@@ -30,6 +30,10 @@ enum TVCellType {
     case MenuTitleTVCell
     case EmptyTVCell
     case SearchFlightsTVCell
+    case CityInfoTVCell
+    case SelectTravellerTVCell
+    case CabinClassTVCell
+    case SearchResultTVCell
     
 }
 

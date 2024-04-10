@@ -24,6 +24,12 @@ class SearchFlightsVC: BaseTableVC {
     
     var tablerow = [TableRow]()
     
+    
+    //MARK: - Loading Functions
+    override func viewWillAppear(_ animated: Bool) {
+        addObserver()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,8 +38,10 @@ class SearchFlightsVC: BaseTableVC {
     }
     
     
+    //MARK: - setupUI
     func setupUI() {
         
+        setupOneWay()
         backBtn.addTarget(self, action: #selector(didTapOnBackButtonAction), for: .touchUpInside)
         commonTableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         commonTableView.layer.cornerRadius = 20
@@ -44,20 +52,91 @@ class SearchFlightsVC: BaseTableVC {
     }
     
     @objc func didTapOnBackButtonAction() {
-        present_or_dismiss_vc.shared.dissmissview(view: view)
         dismiss(animated: true, completion: nil)
     }
     
     
     override func didTapOnOnewayBtnAction(cell: SearchFlightsTVCell) {
+        setupOneWay()
+    }
+    
+    override func didTapOnRoundtripBtnAction(cell: SearchFlightsTVCell) {
+        setupRoundTrip()
+    }
+    
+    
+    func setupOneWay() {
         defaults.setValue("oneway", forKey: UserDefaultsKeys.journeyType)
         commonTableView.reloadData()
     }
     
-    override func didTapOnRoundtripBtnAction(cell: SearchFlightsTVCell) {
+    func setupRoundTrip() {
         defaults.setValue("circle", forKey: UserDefaultsKeys.journeyType)
         commonTableView.reloadData()
     }
+    
+    
+    override func didTapOnSelectFromCityBtnAction(cell:SearchFlightsTVCell) {
+        gotoSelectCityVC(str: "FROM")
+    }
+    
+    
+    override func didTapOnSelectToCityBtnAction(cell:SearchFlightsTVCell) {
+        gotoSelectCityVC(str: "TO")
+    }
+    
+    override func didTapOnAddTravellerBtnAction(cell:SearchFlightsTVCell) {
+        gotoAddTravellerVC()
+    }
+    
+    override func didTapOnSearchFlightsBtnAction(cell:SearchFlightsTVCell) {
+        gotoSearchResultVC()
+    }
+    
+    func gotoSelectCityVC(str:String) {
+        guard let vc = SelectCityVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    func gotoAddTravellerVC() {
+        guard let vc = AddTravellerVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
+    
+    func gotoSearchResultVC() {
+        guard let vc = SearchResultVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
+    
+    
+    //MARK: - donedatePicker cancelDatePicker
+    override func donedatePicker(cell:SearchFlightsTVCell){
+        
+        let journyType = defaults.string(forKey: UserDefaultsKeys.journeyType)
+        if journyType == "oneway" {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd-MM-yyyy"
+            defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calDepDate)
+            
+        }else {
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd-MM-yyyy"
+            defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calDepDate)
+            defaults.set(formatter.string(from: cell.retDatePicker.date), forKey: UserDefaultsKeys.calRetDate)
+        }
+        
+        commonTableView.reloadData()
+        self.view.endEditing(true)
+    }
+    
+    override func cancelDatePicker(cell:SearchFlightsTVCell){
+        self.view.endEditing(true)
+    }
+    
     
 }
 
@@ -73,12 +152,24 @@ extension SearchFlightsVC {
 }
 
 
-extension SearchFlightsVC: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SlideInFromLeftTransitionAnimator() // Use SlideInFromLeftTransitionAnimator for presenting from left to right
+
+extension SearchFlightsVC {
+    func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reload"), object: nil)
     }
     
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SlideInFromRightTransitionAnimator() // Use SlideInFromRightTransitionAnimator for dismissing from right to left
+    
+    @objc func reload() {
+        commonTableView.reloadData()
     }
 }
+
+//extension SearchFlightsVC: UIViewControllerTransitioningDelegate {
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return SlideInFromLeftTransitionAnimator() // Use SlideInFromLeftTransitionAnimator for presenting from left to right
+//    }
+//
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return SlideInFromRightTransitionAnimator() // Use SlideInFromRightTransitionAnimator for dismissing from right to left
+//    }
+//}

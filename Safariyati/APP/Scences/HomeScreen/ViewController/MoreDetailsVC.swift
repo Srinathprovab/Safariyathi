@@ -35,7 +35,6 @@ class MoreDetailsVC: UIViewController {
     
     
     @IBAction func didTapOnBackBtnAction(_ sender: Any) {
-        present_or_dismiss_vc.shared.dissmissview(view: view)
         dismiss(animated: true, completion: nil)
     }
     

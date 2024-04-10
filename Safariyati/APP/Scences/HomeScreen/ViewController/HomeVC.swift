@@ -49,7 +49,6 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
 //        showToast(message: "Flight module not yet implemented")
         
         guard let vc = SearchFlightsVC.newInstance.self else {return}
-        present_or_dismiss_vc.shared.fromRight(view: view)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
 

@@ -94,7 +94,6 @@ extension MoreVC {
     
     func gotoMoreDetailsVC(str:String) {
         guard let vc = MoreDetailsVC.newInstance.self else {return}
-        present_or_dismiss_vc.shared.fromRight(view: view)
         vc.modalPresentationStyle = .fullScreen
         vc.titleString = str
         present(vc, animated: false)

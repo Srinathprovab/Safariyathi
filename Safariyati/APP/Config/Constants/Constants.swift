@@ -34,7 +34,7 @@ var basicloderBool = false
 var BASE_URL = "https://provab.net/travgate/pro_new/mobile/index.php/"
 var BASE_URL1 = "https://provab.net/travgate/pro_new/mobile/index.php/"
 var accessToken = "e3VzZXJuYW1lOmFudWpob29kYSxwYXNzd29yZDp0cmF2Z2F0ZUBtb2JpbGVhcHAsYXV0aHR5cGU6dGVzdH0="
-
+var flightscount = 1
 
 /* URL endpoints */
 struct ApiEndpoints {

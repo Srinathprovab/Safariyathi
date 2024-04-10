@@ -54,4 +54,34 @@ extension UIColor {
         }
     }
     
+    public static var Subtitle1Color : UIColor {
+        
+        get {
+            return UIColor(named: "subtitle1Color")!
+        }
+    }
+    
+    
+    public static var Refundablecolor : UIColor {
+        
+        get {
+            return UIColor(named: "refundablecolor")!
+        }
+    }
+    
+    public static var Farecolor : UIColor {
+        
+        get {
+            return UIColor(named: "farecolor")!
+        }
+    }
+    
+    public static var Refundcolor : UIColor {
+        
+        get {
+            return UIColor(named: "Refundcolor")!
+        }
+    }
+    
+    
 }

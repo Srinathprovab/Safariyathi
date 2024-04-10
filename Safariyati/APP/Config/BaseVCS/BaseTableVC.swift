@@ -8,7 +8,10 @@
 import UIKit
 import MaterialComponents
 
-class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate {
+class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate {
+    
+    
+    
     
     
     
@@ -105,7 +108,17 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     
     func didTapOnOnewayBtnAction(cell: SearchFlightsTVCell) {}
     func didTapOnRoundtripBtnAction(cell: SearchFlightsTVCell) {}
+    func didTapOnSelectFromCityBtnAction(cell:SearchFlightsTVCell) {}
+    func didTapOnSelectToCityBtnAction(cell:SearchFlightsTVCell) {}
+    func didTapOnAddTravellerBtnAction(cell:SearchFlightsTVCell) {}
+    func didTapOnSearchFlightsBtnAction(cell:SearchFlightsTVCell) {}
+    func donedatePicker(cell: SearchFlightsTVCell) {}
+    func cancelDatePicker(cell: SearchFlightsTVCell) {}
     
+    func didTapOnCloseTravellerBtnAction(cell: SelectTravellerTVCell) {}
+    func didTapOnSelectFareBtnAction(cell: SearchResultTVCell) {}
+    func didTapOnFlightDetailsBtnAction(cell: SearchResultTVCell) {}
+    func didTapOnMoreSimilarResults(cell: SearchResultTVCell) {}
     
 }
 
@@ -194,11 +207,32 @@ extension BaseTableVC: UITableViewDataSource {
                 commonCell = cell
                 
                 
+            case .CityInfoTVCell:
+                let cell: CityInfoTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
             case .SearchFlightsTVCell:
                 let cell: SearchFlightsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
                 cell.delegate = self
                 commonCell = cell
                 
+                
+            case .SelectTravellerTVCell:
+                let cell: SelectTravellerTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+                
+            case .CabinClassTVCell:
+                let cell: CabinClassTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .SearchResultTVCell:
+                let cell: SearchResultTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
                 
                 
             default:
