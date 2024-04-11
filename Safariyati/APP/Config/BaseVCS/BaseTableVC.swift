@@ -235,6 +235,34 @@ extension BaseTableVC: UITableViewDataSource {
                 commonCell = cell
                 
                 
+            case .AddFlightltineraryTVCell:
+                let cell: AddFlightltineraryTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .BaggageTVCell:
+                let cell: BaggageTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .ExchangeOrRefundTVCell:
+                let cell: ExchangeOrRefundTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .SelectFareTVCell:
+                let cell: SelectFareTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .BDFlightDetailsTVCell:
+                let cell: BDFlightDetailsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+                
+                
+                
             default:
                 print("handle this case in getCurrentCellAt")
             }

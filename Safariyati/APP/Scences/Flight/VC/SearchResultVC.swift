@@ -31,7 +31,8 @@ class SearchResultVC: BaseTableVC {
     
     
     @IBAction func didTapOnCloseBtnAction(_ sender: Any) {
-        dismiss(animated: true)
+       // dismiss(animated: true)
+        gotoSearchFlightsVC()
     }
     
     
@@ -66,6 +67,24 @@ class SearchResultVC: BaseTableVC {
         present(vc, animated: true)
     }
     
+    func gotoSearchFlightsVC() {
+        guard let vc = SearchFlightsVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: false)
+    }
+    
+   
+    
+    //MARK: - gotoModifySearchVC
+    @IBAction func didTapOnModifySearchBtnAction(_ sender: Any) {
+        gotoModifySearchVC()
+    }
+    
+    func gotoModifySearchVC() {
+        guard let vc = ModifySearchVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
 }
 
 extension SearchResultVC {

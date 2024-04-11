@@ -7,8 +7,8 @@
 
 import UIKit
 
-class FlightDetailsVC: UIViewController {
-
+class FlightDetailsVC: BaseTableVC {
+    
     
     @IBOutlet weak var tabsHolderView: UIView!
     @IBOutlet weak var flightItineraryBtn: UIButton!
@@ -23,10 +23,10 @@ class FlightDetailsVC: UIViewController {
         return vc
     }
     
-    
+    var tablerow = [TableRow]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setupUI()
     }
@@ -41,12 +41,18 @@ class FlightDetailsVC: UIViewController {
         
         setupItienaryBtn()
         
+        
+        commonTableView.registerTVCells(["AddFlightltineraryTVCell",
+                                         "BaggageTVCell",
+                                         "ExchangeOrRefundTVCell"])
+        setupItienaryBtn()
+        
     }
     
     
     
     
-
+    
     @IBAction func didTapOnCloseBtnAction(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -65,7 +71,7 @@ class FlightDetailsVC: UIViewController {
         exchangeBtnView()
     }
     
-
+    
     func setupItienaryBtn() {
         flightItineraryBtn.backgroundColor = .Buttoncolor
         flightItineraryBtn.setTitleColor(.WhiteColor, for: .normal)
@@ -75,6 +81,7 @@ class FlightDetailsVC: UIViewController {
         
         exchangeBtn.backgroundColor = .TxtFldbgColor
         exchangeBtn.setTitleColor(.TitleColor, for: .normal)
+        setupFlightItienaryTVCell()
     }
     
     func setupBaggageInfo() {
@@ -86,6 +93,7 @@ class FlightDetailsVC: UIViewController {
         
         exchangeBtn.backgroundColor = .TxtFldbgColor
         exchangeBtn.setTitleColor(.TitleColor, for: .normal)
+        setupBaggageTVCell()
     }
     
     func exchangeBtnView() {
@@ -97,6 +105,7 @@ class FlightDetailsVC: UIViewController {
         
         exchangeBtn.backgroundColor = .Buttoncolor
         exchangeBtn.setTitleColor(.WhiteColor, for: .normal)
+        setupExchangeTVCell()
     }
     
     
@@ -109,4 +118,57 @@ class FlightDetailsVC: UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
     }
+}
+
+
+extension FlightDetailsVC {
+    
+    func setupFlightItienaryTVCell() {
+        tablerow.removeAll()
+        
+        tablerow.append(TableRow(title:"",
+                                 characterLimit: 2,
+                                 cellType: .AddFlightltineraryTVCell))
+        
+        commonTVData = tablerow
+        commonTableView.reloadData()
+        
+        
+    }
+    
+    
+    func setupBaggageTVCell() {
+        tablerow.removeAll()
+        
+        tablerow.append(TableRow(title:"Dubai- Kuwait",
+                                 cellType: .BaggageTVCell))
+        
+        tablerow.append(TableRow(title:"Kuwait-Dubai",
+                                 cellType: .BaggageTVCell))
+        
+        commonTVData = tablerow
+        commonTableView.reloadData()
+        
+        
+    }
+    
+    
+    func setupExchangeTVCell() {
+        tablerow.removeAll()
+        
+        tablerow.append(TableRow(title:"Cancellation Charges :",
+                                 cellType: .ExchangeOrRefundTVCell))
+        
+        tablerow.append(TableRow(title:"Exchange Charges :",
+                                 cellType: .ExchangeOrRefundTVCell))
+        
+        tablerow.append(TableRow(title:"AHT Charges :",
+                                 cellType: .ExchangeOrRefundTVCell))
+        
+        commonTVData = tablerow
+        commonTableView.reloadData()
+        
+        
+    }
+    
 }

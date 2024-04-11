@@ -7,8 +7,8 @@
 
 import UIKit
 
-class BookingDetailsVC: UIViewController {
-
+class BookingDetailsVC: BaseTableVC {
+    
     static var newInstance: BookingDetailsVC? {
         let storyboard = UIStoryboard(name: Storyboard.Flights.name,
                                       bundle: nil)
@@ -16,23 +16,20 @@ class BookingDetailsVC: UIViewController {
         return vc
     }
     
+    var tablerow = [TableRow]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setupUI()
     }
     
-    func setupUI() {
-        
-      
-    }
     
     
     
     
-
+    
     @IBAction func didTapOnCloseBtnAction(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -41,6 +38,32 @@ class BookingDetailsVC: UIViewController {
         print("didTapOnContinuePaymentBtynAction")
     }
     
-   
     
+    
+}
+
+
+extension BookingDetailsVC {
+    
+    
+    func setupUI() {
+        commonTableView.backgroundColor = .WhiteColor
+        commonTableView.registerTVCells(["BDFlightDetailsTVCell"])
+        
+        setupTVcells()
+    }
+    
+    func setupTVcells() {
+        tablerow.removeAll()
+        
+        
+        tablerow.append(TableRow(title:"",
+                                 characterLimit: flightscount,
+                                 cellType:.BDFlightDetailsTVCell))
+        
+        
+        
+        commonTVData = tablerow
+        commonTableView.reloadData()
+    }
 }

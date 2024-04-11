@@ -34,6 +34,11 @@ enum TVCellType {
     case SelectTravellerTVCell
     case CabinClassTVCell
     case SearchResultTVCell
+    case AddFlightltineraryTVCell
+    case BaggageTVCell
+    case ExchangeOrRefundTVCell
+    case SelectFareTVCell
+    case BDFlightDetailsTVCell
     
 }
 

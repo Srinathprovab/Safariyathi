@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectFareVC: UIViewController {
+class SelectFareVC: BaseTableVC {
 
     static var newInstance: SelectFareVC? {
         let storyboard = UIStoryboard(name: Storyboard.Flights.name,
@@ -17,20 +17,14 @@ class SelectFareVC: UIViewController {
     }
     
     
+    var tablerow = [TableRow]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setupUI()
     }
-    
-    func setupUI() {
-        
-      
-    }
-    
-    
-    
     
 
     @IBAction func didTapOnCloseBtnAction(_ sender: Any) {
@@ -47,4 +41,26 @@ class SelectFareVC: UIViewController {
         present(vc, animated: true)
     }
     
+}
+
+
+extension SelectFareVC {
+    
+    func setupUI() {
+       
+        commonTableView.backgroundColor = .WhiteColor
+        commonTableView.registerTVCells(["SelectFareTVCell"])
+        setupTV()
+    }
+    
+    
+    func setupTV() {
+        tablerow.removeAll()
+       
+        tablerow.append(TableRow(cellType: .SelectFareTVCell))
+        
+        
+        commonTVData = tablerow
+        commonTableView.reloadData()
+    }
 }

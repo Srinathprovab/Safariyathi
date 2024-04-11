@@ -1,21 +1,21 @@
 //
-//  SearchFlightsVC.swift
+//  ModifySearchVC.swift
 //  Safariyati
 //
-//  Created by FCI on 08/04/24.
+//  Created by FCI on 11/04/24.
 //
 
 import UIKit
 
-class SearchFlightsVC: BaseTableVC {
+class ModifySearchVC: BaseTableVC {
     
     @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var backBtn: UIButton!
     
-    static var newInstance: SearchFlightsVC? {
+    static var newInstance: ModifySearchVC? {
         let storyboard = UIStoryboard(name: Storyboard.Flights.name,
                                       bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: self.className()) as? SearchFlightsVC
+        let vc = storyboard.instantiateViewController(withIdentifier: self.className()) as? ModifySearchVC
         return vc
     }
     
@@ -49,8 +49,7 @@ class SearchFlightsVC: BaseTableVC {
     }
     
     @objc func didTapOnBackButtonAction() {
-      //  dismiss(animated: true, completion: nil)
-        gotoTabbarVC()
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -110,14 +109,6 @@ class SearchFlightsVC: BaseTableVC {
     }
     
     
-    func gotoTabbarVC() {
-        guard let vc = TabbarVC.newInstance.self else {return}
-        vc.modalPresentationStyle = .fullScreen
-        vc.selectedIndex = 0
-        present(vc, animated: false)
-    }
-    
-    
     //MARK: - donedatePicker cancelDatePicker
     override func donedatePicker(cell:SearchFlightsTVCell){
         
@@ -144,13 +135,10 @@ class SearchFlightsVC: BaseTableVC {
     }
     
     
-    
-    
-    
 }
 
 
-extension SearchFlightsVC {
+extension ModifySearchVC {
     
     func setupTV() {
         tablerow.removeAll()
@@ -162,7 +150,7 @@ extension SearchFlightsVC {
 
 
 
-extension SearchFlightsVC {
+extension ModifySearchVC {
     func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reload"), object: nil)
     }
