@@ -20,7 +20,7 @@ class SearchResultVC: BaseTableVC {
         return vc
     }
     
-   
+    
     var tablerow = [TableRow]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,18 +30,26 @@ class SearchResultVC: BaseTableVC {
     }
     
     
+    //MARK: - didTapOnCloseBtnAction
     @IBAction func didTapOnCloseBtnAction(_ sender: Any) {
-       // dismiss(animated: true)
+        // dismiss(animated: true)
         gotoSearchFlightsVC()
     }
     
     
+    //MARK: - didTapOnFilterBtnAction didTapOnSortBtnAction
+    @IBAction func didTapOnFilterBtnAction(_ sender: Any) {
+        print("didTapOnFilterBtnAction")
+    }
     
-    //MARK: - SelectTravellerTVCell delegate methods
-//    override func didTapOnCloseTravellerBtnAction(cell: SelectTravellerTVCell) {
-//        print("didTapOnCloseTravellerBtnAction")
-//    }
     
+    @IBAction func didTapOnSortBtnAction(_ sender: Any) {
+        print("didTapOnSortBtnAction")
+    }
+    
+    
+    
+    //MARK: - SearchResultTVCell Delegate Methods
     override func didTapOnSelectFareBtnAction(cell: SearchResultTVCell) {
         gotoSelectFareVC()
     }
@@ -54,7 +62,7 @@ class SearchResultVC: BaseTableVC {
         print("didTapOnMoreSimilarResults")
     }
     
- 
+    
     func gotoFlightDetailsVC() {
         guard let vc = FlightDetailsVC.newInstance.self else {return}
         vc.modalPresentationStyle = .overCurrentContext
@@ -73,7 +81,7 @@ class SearchResultVC: BaseTableVC {
         present(vc, animated: false)
     }
     
-   
+    
     
     //MARK: - gotoModifySearchVC
     @IBAction func didTapOnModifySearchBtnAction(_ sender: Any) {
@@ -102,7 +110,7 @@ extension SearchResultVC {
             tablerow.append(TableRow(title:"",
                                      characterLimit: flightscount,
                                      cellType:.SearchResultTVCell))
-
+            
         }
         
         commonTVData = tablerow

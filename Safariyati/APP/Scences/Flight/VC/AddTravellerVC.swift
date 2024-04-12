@@ -11,6 +11,7 @@ class AddTravellerVC: BaseTableVC {
     
     @IBOutlet weak var doneBTN: UIButton!
     
+    @IBOutlet weak var topconstraint: NSLayoutConstraint!
     static var newInstance: AddTravellerVC? {
         let storyboard = UIStoryboard(name: Storyboard.Flights.name,
                                       bundle: nil)
@@ -45,6 +46,13 @@ class AddTravellerVC: BaseTableVC {
 extension AddTravellerVC {
     
     func setupUI() {
+        if screenHeight < 750 {
+            topconstraint.constant = 150
+        }else {
+            topconstraint.constant = 300
+        }
+        
+        
         self.view.backgroundColor = .black.withAlphaComponent(0.5)
         doneBTN.layer.cornerRadius = 6
         commonTableView.isScrollEnabled = false

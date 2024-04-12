@@ -39,7 +39,9 @@ class BookingDetailsVC: BaseTableVC {
     }
     
     
-    
+    override func didTapOnregOrLoginBtnAction(cell:GuestRegistrationTVCell) {
+        commonTableView.reloadData()
+    }
 }
 
 
@@ -48,7 +50,9 @@ extension BookingDetailsVC {
     
     func setupUI() {
         commonTableView.backgroundColor = .WhiteColor
-        commonTableView.registerTVCells(["BDFlightDetailsTVCell"])
+        commonTableView.registerTVCells(["BDFlightDetailsTVCell",
+                                        "GuestRegistrationTVCell",
+                                         "TermsAndPrivacyCheckBoxTVCell"])
         
         setupTVcells()
     }
@@ -61,6 +65,9 @@ extension BookingDetailsVC {
                                  characterLimit: flightscount,
                                  cellType:.BDFlightDetailsTVCell))
         
+        tablerow.append(TableRow(cellType:.GuestRegistrationTVCell))
+        
+        tablerow.append(TableRow(title:"By booking this item, you agree to pay the total amount shown, which includes Service Fees, on the right and to the , User Terms, Privacy policy .",cellType:.TermsAndPrivacyCheckBoxTVCell))
         
         
         commonTVData = tablerow

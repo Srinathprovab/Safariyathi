@@ -39,6 +39,9 @@ enum TVCellType {
     case ExchangeOrRefundTVCell
     case SelectFareTVCell
     case BDFlightDetailsTVCell
+    case GuestRegistrationTVCell
+    case TermsAndPrivacyCheckBoxTVCell
+    case NoteTVCell
     
 }
 

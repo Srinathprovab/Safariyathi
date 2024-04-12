@@ -94,6 +94,7 @@ class SearchFlightsVC: BaseTableVC {
     func gotoSelectCityVC(str:String) {
         guard let vc = SelectCityVC.newInstance.self else {return}
         vc.modalPresentationStyle = .fullScreen
+        vc.titleString = str
         present(vc, animated: true)
     }
     
@@ -106,7 +107,7 @@ class SearchFlightsVC: BaseTableVC {
     func gotoSearchResultVC() {
         guard let vc = SearchResultVC.newInstance.self else {return}
         vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true)
+      //  present(vc, animated: true)
     }
     
     

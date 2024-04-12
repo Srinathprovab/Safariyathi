@@ -72,7 +72,7 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
 extension HomeVC {
     func setupUI() {
         setupMenu()
-        commonTableView.backgroundColor = .WhiteColor
+        commonTableView.backgroundColor = HexColor("E9F8FF")
         commonTableView.registerTVCells(["TabselectTVCell",
                                          "BestFlightTVCell",
                                          "TopDestinationsTVCell"])

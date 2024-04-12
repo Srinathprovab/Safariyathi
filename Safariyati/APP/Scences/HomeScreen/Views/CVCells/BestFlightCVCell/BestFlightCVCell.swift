@@ -15,6 +15,7 @@ class BestFlightCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        contentView.backgroundColor = HexColor("E9F8FF")
         img.layer.cornerRadius = 10
     }
 

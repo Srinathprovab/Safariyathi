@@ -43,6 +43,8 @@ extension SelectCityVC {
         titlelbl.text = titleString
         searchTF.setLeftPaddingPoints(35)
         searchTF.font = .InterRegular(size: 14)
+        topView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        topView.layer.cornerRadius = 20
         commonTableView.backgroundColor = .WhiteColor
         commonTableView.registerTVCells(["CityInfoTVCell"])
         setupTV()

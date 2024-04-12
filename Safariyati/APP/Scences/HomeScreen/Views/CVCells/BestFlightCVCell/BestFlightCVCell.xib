@@ -22,35 +22,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="308" height="178"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bestflight" translatesAutoresizingMaskIntoConstraints="NO" id="Kbo-08-113">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIy-VX-9aH">
                         <rect key="frame" x="0.0" y="0.0" width="308" height="178"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dubai(DXB) To  Kuwait(KWI)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1L-qg-oDd">
-                        <rect key="frame" x="0.0" y="148" width="308" height="30"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bestflight" translatesAutoresizingMaskIntoConstraints="NO" id="Kbo-08-113">
+                                <rect key="frame" x="0.0" y="0.0" width="308" height="178"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dubai(DXB) To  Kuwait(KWI)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SS4-2d-yFu">
+                                <rect key="frame" x="0.0" y="148" width="308" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Cc9-0G-wOr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                <color key="textColor" name="WhightColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9137254901960784" green="0.97254901960784312" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="lvS-wh-xbn"/>
+                            <constraint firstItem="Kbo-08-113" firstAttribute="leading" secondItem="AIy-VX-9aH" secondAttribute="leading" id="0DS-bC-Vlq"/>
+                            <constraint firstItem="Kbo-08-113" firstAttribute="top" secondItem="AIy-VX-9aH" secondAttribute="top" id="BEQ-Rg-hem"/>
+                            <constraint firstAttribute="trailing" secondItem="SS4-2d-yFu" secondAttribute="trailing" id="f3i-sA-Vxn"/>
+                            <constraint firstItem="SS4-2d-yFu" firstAttribute="leading" secondItem="AIy-VX-9aH" secondAttribute="leading" id="fvo-mW-f7I"/>
+                            <constraint firstAttribute="trailing" secondItem="Kbo-08-113" secondAttribute="trailing" id="gN0-Hg-d6j"/>
+                            <constraint firstAttribute="bottom" secondItem="Kbo-08-113" secondAttribute="bottom" id="vqX-9A-F4X"/>
+                            <constraint firstAttribute="bottom" secondItem="SS4-2d-yFu" secondAttribute="bottom" id="xrJ-9c-elc"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
-                        <color key="textColor" name="WhightColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="s1L-qg-oDd" secondAttribute="trailing" id="0fl-7b-axe"/>
-                <constraint firstAttribute="trailing" secondItem="Kbo-08-113" secondAttribute="trailing" id="Pfp-kT-Kbx"/>
-                <constraint firstItem="s1L-qg-oDd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bWl-oy-OYP"/>
-                <constraint firstItem="Kbo-08-113" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cyX-Jt-O7X"/>
-                <constraint firstAttribute="bottom" secondItem="s1L-qg-oDd" secondAttribute="bottom" id="kPu-0e-x92"/>
-                <constraint firstAttribute="bottom" secondItem="Kbo-08-113" secondAttribute="bottom" id="otq-jt-px6"/>
-                <constraint firstItem="Kbo-08-113" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rnX-1L-mrW"/>
+                <constraint firstItem="AIy-VX-9aH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6aj-tt-pYP"/>
+                <constraint firstAttribute="bottom" secondItem="AIy-VX-9aH" secondAttribute="bottom" id="Wns-bY-3j7"/>
+                <constraint firstItem="AIy-VX-9aH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="X10-km-6se"/>
+                <constraint firstAttribute="trailing" secondItem="AIy-VX-9aH" secondAttribute="trailing" id="zxl-de-HxG"/>
             </constraints>
             <size key="customSize" width="308" height="178"/>
             <connections>
                 <outlet property="img" destination="Kbo-08-113" id="grb-dQ-UhI"/>
-                <outlet property="titlelbl" destination="s1L-qg-oDd" id="iJP-B2-VWr"/>
+                <outlet property="titlelbl" destination="SS4-2d-yFu" id="2KI-wP-dds"/>
             </connections>
             <point key="canvasLocation" x="335.87786259541986" y="64.788732394366207"/>
         </collectionViewCell>

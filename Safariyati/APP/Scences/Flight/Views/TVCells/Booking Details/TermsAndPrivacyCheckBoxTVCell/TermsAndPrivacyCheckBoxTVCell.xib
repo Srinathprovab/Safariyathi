@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Medium.ttf">
+            <string>Inter-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="56" id="KGk-i7-Jjw" customClass="TermsAndPrivacyCheckBoxTVCell" customModule="Safariyati" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="394" height="56"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUi-Sy-dXX">
+                        <rect key="frame" x="10" y="5" width="374" height="46"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck" translatesAutoresizingMaskIntoConstraints="NO" id="Rns-6V-vyW">
+                                <rect key="frame" x="10" y="11" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Gya-j1-VtR"/>
+                                    <constraint firstAttribute="width" constant="24" id="n8i-Cg-AdJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofH-R6-F4i">
+                                <rect key="frame" x="44" y="11" width="320" height="21"/>
+                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAO-SY-N5Z">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="didTapOnCheckBoxBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="EtS-1h-JDm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ofH-R6-F4i" secondAttribute="trailing" constant="10" id="8PV-mT-zwY"/>
+                            <constraint firstItem="Rns-6V-vyW" firstAttribute="leading" secondItem="MUi-Sy-dXX" secondAttribute="leading" constant="10" id="B2z-PO-s58"/>
+                            <constraint firstAttribute="bottom" secondItem="ofH-R6-F4i" secondAttribute="bottom" constant="14" id="D0L-Hk-ll4"/>
+                            <constraint firstItem="uAO-SY-N5Z" firstAttribute="leading" secondItem="MUi-Sy-dXX" secondAttribute="leading" id="Fuq-xU-T9s"/>
+                            <constraint firstItem="ofH-R6-F4i" firstAttribute="top" secondItem="MUi-Sy-dXX" secondAttribute="top" constant="11" id="G5X-9g-H1g"/>
+                            <constraint firstItem="Rns-6V-vyW" firstAttribute="top" secondItem="MUi-Sy-dXX" secondAttribute="top" constant="11" id="I3R-cT-Zas"/>
+                            <constraint firstAttribute="bottom" secondItem="uAO-SY-N5Z" secondAttribute="bottom" id="JT2-lV-9Kk"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="a8g-yn-wmi"/>
+                            <constraint firstAttribute="trailing" secondItem="uAO-SY-N5Z" secondAttribute="trailing" id="e2h-bO-3a2"/>
+                            <constraint firstItem="uAO-SY-N5Z" firstAttribute="top" secondItem="MUi-Sy-dXX" secondAttribute="top" id="vdY-rp-duo"/>
+                            <constraint firstItem="ofH-R6-F4i" firstAttribute="leading" secondItem="Rns-6V-vyW" secondAttribute="trailing" constant="10" id="zCU-Is-fN0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MUi-Sy-dXX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="3Fj-vQ-M2v"/>
+                    <constraint firstItem="MUi-Sy-dXX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="AA7-BK-hOd"/>
+                    <constraint firstAttribute="trailing" secondItem="MUi-Sy-dXX" secondAttribute="trailing" constant="10" id="aOO-mO-9Az"/>
+                    <constraint firstAttribute="bottom" secondItem="MUi-Sy-dXX" secondAttribute="bottom" constant="5" id="nGR-Am-LnS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="checkBoxImg" destination="Rns-6V-vyW" id="lyV-jw-FoV"/>
+                <outlet property="titlelbl" destination="ofH-R6-F4i" id="vus-NR-QwZ"/>
+            </connections>
+            <point key="canvasLocation" x="195.41984732824426" y="49.295774647887328"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="uncheck" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

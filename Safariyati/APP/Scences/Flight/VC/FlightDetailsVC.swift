@@ -44,7 +44,8 @@ class FlightDetailsVC: BaseTableVC {
         
         commonTableView.registerTVCells(["AddFlightltineraryTVCell",
                                          "BaggageTVCell",
-                                         "ExchangeOrRefundTVCell"])
+                                         "ExchangeOrRefundTVCell",
+                                         "NoteTVCell"])
         setupItienaryBtn()
         
     }
@@ -164,6 +165,11 @@ extension FlightDetailsVC {
         
         tablerow.append(TableRow(title:"AHT Charges :",
                                  cellType: .ExchangeOrRefundTVCell))
+        
+        
+        tablerow.append(TableRow(cellType: .NoteTVCell))
+        
+        
         
         commonTVData = tablerow
         commonTableView.reloadData()

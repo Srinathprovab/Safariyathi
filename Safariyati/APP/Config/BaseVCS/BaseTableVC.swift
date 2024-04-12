@@ -14,7 +14,6 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     
     
     
-    
     @IBOutlet weak var commonScrollView: UITableView!
     @IBOutlet weak var commonTableView: UITableView!
     @IBOutlet weak var commonTVTopConstraint: NSLayoutConstraint!
@@ -119,7 +118,7 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnSelectFareBtnAction(cell: SearchResultTVCell) {}
     func didTapOnFlightDetailsBtnAction(cell: SearchResultTVCell) {}
     func didTapOnMoreSimilarResults(cell: SearchResultTVCell) {}
-    
+    func didTapOnregOrLoginBtnAction(cell:GuestRegistrationTVCell) {}
 }
 
 extension BaseTableVC: UITableViewDelegate {
@@ -259,6 +258,20 @@ extension BaseTableVC: UITableViewDataSource {
                 let cell: BDFlightDetailsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
                 commonCell = cell
                 
+                
+            case .GuestRegistrationTVCell:
+                let cell: GuestRegistrationTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .TermsAndPrivacyCheckBoxTVCell:
+                let cell: TermsAndPrivacyCheckBoxTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .NoteTVCell:
+                let cell: NoteTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
                 
                 
                 

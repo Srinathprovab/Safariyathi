@@ -44,6 +44,11 @@ class SelectTravellerTVCell: TableViewCell {
         adultCountlbl.text = defaults.string(forKey: UserDefaultsKeys.adultCount) ?? "1"
         childCountlbl.text = defaults.string(forKey: UserDefaultsKeys.childCount) ?? "0"
         infantCountlbl.text = defaults.string(forKey: UserDefaultsKeys.infantsCount) ?? "0"
+        
+        
+        adultsCount = Int(defaults.string(forKey: UserDefaultsKeys.adultCount) ?? "") ?? 1
+        childCount = Int(defaults.string(forKey: UserDefaultsKeys.childCount) ?? "") ?? 0
+        infantsCount = Int(defaults.string(forKey: UserDefaultsKeys.infantsCount) ?? "") ?? 0
     }
     
     
@@ -95,6 +100,7 @@ extension SelectTravellerTVCell {
         updateTotalTravelerCount()
     }
     
+    
     //MARK: - Child
     @objc func didTapOnChildIncrementBtnAction(_ sender:UIButton) {
         
@@ -117,6 +123,7 @@ extension SelectTravellerTVCell {
         
         updateTotalTravelerCount()
     }
+    
     
     //MARK: - Infant
     @objc func didTapOnInfantIncrementBtnAction(_ sender:UIButton) {

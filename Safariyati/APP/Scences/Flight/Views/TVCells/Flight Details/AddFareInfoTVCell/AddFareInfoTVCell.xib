@@ -160,7 +160,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="Zdp-a9-7Vp"/>
                                                                 </constraints>
                                                             </view>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare1" translatesAutoresizingMaskIntoConstraints="NO" id="1z0-38-cNT">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare2" translatesAutoresizingMaskIntoConstraints="NO" id="1z0-38-cNT">
                                                                 <rect key="frame" x="10" y="14.666666666666671" width="16" height="16"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="5UR-zU-kOf"/>
@@ -251,7 +251,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="Vrp-IA-KvQ"/>
                                                                 </constraints>
                                                             </view>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare1" translatesAutoresizingMaskIntoConstraints="NO" id="Yhb-DN-rvl">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare3" translatesAutoresizingMaskIntoConstraints="NO" id="Yhb-DN-rvl">
                                                                 <rect key="frame" x="10" y="14.666666666666657" width="16" height="16"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="Bd8-Mc-um8"/>
@@ -342,7 +342,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="3tE-uT-Qr6"/>
                                                                 </constraints>
                                                             </view>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare1" translatesAutoresizingMaskIntoConstraints="NO" id="yMi-bn-3pT">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare4" translatesAutoresizingMaskIntoConstraints="NO" id="yMi-bn-3pT">
                                                                 <rect key="frame" x="10" y="14.666666666666657" width="16" height="16"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="OY3-aP-K2E"/>
@@ -433,7 +433,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="KkW-km-Tro"/>
                                                                 </constraints>
                                                             </view>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare1" translatesAutoresizingMaskIntoConstraints="NO" id="Udy-ub-1GJ">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare5" translatesAutoresizingMaskIntoConstraints="NO" id="Udy-ub-1GJ">
                                                                 <rect key="frame" x="10" y="14.666666666666657" width="16" height="16"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="FH0-C7-qmR"/>
@@ -517,7 +517,7 @@
                                                                     <constraint firstAttribute="width" constant="1" id="ztt-5Z-IlK"/>
                                                                 </constraints>
                                                             </view>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare1" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-B8-y8c">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fare6" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-B8-y8c">
                                                                 <rect key="frame" x="10" y="14.666666666666686" width="16" height="16"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="0JZ-ex-PqC"/>
@@ -640,9 +640,14 @@
     </objects>
     <resources>
         <image name="fare1" width="17.333333969116211" height="17"/>
+        <image name="fare2" width="16" height="16"/>
+        <image name="fare3" width="16" height="16"/>
+        <image name="fare4" width="16" height="16"/>
+        <image name="fare5" width="14.666666984558105" height="14.666666984558105"/>
+        <image name="fare6" width="16" height="16"/>
         <image name="runselect" width="20" height="20"/>
         <namedColor name="BorderColor">
-            <color red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Buttoncolor">
             <color red="0.87800002098083496" green="0.078000001609325409" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
