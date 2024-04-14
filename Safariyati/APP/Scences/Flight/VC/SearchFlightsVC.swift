@@ -107,7 +107,7 @@ class SearchFlightsVC: BaseTableVC {
     func gotoSearchResultVC() {
         guard let vc = SearchResultVC.newInstance.self else {return}
         vc.modalPresentationStyle = .overCurrentContext
-      //  present(vc, animated: true)
+        present(vc, animated: true)
     }
     
     

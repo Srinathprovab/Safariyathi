@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MenuBGTVCellDelegate {
+    func didTapOnLoginBtnAction(cell:MenuBGTVCell)
+}
+
 class MenuBGTVCell: TableViewCell {
 
     
@@ -20,7 +24,7 @@ class MenuBGTVCell: TableViewCell {
     @IBOutlet weak var emaillbl: UILabel!
     @IBOutlet weak var phonelbl: UILabel!
     
-    
+    var delegate:MenuBGTVCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -46,6 +50,11 @@ class MenuBGTVCell: TableViewCell {
         noProfileView.isHidden = false
         profileImage.image = UIImage(named: "noprofile")
         noProfileImage.image = UIImage(named: "noprofile")
+    }
+    
+    
+    @IBAction func didTapOnLoginBtnAction(_ sender: Any) {
+        delegate?.didTapOnLoginBtnAction(cell: self)
     }
     
 }

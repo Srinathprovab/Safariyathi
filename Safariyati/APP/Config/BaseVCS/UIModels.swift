@@ -42,6 +42,8 @@ enum TVCellType {
     case GuestRegistrationTVCell
     case TermsAndPrivacyCheckBoxTVCell
     case NoteTVCell
+    case SignupTVCell
+    case SigninTVCell
     
 }
 

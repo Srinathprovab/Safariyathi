@@ -8,9 +8,7 @@
 import UIKit
 import MaterialComponents
 
-class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate {
-    
-    
+class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate {
     
     
     
@@ -119,6 +117,20 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnFlightDetailsBtnAction(cell: SearchResultTVCell) {}
     func didTapOnMoreSimilarResults(cell: SearchResultTVCell) {}
     func didTapOnregOrLoginBtnAction(cell:GuestRegistrationTVCell) {}
+    
+    func didTapOnBackBtnnAction(cell: SignupTVCell) {}
+    func didTapOnSignupBtnAction(cell: SignupTVCell) {}
+    func didTapOnGotoSigninBtnAction(cell: SignupTVCell) {}
+    func didTapOnBackBtnnAction(cell: SigninTVCell) {}
+    func didTapOnSigninnBtnAction(cell: SigninTVCell) {}
+    func didTapOnGotoSignupBtnAction(cell: SigninTVCell) {}
+    func editingText(tf: UITextField) {}
+    func didTapOnLoginBtnAction(cell: MenuBGTVCell) {}
+    
+    
+    
+    
+    
 }
 
 extension BaseTableVC: UITableViewDelegate {
@@ -198,6 +210,7 @@ extension BaseTableVC: UITableViewDataSource {
                 
             case .MenuBGTVCell:
                 let cell: MenuBGTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
                 commonCell = cell
                 
                 
@@ -274,6 +287,16 @@ extension BaseTableVC: UITableViewDataSource {
                 commonCell = cell
                 
                 
+            case .SigninTVCell:
+                let cell: SigninTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+                
+            case .SignupTVCell:
+                let cell: SignupTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
                 
                 
             default:

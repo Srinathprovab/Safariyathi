@@ -32,6 +32,18 @@ class MenuVC: BaseTableVC {
     @IBAction func didTapOnLogoutBtnAction(_ sender: Any) {
         print("Logout")
     }
+    
+    override func didTapOnLoginBtnAction(cell: MenuBGTVCell) {
+        gotoSigninVC()
+    }
+    
+    func gotoSigninVC() {
+        guard let vc = SigninVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false)
+    }
+    
+    
 }
 
 extension MenuVC {

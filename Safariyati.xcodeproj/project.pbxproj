@@ -115,6 +115,12 @@
 		65A965E02BC17BE6000E0487 /* MenuTitleTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A965DE2BC17BE6000E0487 /* MenuTitleTVCell.xib */; };
 		65A965E42BC18087000E0487 /* EmptyTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A965E22BC18087000E0487 /* EmptyTVCell.swift */; };
 		65A965E52BC18087000E0487 /* EmptyTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A965E32BC18087000E0487 /* EmptyTVCell.xib */; };
+		65E4B5AF2BCBE01D00E29405 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E4B5AE2BCBE01D00E29405 /* SigninVC.swift */; };
+		65E4B5B12BCBE07C00E29405 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E4B5B02BCBE07C00E29405 /* SignupVC.swift */; };
+		65E4B5B52BCBE13D00E29405 /* SigninTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E4B5B32BCBE13D00E29405 /* SigninTVCell.swift */; };
+		65E4B5B62BCBE13D00E29405 /* SigninTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E4B5B42BCBE13D00E29405 /* SigninTVCell.xib */; };
+		65E4B5BA2BCBE90700E29405 /* SignupTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E4B5B82BCBE90700E29405 /* SignupTVCell.swift */; };
+		65E4B5BB2BCBE90700E29405 /* SignupTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E4B5B92BCBE90700E29405 /* SignupTVCell.xib */; };
 		65E550802BC8F90C00C9864D /* NoteTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5507E2BC8F90C00C9864D /* NoteTVCell.swift */; };
 		65E550812BC8F90C00C9864D /* NoteTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E5507F2BC8F90C00C9864D /* NoteTVCell.xib */; };
 		8BEB4D35259C93D87C78CFE3 /* Pods_SafariyatiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C8F04407717B070F2F8692 /* Pods_SafariyatiTests.framework */; };
@@ -251,6 +257,12 @@
 		65A965DE2BC17BE6000E0487 /* MenuTitleTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTitleTVCell.xib; sourceTree = "<group>"; };
 		65A965E22BC18087000E0487 /* EmptyTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTVCell.swift; sourceTree = "<group>"; };
 		65A965E32BC18087000E0487 /* EmptyTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTVCell.xib; sourceTree = "<group>"; };
+		65E4B5AE2BCBE01D00E29405 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
+		65E4B5B02BCBE07C00E29405 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		65E4B5B32BCBE13D00E29405 /* SigninTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninTVCell.swift; sourceTree = "<group>"; };
+		65E4B5B42BCBE13D00E29405 /* SigninTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SigninTVCell.xib; sourceTree = "<group>"; };
+		65E4B5B82BCBE90700E29405 /* SignupTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTVCell.swift; sourceTree = "<group>"; };
+		65E4B5B92BCBE90700E29405 /* SignupTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupTVCell.xib; sourceTree = "<group>"; };
 		65E5507E2BC8F90C00C9864D /* NoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTVCell.swift; sourceTree = "<group>"; };
 		65E5507F2BC8F90C00C9864D /* NoteTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTVCell.xib; sourceTree = "<group>"; };
 		7855170A7BBFE9727910E08F /* Pods-Safariyati-SafariyatiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safariyati-SafariyatiUITests.debug.xcconfig"; path = "Target Support Files/Pods-Safariyati-SafariyatiUITests/Pods-Safariyati-SafariyatiUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -892,6 +904,8 @@
 			isa = PBXGroup;
 			children = (
 				65A965D12BC16150000E0487 /* MenuVC.swift */,
+				65E4B5AE2BCBE01D00E29405 /* SigninVC.swift */,
+				65E4B5B02BCBE07C00E29405 /* SignupVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -937,6 +951,8 @@
 		65A965D62BC1665B000E0487 /* TVCells */ = {
 			isa = PBXGroup;
 			children = (
+				65E4B5B72BCBE8F000E29405 /* SignupTVCell */,
+				65E4B5B22BCBE12200E29405 /* SigninTVCell */,
 				65A965E12BC1806B000E0487 /* EmptyTVCell */,
 				65A965DC2BC17BCC000E0487 /* MenuTitleTVCell */,
 				65A965D72BC1667A000E0487 /* MenuBGTVCell */,
@@ -969,6 +985,24 @@
 				65A965E32BC18087000E0487 /* EmptyTVCell.xib */,
 			);
 			path = EmptyTVCell;
+			sourceTree = "<group>";
+		};
+		65E4B5B22BCBE12200E29405 /* SigninTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				65E4B5B32BCBE13D00E29405 /* SigninTVCell.swift */,
+				65E4B5B42BCBE13D00E29405 /* SigninTVCell.xib */,
+			);
+			path = SigninTVCell;
+			sourceTree = "<group>";
+		};
+		65E4B5B72BCBE8F000E29405 /* SignupTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				65E4B5B82BCBE90700E29405 /* SignupTVCell.swift */,
+				65E4B5B92BCBE90700E29405 /* SignupTVCell.xib */,
+			);
+			path = SignupTVCell;
 			sourceTree = "<group>";
 		};
 		65E5507D2BC8F8E300C9864D /* NoteTVCell */ = {
@@ -1138,6 +1172,8 @@
 				65A7194E2BBFE02F009C05D3 /* Assets.xcassets in Resources */,
 				651B58FD2BC7BBA000132165 /* SelectFareTVCell.xib in Resources */,
 				651B59122BC7EFDE00132165 /* GuestRegistrationTVCell.xib in Resources */,
+				65E4B5B62BCBE13D00E29405 /* SigninTVCell.xib in Resources */,
+				65E4B5BB2BCBE90700E29405 /* SignupTVCell.xib in Resources */,
 				65A719C32BBFE2C7009C05D3 /* sucessful.gif in Resources */,
 				65A7194C2BBFE02D009C05D3 /* Main.storyboard in Resources */,
 				65A965CA2BC1595F000E0487 /* TopDestinationsTVCell.xib in Resources */,
@@ -1319,6 +1355,7 @@
 				653378292BC6513D00E8B940 /* AddTravellerVC.swift in Sources */,
 				6533782D2BC6885400E8B940 /* CabinClassCVCell.swift in Sources */,
 				65A719D52BBFE2C7009C05D3 /* UIColorManager.swift in Sources */,
+				65E4B5B52BCBE13D00E29405 /* SigninTVCell.swift in Sources */,
 				65A719CE2BBFE2C7009C05D3 /* DateExtension.swift in Sources */,
 				65A719BD2BBFE2C7009C05D3 /* TableViewCell.swift in Sources */,
 				65A719CA2BBFE2C7009C05D3 /* UIKitHelper.swift in Sources */,
@@ -1333,6 +1370,7 @@
 				651B58FC2BC7BBA000132165 /* SelectFareTVCell.swift in Sources */,
 				651B58E92BC794EA00132165 /* AddFlightltineraryInfoTVCell.swift in Sources */,
 				65A719ED2BBFE2C7009C05D3 /* NSObject+Helper.swift in Sources */,
+				65E4B5BA2BCBE90700E29405 /* SignupTVCell.swift in Sources */,
 				653378322BC688FB00E8B940 /* CabinClassTVCell.swift in Sources */,
 				651B58F32BC7A68100132165 /* ExchangeOrRefundTVCell.swift in Sources */,
 				651B58EE2BC79FD200132165 /* BaggageTVCell.swift in Sources */,
@@ -1349,6 +1387,7 @@
 				65A719F22BBFE2C7009C05D3 /* StoryboardExtension.swift in Sources */,
 				65A71A0E2BBFFD89009C05D3 /* TabbarVC.swift in Sources */,
 				6533783A2BC6946C00E8B940 /* AddFlightInfoTVCell.swift in Sources */,
+				65E4B5B12BCBE07C00E29405 /* SignupVC.swift in Sources */,
 				65A719C62BBFE2C7009C05D3 /* BorderView.swift in Sources */,
 				65A719452BBFE02D009C05D3 /* AppDelegate.swift in Sources */,
 				65A71A152BC0068A009C05D3 /* TabselectTVCell.swift in Sources */,
@@ -1377,6 +1416,7 @@
 				65A719C92BBFE2C7009C05D3 /* ButtonExtension.swift in Sources */,
 				65A719C82BBFE2C7009C05D3 /* UIViewControllerExtension.swift in Sources */,
 				65A965D22BC16150000E0487 /* MenuVC.swift in Sources */,
+				65E4B5AF2BCBE01D00E29405 /* SigninVC.swift in Sources */,
 				65A965C92BC1595F000E0487 /* TopDestinationsTVCell.swift in Sources */,
 				65A719EC2BBFE2C7009C05D3 /* DeviceName.swift in Sources */,
 				65A719EF2BBFE2C7009C05D3 /* Loader.swift in Sources */,
@@ -1562,7 +1602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5TLY5PME9K;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1597,7 +1637,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5TLY5PME9K;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
