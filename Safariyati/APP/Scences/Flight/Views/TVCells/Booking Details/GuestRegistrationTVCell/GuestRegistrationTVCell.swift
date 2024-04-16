@@ -7,17 +7,15 @@
 
 import UIKit
 protocol GuestRegistrationTVCellDelegate {
-    func didTapOnRegisterBtnAction(cell:GuestRegistrationTVCell)
-    func didTapOnLoginNowBtnAction(cell:GuestRegistrationTVCell)
-    func didTapOnregOrLoginBtnAction(cell:GuestRegistrationTVCell)
+    func didTapOnRegisterNowBtnAction(cell:GuestRegistrationTVCell)
+    func didTapOnGuestLoginBtnAction(cell:GuestRegistrationTVCell)
+    func didTapOnLoginBtnAction(cell:GuestRegistrationTVCell)
 }
 
 class GuestRegistrationTVCell: TableViewCell {
     
     
     @IBOutlet weak var mobileView: UIView!
-    @IBOutlet weak var registerradioImg: UIImageView!
-    @IBOutlet weak var loginradioImg: UIImageView!
     @IBOutlet weak var regView: UIView!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var loginBtnlbl: UILabel!
@@ -45,47 +43,41 @@ class GuestRegistrationTVCell: TableViewCell {
     
     
     override func updateUI() {
-        
+        if regnowloginBtntap == "reg" {
+            setupregisterUserView()
+        }else {
+            setupLoginView()
+        }
     }
     
-    
-    
-    
-    
-    @IBAction func didTapOnRegisterBtnAction(_ sender: Any) {
-        setupregisterUserView()
-        delegate?.didTapOnregOrLoginBtnAction(cell: self)
-    }
+ 
     
     func setupregisterUserView() {
         mobileView.isHidden = false
         regView.isHidden = false
         loginBtnlbl.text = "Countinue As Guest"
-        registerradioImg.image = UIImage(named: "rselect")?.withRenderingMode(.alwaysOriginal).withTintColor(HexColor("#0095DA"))
-        loginradioImg.image = UIImage(named: "runselect")?.withRenderingMode(.alwaysOriginal)
     }
     
-    
-    @IBAction func didTapOnLoginBtnAction(_ sender: Any) {
-        setupLoginView()
-        delegate?.didTapOnregOrLoginBtnAction(cell: self)
-    }
-    
+
     func setupLoginView() {
         mobileView.isHidden = true
         regView.isHidden = true
         loginBtnlbl.text = "Login"
-        registerradioImg.image = UIImage(named: "runselect")?.withRenderingMode(.alwaysOriginal)
-        loginradioImg.image = UIImage(named: "rselect")?.withRenderingMode(.alwaysOriginal).withTintColor(HexColor("#0095DA"))
     }
+    
     
     @IBAction func didTapOnRegisterNowBtnAction(_ sender: Any) {
-        delegate?.didTapOnRegisterBtnAction(cell: self)
+        delegate?.didTapOnRegisterNowBtnAction(cell: self)
     }
     
     
-    @IBAction func didTapOnLoginNowBtnAction(_ sender: Any) {
-        delegate?.didTapOnLoginNowBtnAction(cell: self)
+    @IBAction func didTapOnGuestLoginBtnAction(_ sender: Any) {
+        if loginBtnlbl.text == "Login" {
+            delegate?.didTapOnLoginBtnAction(cell: self)
+        }else {
+            delegate?.didTapOnGuestLoginBtnAction(cell: self)
+        }
+        
     }
     
 }

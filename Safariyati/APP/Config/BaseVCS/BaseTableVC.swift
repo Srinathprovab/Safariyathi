@@ -8,7 +8,12 @@
 import UIKit
 import MaterialComponents
 
-class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate {
+class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate {
+    
+    
+   
+    
+    
     
     
     
@@ -116,7 +121,8 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnSelectFareBtnAction(cell: SearchResultTVCell) {}
     func didTapOnFlightDetailsBtnAction(cell: SearchResultTVCell) {}
     func didTapOnMoreSimilarResults(cell: SearchResultTVCell) {}
-    func didTapOnregOrLoginBtnAction(cell:GuestRegistrationTVCell) {}
+    
+    
     
     func didTapOnBackBtnnAction(cell: SignupTVCell) {}
     func didTapOnSignupBtnAction(cell: SignupTVCell) {}
@@ -126,8 +132,11 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnGotoSignupBtnAction(cell: SigninTVCell) {}
     func editingText(tf: UITextField) {}
     func didTapOnLoginBtnAction(cell: MenuBGTVCell) {}
-    
-    
+   
+    func didTapOnRegisterNowOrLoginBtnACtion(cell: GuestLoginButtonsTVCell) {}
+    func didTapOnRegisterNowBtnAction(cell: GuestRegistrationTVCell) {}
+    func didTapOnGuestLoginBtnAction(cell: GuestRegistrationTVCell) {}
+    func didTapOnLoginBtnAction(cell: GuestRegistrationTVCell) {}
     
     
     
@@ -274,6 +283,7 @@ extension BaseTableVC: UITableViewDataSource {
                 
             case .GuestRegistrationTVCell:
                 let cell: GuestRegistrationTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
                 commonCell = cell
                 
                 
@@ -297,6 +307,19 @@ extension BaseTableVC: UITableViewDataSource {
                 let cell: SignupTVCell = commonTV.dequeTVCell(indexPath: indexPath)
                 cell.delegate = self
                 commonCell = cell
+                
+                
+                
+            case .GuestLoginButtonsTVCell:
+                let cell: GuestLoginButtonsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+                
+            case .FareSummaryTVCell:
+                let cell: FareSummaryTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
                 
                 
             default:

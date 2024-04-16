@@ -28,6 +28,18 @@ class BookingDetailsVC: BaseTableVC {
     
     
     
+    override func didTapOnRegisterNowOrLoginBtnACtion(cell: GuestLoginButtonsTVCell) {
+        commonTableView.reloadData()
+    }
+    override func didTapOnRegisterNowBtnAction(cell: GuestRegistrationTVCell) {
+        print("didTapOnRegisterNowBtnAction")
+    }
+    override func didTapOnGuestLoginBtnAction(cell: GuestRegistrationTVCell) {
+        print("didTapOnGuestLoginBtnAction")
+    }
+    override func didTapOnLoginBtnAction(cell: GuestRegistrationTVCell) {
+        print("didTapOnLoginBtnAction")
+    }
     
     
     @IBAction func didTapOnCloseBtnAction(_ sender: Any) {
@@ -39,9 +51,7 @@ class BookingDetailsVC: BaseTableVC {
     }
     
     
-    override func didTapOnregOrLoginBtnAction(cell:GuestRegistrationTVCell) {
-        commonTableView.reloadData()
-    }
+    
 }
 
 
@@ -51,11 +61,14 @@ extension BookingDetailsVC {
     func setupUI() {
         commonTableView.backgroundColor = .WhiteColor
         commonTableView.registerTVCells(["BDFlightDetailsTVCell",
-                                        "GuestRegistrationTVCell",
+                                         "GuestRegistrationTVCell",
+                                         "GuestLoginButtonsTVCell",
+                                         "FareSummaryTVCell",
                                          "TermsAndPrivacyCheckBoxTVCell"])
         
         setupTVcells()
     }
+    
     
     func setupTVcells() {
         tablerow.removeAll()
@@ -65,7 +78,11 @@ extension BookingDetailsVC {
                                  characterLimit: flightscount,
                                  cellType:.BDFlightDetailsTVCell))
         
+        tablerow.append(TableRow(cellType:.GuestLoginButtonsTVCell))
         tablerow.append(TableRow(cellType:.GuestRegistrationTVCell))
+        tablerow.append(TableRow(cellType:.FareSummaryTVCell))
+        
+        
         
         tablerow.append(TableRow(title:"By booking this item, you agree to pay the total amount shown, which includes Service Fees, on the right and to the , User Terms, Privacy policy .",cellType:.TermsAndPrivacyCheckBoxTVCell))
         
@@ -73,4 +90,6 @@ extension BookingDetailsVC {
         commonTVData = tablerow
         commonTableView.reloadData()
     }
+    
+    
 }
