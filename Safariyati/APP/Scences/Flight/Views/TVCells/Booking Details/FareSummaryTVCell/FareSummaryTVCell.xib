@@ -350,8 +350,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OMR15.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKY-1T-YIL">
-                                <rect key="frame" x="353" y="478.66666666666669" width="79" height="19.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="16"/>
+                                <rect key="frame" x="350" y="478.66666666666669" width="82" height="19.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="16"/>
                                 <color key="textColor" name="Buttoncolor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -369,8 +369,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OMR15.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUN-LM-LHs">
-                                <rect key="frame" x="353" y="519.33333333333337" width="79" height="19.666666666666629"/>
-                                <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="16"/>
+                                <rect key="frame" x="350" y="519.33333333333337" width="82" height="19.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="16"/>
                                 <color key="textColor" name="Buttoncolor"/>
                                 <nil key="highlightedColor"/>
                             </label>
