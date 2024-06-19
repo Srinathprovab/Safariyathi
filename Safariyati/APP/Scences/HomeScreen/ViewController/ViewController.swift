@@ -27,9 +27,8 @@ class ViewController: UIViewController {
         present(vc, animated: false)
     }
     
-
-
 }
+
 
 class present_or_dismiss_vc {
     

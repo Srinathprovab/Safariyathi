@@ -13,6 +13,7 @@ enum Storyboard: String {
     case Main
     case Menu
     case Flights
+    case BookingConfirmation
    
     
     var name: String {

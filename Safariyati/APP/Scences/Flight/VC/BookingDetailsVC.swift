@@ -47,10 +47,15 @@ class BookingDetailsVC: BaseTableVC {
     }
     
     @IBAction func didTapOnContinuePaymentBtynAction(_ sender: Any) {
-        print("didTapOnContinuePaymentBtynAction")
+        gotoProcessingToPaymentVC()
     }
     
     
+    func gotoProcessingToPaymentVC() {
+        guard let vc = ProcessingToPaymentVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
     
 }
 

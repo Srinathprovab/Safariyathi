@@ -46,6 +46,8 @@ enum TVCellType {
     case SigninTVCell
     case GuestLoginButtonsTVCell
     case FareSummaryTVCell
+    case PassengerDetailsTVCell
+    case BookingReceiptTVCell
     
     
     

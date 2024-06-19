@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -944,6 +944,92 @@
             </objects>
             <point key="canvasLocation" x="4609.9236641221369" y="3.5211267605633805"/>
         </scene>
+        <!--Processing To PaymentVC-->
+        <scene sceneID="DY7-b8-ptN">
+            <objects>
+                <viewController storyboardIdentifier="ProcessingToPaymentVC" id="Iwz-RR-pdL" customClass="ProcessingToPaymentVC" customModule="Safariyati" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tRU-C4-B9r">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UoA-mE-SOH">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gK9-ax-RGj">
+                                        <rect key="frame" x="111.66666666666669" y="100" width="170" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="lzO-XC-2iL"/>
+                                            <constraint firstAttribute="width" constant="170" id="n8B-8G-21v"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing  To Payment " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HB-E7-MYI">
+                                        <rect key="frame" x="97.000000000000014" y="260" width="199.33333333333337" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VT-O1-gYa" customClass="BorderedView" customModule="Safariyati" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="707" width="339" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not click back or close the website " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxo-4f-ATO">
+                                                <rect key="frame" x="48.333333333333329" y="14.333333333333369" width="242.66666666666669" height="16.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.86274509803921573" green="0.95686274509803915" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Mxo-4f-ATO" firstAttribute="centerY" secondItem="3VT-O1-gYa" secondAttribute="centerY" id="BrC-tP-0RZ"/>
+                                            <constraint firstItem="Mxo-4f-ATO" firstAttribute="centerX" secondItem="3VT-O1-gYa" secondAttribute="centerX" id="Cds-Fo-njj"/>
+                                            <constraint firstAttribute="height" constant="45" id="JU1-NF-t99"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4D-ny-76M" customClass="DotLoaderView" customModule="Safariyati" customModuleProvider="target">
+                                        <rect key="frame" x="146.66666666666666" y="341" width="100" height="10"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="DaF-iS-Zt2"/>
+                                            <constraint firstAttribute="width" constant="100" id="mv8-49-NjP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="3VT-O1-gYa" firstAttribute="leading" secondItem="UoA-mE-SOH" secondAttribute="leading" constant="27" id="33A-Ex-vda"/>
+                                    <constraint firstItem="L4D-ny-76M" firstAttribute="centerX" secondItem="UoA-mE-SOH" secondAttribute="centerX" id="5oa-Ax-VTE"/>
+                                    <constraint firstItem="gK9-ax-RGj" firstAttribute="top" secondItem="UoA-mE-SOH" secondAttribute="top" constant="100" id="5yz-02-EfR"/>
+                                    <constraint firstItem="gK9-ax-RGj" firstAttribute="centerX" secondItem="UoA-mE-SOH" secondAttribute="centerX" id="De1-RT-dZa"/>
+                                    <constraint firstItem="1HB-E7-MYI" firstAttribute="top" secondItem="gK9-ax-RGj" secondAttribute="bottom" constant="50" id="IFn-uJ-rbI"/>
+                                    <constraint firstAttribute="bottom" secondItem="3VT-O1-gYa" secondAttribute="bottom" constant="100" id="MVL-c5-999"/>
+                                    <constraint firstAttribute="trailing" secondItem="3VT-O1-gYa" secondAttribute="trailing" constant="27" id="WfM-cK-SU6"/>
+                                    <constraint firstItem="1HB-E7-MYI" firstAttribute="centerX" secondItem="UoA-mE-SOH" secondAttribute="centerX" id="cbf-bf-lX9"/>
+                                    <constraint firstItem="L4D-ny-76M" firstAttribute="top" secondItem="1HB-E7-MYI" secondAttribute="bottom" constant="60" id="g1m-oq-wGf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B5u-H7-onc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UoA-mE-SOH" firstAttribute="top" secondItem="tRU-C4-B9r" secondAttribute="top" id="0H9-ah-4Jf"/>
+                            <constraint firstAttribute="bottom" secondItem="UoA-mE-SOH" secondAttribute="bottom" id="1mo-HO-lD2"/>
+                            <constraint firstItem="UoA-mE-SOH" firstAttribute="leading" secondItem="B5u-H7-onc" secondAttribute="leading" id="Osu-V0-crg"/>
+                            <constraint firstItem="B5u-H7-onc" firstAttribute="trailing" secondItem="UoA-mE-SOH" secondAttribute="trailing" id="roM-gA-mR4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dotview" destination="L4D-ny-76M" id="6r8-6m-6hD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MQa-rN-a2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5355" y="4"/>
+        </scene>
         <!--Modify SearchVC-->
         <scene sceneID="nKR-A9-PIz">
             <objects>
@@ -1015,6 +1101,7 @@
         <image name="close" width="24" height="24"/>
         <image name="edit" width="24" height="24"/>
         <image name="filter" width="24" height="24"/>
+        <image name="logo" width="151" height="54"/>
         <image name="search" width="24" height="24"/>
         <image name="sort" width="24" height="24"/>
         <namedColor name="BorderColor">

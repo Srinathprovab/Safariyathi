@@ -11,7 +11,7 @@ import MaterialComponents
 class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate {
     
     
-   
+    
     
     
     
@@ -132,7 +132,7 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnGotoSignupBtnAction(cell: SigninTVCell) {}
     func editingText(tf: UITextField) {}
     func didTapOnLoginBtnAction(cell: MenuBGTVCell) {}
-   
+    
     func didTapOnRegisterNowOrLoginBtnACtion(cell: GuestLoginButtonsTVCell) {}
     func didTapOnRegisterNowBtnAction(cell: GuestRegistrationTVCell) {}
     func didTapOnGuestLoginBtnAction(cell: GuestRegistrationTVCell) {}
@@ -319,6 +319,22 @@ extension BaseTableVC: UITableViewDataSource {
             case .FareSummaryTVCell:
                 let cell: FareSummaryTVCell = commonTV.dequeTVCell(indexPath: indexPath)
                 commonCell = cell
+                
+                
+            case .PassengerDetailsTVCell:
+                let cell: PassengerDetailsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .BookingReceiptTVCell:
+                let cell: BookingReceiptTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+                
+                
+                
+                
                 
                 
                 
