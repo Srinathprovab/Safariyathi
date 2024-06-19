@@ -11,6 +11,7 @@ import UIKit
 
 enum Storyboard: String {
     case Main
+    case Calender
     case Menu
     case Flights
     case BookingConfirmation

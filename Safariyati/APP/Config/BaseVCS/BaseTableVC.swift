@@ -116,13 +116,15 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnSearchFlightsBtnAction(cell:SearchFlightsTVCell) {}
     func donedatePicker(cell: SearchFlightsTVCell) {}
     func cancelDatePicker(cell: SearchFlightsTVCell) {}
+    func didTapOnDepartureBtnAction(cell:SearchFlightsTVCell) {}
+    func didTapOnReturnBtnAction(cell:SearchFlightsTVCell) {}
     
     func didTapOnCloseTravellerBtnAction(cell: SelectTravellerTVCell) {}
     func didTapOnSelectFareBtnAction(cell: SearchResultTVCell) {}
     func didTapOnFlightDetailsBtnAction(cell: SearchResultTVCell) {}
     func didTapOnMoreSimilarResults(cell: SearchResultTVCell) {}
     
-    
+   
     
     func didTapOnBackBtnnAction(cell: SignupTVCell) {}
     func didTapOnSignupBtnAction(cell: SignupTVCell) {}

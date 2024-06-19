@@ -18,6 +18,9 @@ protocol SearchFlightsTVCellDelagate {
     func donedatePicker(cell:SearchFlightsTVCell)
     func cancelDatePicker(cell:SearchFlightsTVCell)
     
+    func didTapOnDepartureBtnAction(cell:SearchFlightsTVCell)
+    func didTapOnReturnBtnAction(cell:SearchFlightsTVCell)
+    
 }
 
 class SearchFlightsTVCell: TableViewCell {
@@ -31,6 +34,8 @@ class SearchFlightsTVCell: TableViewCell {
     @IBOutlet weak var roundtripRadioImage: UIImageView!
     @IBOutlet weak var roundtripView: UIView!
     @IBOutlet weak var searchBtn: UIButton!
+    @IBOutlet weak var depbtn: UIButton!
+    @IBOutlet weak var retbtn: UIButton!
     
     
     let depDatePicker = UIDatePicker()
@@ -59,8 +64,8 @@ class SearchFlightsTVCell: TableViewCell {
                 roundtripView.alpha = 0.5
                 
                 roundtripView.isHidden = true
-                returnTF.text = "Add Date"
-                defaults.set("Add Date", forKey: UserDefaultsKeys.calRetDate)
+                self.returnTF.text = defaults.string(forKey: UserDefaultsKeys.calRetDate) ?? "Add Date"
+               // defaults.set("Add Date", forKey: UserDefaultsKeys.calRetDate)
                 showdepDatePicker()
                 
             }else {
@@ -83,9 +88,14 @@ class SearchFlightsTVCell: TableViewCell {
     }
     
     func setupUI() {
+        
+        depbtn.isHidden = false
+        retbtn.isHidden = false
+        
         searchBtn.layer.cornerRadius = 4
         departureTF.setLeftPaddingPoints(35)
         returnTF.setLeftPaddingPoints(35)
+        
     }
     
     
@@ -126,6 +136,17 @@ class SearchFlightsTVCell: TableViewCell {
     
     @IBAction func didTapOnSearchFlightsBtnAction(_ sender: Any) {
         delegate?.didTapOnSearchFlightsBtnAction(cell: self)
+    }
+    
+    
+    
+    @IBAction func didTapOnDepartureBtnAction(_ sender: Any) {
+        delegate?.didTapOnDepartureBtnAction(cell: self)
+    }
+    
+    
+    @IBAction func didTapOnReturnBtnAction(_ sender: Any) {
+        delegate?.didTapOnReturnBtnAction(cell: self)
     }
     
 }

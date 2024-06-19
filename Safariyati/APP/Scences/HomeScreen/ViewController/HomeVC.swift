@@ -47,11 +47,7 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
     }
     override func didTapOnFlightBtnAction(cell: TabselectTVCell) {
 //        showToast(message: "Flight module not yet implemented")
-        
-        guard let vc = SearchFlightsVC.newInstance.self else {return}
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-
+        gotoSearchFlightsVC()
     }
     override func didTapOnHotelBtnAction(cell: TabselectTVCell) {
         showToast(message: "Hotels module not yet implemented")
@@ -64,7 +60,12 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
     }
     
     
-    
+    func gotoSearchFlightsVC() {
+        defaults.set("Flights", forKey: UserDefaultsKeys.tabselect)
+        guard let vc = SearchFlightsVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
     
 }
 

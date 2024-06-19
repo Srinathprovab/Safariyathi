@@ -145,6 +145,25 @@ class SearchFlightsVC: BaseTableVC {
     }
     
     
+    //MARK: - gotoCalenderVC
+    
+    
+    override func didTapOnDepartureBtnAction(cell:SearchFlightsTVCell) {
+        gotoCalenderVC(key: "dep", titleStr: "Departure Date")
+    }
+    
+    override func didTapOnReturnBtnAction(cell:SearchFlightsTVCell) {
+         gotoCalenderVC(key: "ret", titleStr: "Ruturn Date")
+    }
+    
+    func gotoCalenderVC(key:String,titleStr:String) {
+        dateSelectKey = key
+        guard let vc = Calvc.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.titleStr = titleStr
+        callapibool = true
+        self.present(vc, animated: false)
+    }
     
     
     
