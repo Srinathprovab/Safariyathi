@@ -10,6 +10,7 @@ import UIKit
 class SearchResultVC: BaseTableVC {
     
     
+    @IBOutlet weak var filterSortView: BorderedView!
     @IBOutlet weak var cityslbl: UILabel!
     @IBOutlet weak var dateslbl: UILabel!
     
@@ -98,7 +99,8 @@ class SearchResultVC: BaseTableVC {
 extension SearchResultVC {
     func setupUI() {
         commonTableView.backgroundColor = .WhiteColor
-        commonTableView.registerTVCells(["SearchResultTVCell"])
+        commonTableView.registerTVCells(["SearchResultTVCell", "EmptyTVCell"])
+      
         
         setupTVcells()
     }
@@ -112,8 +114,25 @@ extension SearchResultVC {
                                      cellType:.SearchResultTVCell))
             
         }
-        
+        tablerow.append((TableRow(height: 60, cellType:.EmptyTVCell)))
         commonTVData = tablerow
         commonTableView.reloadData()
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+            // Hide the filterSortView when scrolling begins
+            filterSortView.isHidden = true
+        }
+
+        func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+            if !decelerate {
+                // Show the filterSortView when scrolling stops
+                filterSortView.isHidden = false
+            }
+        }
+
+        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+            // Show the filterSortView when scrolling stops after deceleration
+            filterSortView.isHidden = false
+        }
 }

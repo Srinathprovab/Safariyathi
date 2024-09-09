@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="latoregular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+        <array key="latosemibold.ttf">
+            <string>Lato-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="7LL-Ts-WNq" customClass="UserSpecificationTVCell" customModule="Burhantrips" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7LL-Ts-WNq" id="9gT-Vd-LtZ">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="272"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7c9-tO-6nD" customClass="BorderedView" customModule="Burhantrips" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="373" height="252"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userspecification 1" translatesAutoresizingMaskIntoConstraints="NO" id="N87-ym-cft">
+                                <rect key="frame" x="10" y="10" width="28" height="28"/>
+                                <color key="tintColor" name="farecolor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="gsU-jc-S3w"/>
+                                    <constraint firstAttribute="height" constant="28" id="o3Z-pz-wKc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Request" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-R0-qUw">
+                                <rect key="frame" x="44" y="15.666666666666668" width="317" height="17.000000000000004"/>
+                                <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHS-AS-wBn">
+                                <rect key="frame" x="0.0" y="47.666666666666664" width="373" height="1"/>
+                                <color key="backgroundColor" name="BorderColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="lBu-Sp-M2K"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMB-0n-slH">
+                                <rect key="frame" x="12" y="56.666666666666671" width="349" height="42"/>
+                                <string key="text">Choose below if there are any specific requirements from the property. request cannot be guranteed and are subject to availability on arrival</string>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                <color key="textColor" name="ZeroD1Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tpa-Yx-VuL">
+                                <rect key="frame" x="0.0" y="114.66666666666669" width="373" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mNS-D6-vWM"/>
+                                </constraints>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs0-mb-ZYW">
+                                <rect key="frame" x="12" y="160.66666666666666" width="349" height="16"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Would you like to add a comment or request to your booking?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uTg-Mv-CFg">
+                                <rect key="frame" x="12" y="191.66666666666666" width="349" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xr3-xF-VeC"/>
+                                </constraints>
+                                <color key="textColor" name="nine2Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="252" id="126-bU-wPS"/>
+                            <constraint firstItem="JHS-AS-wBn" firstAttribute="leading" secondItem="7c9-tO-6nD" secondAttribute="leading" id="2uN-v5-eYm"/>
+                            <constraint firstAttribute="trailing" secondItem="V1c-R0-qUw" secondAttribute="trailing" constant="12" id="7y8-rL-KpF"/>
+                            <constraint firstItem="PMB-0n-slH" firstAttribute="leading" secondItem="7c9-tO-6nD" secondAttribute="leading" constant="12" id="8hs-fc-Ew7"/>
+                            <constraint firstItem="uTg-Mv-CFg" firstAttribute="leading" secondItem="7c9-tO-6nD" secondAttribute="leading" constant="12" id="EgF-kk-8m2"/>
+                            <constraint firstItem="tpa-Yx-VuL" firstAttribute="leading" secondItem="7c9-tO-6nD" secondAttribute="leading" id="Fkl-Lf-hsd"/>
+                            <constraint firstItem="N87-ym-cft" firstAttribute="leading" secondItem="7c9-tO-6nD" secondAttribute="leading" constant="10" id="HGo-C0-XEJ"/>
+                            <constraint firstItem="PMB-0n-slH" firstAttribute="top" secondItem="JHS-AS-wBn" secondAttribute="bottom" constant="8" id="KUd-Xh-6C4"/>
+                            <constraint firstItem="N87-ym-cft" firstAttribute="top" secondItem="7c9-tO-6nD" secondAttribute="top" constant="10" id="Nje-dG-WHI"/>
+                            <constraint firstItem="JHS-AS-wBn" firstAttribute="top" secondItem="V1c-R0-qUw" secondAttribute="bottom" constant="15" id="Nsd-cJ-DMP"/>
+                            <constraint firstAttribute="trailing" secondItem="tpa-Yx-VuL" secondAttribute="trailing" id="X6D-dF-t9e"/>
+                            <constraint firstItem="V1c-R0-qUw" firstAttribute="leading" secondItem="N87-ym-cft" secondAttribute="trailing" constant="6" id="ZKU-iQ-yjL"/>
+                            <constraint firstAttribute="trailing" secondItem="uTg-Mv-CFg" secondAttribute="trailing" constant="12" id="ZYO-sh-hcJ"/>
+                            <constraint firstAttribute="trailing" secondItem="PMB-0n-slH" secondAttribute="trailing" constant="12" id="bbx-C0-Ogg"/>
+                            <constraint firstItem="uTg-Mv-CFg" firstAttribute="top" secondItem="Gs0-mb-ZYW" secondAttribute="bottom" constant="15" id="c7H-Zk-WcA"/>
+                            <constraint firstItem="Gs0-mb-ZYW" firstAttribute="leading" secondItem="7c9-tO-6nD" secondAttribute="leading" constant="12" id="cO2-CI-Vjo"/>
+                            <constraint firstAttribute="bottom" secondItem="uTg-Mv-CFg" secondAttribute="bottom" constant="10.33" id="eQq-pC-tpx"/>
+                            <constraint firstItem="V1c-R0-qUw" firstAttribute="centerY" secondItem="N87-ym-cft" secondAttribute="centerY" id="f0r-Bw-2Ke"/>
+                            <constraint firstItem="Gs0-mb-ZYW" firstAttribute="top" secondItem="tpa-Yx-VuL" secondAttribute="bottom" constant="16" id="i1I-9P-pZp"/>
+                            <constraint firstItem="tpa-Yx-VuL" firstAttribute="top" secondItem="PMB-0n-slH" secondAttribute="bottom" constant="16" id="sH3-zg-Ej4"/>
+                            <constraint firstAttribute="trailing" secondItem="JHS-AS-wBn" secondAttribute="trailing" id="tHr-RU-8WG"/>
+                            <constraint firstAttribute="trailing" secondItem="Gs0-mb-ZYW" secondAttribute="trailing" constant="12" id="uDX-4w-UkL"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="BorderColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="7c9-tO-6nD" firstAttribute="top" secondItem="9gT-Vd-LtZ" secondAttribute="top" constant="10" id="1Ga-r8-T4B"/>
+                    <constraint firstAttribute="bottom" secondItem="7c9-tO-6nD" secondAttribute="bottom" constant="10" id="U0O-rk-aob"/>
+                    <constraint firstAttribute="trailing" secondItem="7c9-tO-6nD" secondAttribute="trailing" constant="10" id="dRg-oF-NJs"/>
+                    <constraint firstItem="7c9-tO-6nD" firstAttribute="leading" secondItem="9gT-Vd-LtZ" secondAttribute="leading" constant="10" id="n3d-GP-Rx8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="8zM-9E-1B2"/>
+            <connections>
+                <outlet property="specificationTV" destination="tpa-Yx-VuL" id="49t-Kk-EBy"/>
+                <outlet property="tvHeight" destination="mNS-D6-vWM" id="sPg-yP-wbb"/>
+                <outlet property="yourTextView" destination="uTg-Mv-CFg" id="sdr-ho-Q27"/>
+            </connections>
+            <point key="canvasLocation" x="23.664122137404579" y="141.5492957746479"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="userspecification 1" width="28" height="28"/>
+        <namedColor name="BorderColor">
+            <color red="0.90196078431372551" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ZeroD1Color">
+            <color red="0.050980392156862744" green="0.086274509803921567" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="farecolor">
+            <color red="0.0" green="0.58431372549019611" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nine2Color">
+            <color red="0.5725490196078431" green="0.57647058823529407" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

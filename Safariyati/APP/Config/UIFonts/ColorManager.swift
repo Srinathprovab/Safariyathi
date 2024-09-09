@@ -84,4 +84,40 @@ extension UIColor {
     }
     
     
+    public static var ZeroD1Color : UIColor {
+        
+        get {
+            return UIColor(named: "ZeroD1Color")!
+        }
+    }
+    
+    
+    public static var nine2Color : UIColor {
+        
+        get {
+            return UIColor(named: "nine2Color")!
+        }
+    }
+    
+    public static var ApplabelColor : UIColor {
+        
+        get {
+            return UIColor(named: "ApplabelColor")!
+        }
+    }
+    
+    public static var double2Color : UIColor {
+        
+        get {
+            return UIColor(named: "double2Color")!
+        }
+    }
+    
+    
+    public static var twoAcolor : UIColor {
+        
+        get {
+            return UIColor(named: "twoacolor")!
+        }
+    }
 }

@@ -8,6 +8,17 @@
 import Foundation
 import UIKit
 
+func setupLabel(lbl:UILabel,textcolor:UIColor,font:UIFont) {
+    lbl.textColor = textcolor
+    lbl.font = font
+}
+
+func setupOnlyFont(lbl:UILabel,font:UIFont, text: String) {
+    lbl.font = font
+    lbl.text = text
+}
+
+
 
 func setupLabels(lbl:UILabel,text:String,textcolor:UIColor,font:UIFont) {
     lbl.text = text

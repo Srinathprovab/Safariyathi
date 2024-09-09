@@ -25,6 +25,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-2o-6h3">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerBg" translatesAutoresizingMaskIntoConstraints="NO" id="Gnd-WK-hFr">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="225" id="GmN-lb-2zD"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Confirmation " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glI-4Z-yLt">
                                         <rect key="frame" x="15" y="64" width="363" height="22"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="18"/>
@@ -74,7 +80,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Aii-bQ-ibM">
-                                        <rect key="frame" x="0.0" y="106" width="393" height="666"/>
+                                        <rect key="frame" x="0.0" y="115" width="393" height="657"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -84,11 +90,14 @@
                                     <constraint firstItem="glI-4Z-yLt" firstAttribute="centerY" secondItem="Kwe-iT-EO0" secondAttribute="centerY" id="5o7-At-gBb"/>
                                     <constraint firstItem="qRQ-Tl-Zlb" firstAttribute="top" secondItem="Aii-bQ-ibM" secondAttribute="bottom" id="6rH-e6-bbe"/>
                                     <constraint firstAttribute="trailing" secondItem="glI-4Z-yLt" secondAttribute="trailing" constant="15" id="HVr-t3-tfH"/>
-                                    <constraint firstItem="Aii-bQ-ibM" firstAttribute="top" secondItem="glI-4Z-yLt" secondAttribute="bottom" constant="20" id="Jm7-W1-kze"/>
                                     <constraint firstAttribute="trailing" secondItem="qRQ-Tl-Zlb" secondAttribute="trailing" id="MJH-hs-AwK"/>
+                                    <constraint firstItem="Aii-bQ-ibM" firstAttribute="top" secondItem="Kwe-iT-EO0" secondAttribute="bottom" constant="25" id="MMA-ms-kd4"/>
+                                    <constraint firstItem="Gnd-WK-hFr" firstAttribute="leading" secondItem="zHj-2o-6h3" secondAttribute="leading" id="XAX-b8-XZg"/>
+                                    <constraint firstItem="Gnd-WK-hFr" firstAttribute="top" secondItem="zHj-2o-6h3" secondAttribute="top" id="aRJ-zZ-GNV"/>
                                     <constraint firstItem="qRQ-Tl-Zlb" firstAttribute="leading" secondItem="zHj-2o-6h3" secondAttribute="leading" id="aRR-XM-U1a"/>
                                     <constraint firstItem="Kwe-iT-EO0" firstAttribute="leading" secondItem="zHj-2o-6h3" secondAttribute="leading" constant="15" id="fTD-Gt-RwU"/>
                                     <constraint firstItem="Kwe-iT-EO0" firstAttribute="top" secondItem="zHj-2o-6h3" secondAttribute="top" constant="60" id="ggN-Gm-TAo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gnd-WK-hFr" secondAttribute="trailing" id="jhS-Ve-gCk"/>
                                     <constraint firstAttribute="trailing" secondItem="Aii-bQ-ibM" secondAttribute="trailing" id="lQT-5f-MAO"/>
                                     <constraint firstAttribute="bottom" secondItem="qRQ-Tl-Zlb" secondAttribute="bottom" id="sZQ-qg-FIg"/>
                                     <constraint firstItem="Aii-bQ-ibM" firstAttribute="leading" secondItem="zHj-2o-6h3" secondAttribute="leading" id="vLt-c5-Mx7"/>
@@ -116,6 +125,7 @@
     </scenes>
     <resources>
         <image name="arrowleft" width="24" height="24"/>
+        <image name="headerBg" width="375" height="219"/>
         <namedColor name="Buttoncolor">
             <color red="0.87800002098083496" green="0.078000001609325409" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Bold.ttf">
+            <string>Inter-Bold</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="TimesNewRoman.ttf">
+            <string>.SFUI-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="247" id="WDs-MN-uZl" customClass="HotelResultTVCell" customModule="Safariyati" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="372" height="375"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WDs-MN-uZl" id="D9a-iM-mJK">
+                <rect key="frame" x="0.0" y="0.0" width="372" height="375"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSx-n9-6ye" customClass="BorderedView" customModule="Safariyati" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="352" height="360"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotelBanner" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-tc-LrB">
+                                <rect key="frame" x="0.0" y="0.0" width="352" height="225"/>
+                                <color key="backgroundColor" red="0.70980392160000005" green="0.71764705880000002" blue="0.74117647060000003" alpha="0.30350610589999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="tra-sI-e4Q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercure Grand Jebel Hafeet" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7L-s5-Uvi">
+                                <rect key="frame" x="10" y="235" width="182" height="18"/>
+                                <fontDescription key="fontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="16"/>
+                                <color key="textColor" name="TitleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdc-15-b1c">
+                                <rect key="frame" x="33" y="261" width="299" height="28"/>
+                                <string key="text">Bur Dubai, Dubai | 700 m from Al 
+Fahidi Metro  dsdsod,sldwsdl,sldwjdwodo efneifef</string>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" name="resultSubtitleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Price Per Nights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEr-EI-7vy">
+                                <rect key="frame" x="248" y="294.33333333333331" width="94" height="14.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="12"/>
+                                <color key="textColor" name="TitleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotelloc" translatesAutoresizingMaskIntoConstraints="NO" id="0jI-K8-FZB">
+                                <rect key="frame" x="10" y="267" width="16" height="16"/>
+                                <color key="tintColor" name="AppBtnColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="6G8-9C-HTt"/>
+                                    <constraint firstAttribute="height" constant="16" id="sFG-9F-KCa"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giK-JK-Jgf" customClass="AARatingBar" customModule="AARatingBar">
+                                <rect key="frame" x="33" y="294" width="80" height="15"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="IaA-mY-dtD"/>
+                                    <constraint firstAttribute="height" constant="15" id="aNx-6Y-hgj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" systemColor="systemYellowColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJD-bj-Xik">
+                                <rect key="frame" x="0.0" y="319" width="352" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="OMR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9o-2M-ev8">
+                                        <rect key="frame" x="224.33333333333334" y="12.000000000000002" width="37.666666666666657" height="19.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="16"/>
+                                        <color key="textColor" name="Buttoncolor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="29.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKX-LV-TOL">
+                                        <rect key="frame" x="264" y="8.3333333333333126" width="72" height="24.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
+                                        <color key="textColor" name="Buttoncolor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refundable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilo-hG-skL">
+                                        <rect key="frame" x="10" y="10" width="86.666666666666671" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="refundablecolor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eKX-LV-TOL" secondAttribute="trailing" constant="16" id="3ks-yb-4z2"/>
+                                    <constraint firstItem="eKX-LV-TOL" firstAttribute="centerY" secondItem="sJD-bj-Xik" secondAttribute="centerY" id="7DJ-UK-aTR"/>
+                                    <constraint firstItem="eKX-LV-TOL" firstAttribute="leading" secondItem="p9o-2M-ev8" secondAttribute="trailing" constant="2" id="Ck2-Ug-K1m"/>
+                                    <constraint firstItem="Ilo-hG-skL" firstAttribute="centerY" secondItem="sJD-bj-Xik" secondAttribute="centerY" id="LfN-AM-Hbb"/>
+                                    <constraint firstAttribute="height" constant="41" id="TmI-gN-PZq"/>
+                                    <constraint firstItem="p9o-2M-ev8" firstAttribute="top" secondItem="sJD-bj-Xik" secondAttribute="top" constant="12" id="oBL-Bj-FXR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sJD-bj-Xik" firstAttribute="leading" secondItem="iSx-n9-6ye" secondAttribute="leading" id="1QP-VQ-hQW"/>
+                            <constraint firstItem="wdc-15-b1c" firstAttribute="leading" secondItem="0jI-K8-FZB" secondAttribute="trailing" constant="7" id="2rt-Vq-fS4"/>
+                            <constraint firstItem="sJD-bj-Xik" firstAttribute="top" secondItem="giK-JK-Jgf" secondAttribute="bottom" constant="10" id="5px-Lj-JY3"/>
+                            <constraint firstAttribute="trailing" secondItem="wdc-15-b1c" secondAttribute="trailing" constant="20" id="6Af-Lj-iVh"/>
+                            <constraint firstItem="d7L-s5-Uvi" firstAttribute="top" secondItem="3Po-tc-LrB" secondAttribute="bottom" constant="10" id="DOW-mv-cTZ"/>
+                            <constraint firstItem="3Po-tc-LrB" firstAttribute="top" secondItem="iSx-n9-6ye" secondAttribute="top" id="M1o-CQ-AsY"/>
+                            <constraint firstItem="0jI-K8-FZB" firstAttribute="centerY" secondItem="wdc-15-b1c" secondAttribute="centerY" id="NA8-CP-Cg1"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="350" id="Ohz-sS-MIm"/>
+                            <constraint firstItem="Ilo-hG-skL" firstAttribute="leading" secondItem="d7L-s5-Uvi" secondAttribute="leading" id="T57-mw-1oK"/>
+                            <constraint firstItem="d7L-s5-Uvi" firstAttribute="leading" secondItem="iSx-n9-6ye" secondAttribute="leading" constant="10" id="TqC-R5-Ha2"/>
+                            <constraint firstItem="wdc-15-b1c" firstAttribute="top" secondItem="d7L-s5-Uvi" secondAttribute="bottom" constant="8" id="WI8-bE-zEN"/>
+                            <constraint firstAttribute="trailing" secondItem="KEr-EI-7vy" secondAttribute="trailing" constant="10" id="Yjz-lU-oJw"/>
+                            <constraint firstAttribute="bottom" secondItem="sJD-bj-Xik" secondAttribute="bottom" id="dCz-7W-One"/>
+                            <constraint firstItem="0jI-K8-FZB" firstAttribute="leading" secondItem="iSx-n9-6ye" secondAttribute="leading" constant="10" id="gqD-9g-0Dr"/>
+                            <constraint firstAttribute="trailing" secondItem="3Po-tc-LrB" secondAttribute="trailing" id="jMm-yU-b2C"/>
+                            <constraint firstItem="3Po-tc-LrB" firstAttribute="leading" secondItem="iSx-n9-6ye" secondAttribute="leading" id="jO1-ei-8bl"/>
+                            <constraint firstAttribute="trailing" secondItem="sJD-bj-Xik" secondAttribute="trailing" id="kJk-dZ-i5X"/>
+                            <constraint firstItem="giK-JK-Jgf" firstAttribute="leading" secondItem="wdc-15-b1c" secondAttribute="leading" id="llE-HQ-akP"/>
+                            <constraint firstItem="giK-JK-Jgf" firstAttribute="top" secondItem="wdc-15-b1c" secondAttribute="bottom" constant="5" id="oEl-aA-Pfa"/>
+                            <constraint firstItem="KEr-EI-7vy" firstAttribute="centerY" secondItem="giK-JK-Jgf" secondAttribute="centerY" id="uRn-39-gQZ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="BorderColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="iSx-n9-6ye" firstAttribute="leading" secondItem="D9a-iM-mJK" secondAttribute="leading" constant="10" id="4HP-70-5Sb"/>
+                    <constraint firstAttribute="trailing" secondItem="iSx-n9-6ye" secondAttribute="trailing" constant="10" id="6bg-e8-3qI"/>
+                    <constraint firstItem="iSx-n9-6ye" firstAttribute="top" secondItem="D9a-iM-mJK" secondAttribute="top" constant="10" id="CfK-UI-9IF"/>
+                    <constraint firstAttribute="bottom" secondItem="iSx-n9-6ye" secondAttribute="bottom" constant="5" id="hme-Ew-uSR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="hf9-3X-WaG"/>
+            <connections>
+                <outlet property="faretypelbl" destination="p9o-2M-ev8" id="pbU-nb-AT0"/>
+                <outlet property="holderView" destination="iSx-n9-6ye" id="odQ-TH-4Ru"/>
+                <outlet property="hotelImg" destination="3Po-tc-LrB" id="EaE-8J-bbW"/>
+                <outlet property="hotelNamelbl" destination="d7L-s5-Uvi" id="4SK-dH-lkM"/>
+                <outlet property="kwdlbl" destination="eKX-LV-TOL" id="91s-0L-kxf"/>
+                <outlet property="locImg" destination="0jI-K8-FZB" id="xjv-qk-yaK"/>
+                <outlet property="locationlbl" destination="wdc-15-b1c" id="SUb-xy-NBs"/>
+                <outlet property="priceperLabel" destination="KEr-EI-7vy" id="5wR-0f-s5h"/>
+                <outlet property="ratingView" destination="giK-JK-Jgf" id="j4a-Hc-8Gm"/>
+                <outlet property="refundLAbel" destination="Ilo-hG-skL" id="EWe-XX-QQ7"/>
+            </connections>
+            <point key="canvasLocation" x="174.04580152671755" y="184.1549295774648"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="hotelBanner" width="335" height="197"/>
+        <image name="hotelloc" width="20.333333969116211" height="20"/>
+        <namedColor name="AppBtnColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BorderColor">
+            <color red="0.90196078431372551" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Buttoncolor">
+            <color red="0.87800002098083496" green="0.078000001609325409" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TitleColor">
+            <color red="0.12941176470588237" green="0.18823529411764706" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="refundablecolor">
+            <color red="1" green="0.92941176470588238" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="resultSubtitleColor">
+            <color red="0.5725490196078431" green="0.57647058823529407" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

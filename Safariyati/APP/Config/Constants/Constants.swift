@@ -10,6 +10,19 @@ import UIKit
 import CoreData
 
 
+enum Rows {
+    case rooms
+    case details
+    case amenties
+}
+
+protocol Output {
+    var section: Rows? { get set }
+}
+
+
+
+
 /*SETTING USER DEFAULTS*/
 let defaults = UserDefaults.standard
 
@@ -39,6 +52,24 @@ var accessToken = "e3VzZXJuYW1lOmFudWpob29kYSxwYXNzd29yZDp0cmF2Z2F0ZUBtb2JpbGVhc
 var flightscount = 1
 var regnowloginBtntap = "reg"
 var callapibool = false
+
+
+
+
+// hotel
+
+var imagesArray = ["hotelBanner", "hotelBanner", "hotelBanner", "hotelBanner", "hotelBanner", "hotelBanner"]
+var travelerArray: [Traveler] = []
+var userspecificationArray = ["If possible please provide non-smoking rooms", "Please note early Arrival", "Please note late Arrival", "Please note late check out", "If possible, please provide adjoining rooms", "Please provide inter-connecting rooms", "Please note late Arrival", "Please note late Arrival","Please note passengers are honeymooners"]
+
+var adtArray = [String]()
+var chArray = [String]()
+var totalRooms = 0
+var totalAdults = 0
+var totalChildren = 0
+
+
+
 
 /* URL endpoints */
 struct ApiEndpoints {
@@ -80,8 +111,6 @@ struct ApiEndpoints {
     static let hotelmobiledetails = "mobile_details"
     static let hotel_mobile_booking = "hotel/mobile_booking"
     static let hotel_mobile_hotel_pre_booking = "hotel/mobile_hotel_pre_booking"
-    
-    
     
     //VISA
     static let visa_enquiry_form = "visa/visa_enquiry_form"

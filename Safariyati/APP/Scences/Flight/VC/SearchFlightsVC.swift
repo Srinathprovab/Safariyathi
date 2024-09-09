@@ -43,7 +43,8 @@ class SearchFlightsVC: BaseTableVC {
         commonTableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         commonTableView.layer.cornerRadius = 20
         commonTableView.backgroundColor = .WhiteColor
-        commonTableView.registerTVCells(["SearchFlightsTVCell"])
+        commonTableView.registerTVCells(["SearchFlightsTVCell","EmptyTVCell"])
+      
         
         setupTV()
     }
@@ -175,6 +176,7 @@ extension SearchFlightsVC {
     func setupTV() {
         tablerow.removeAll()
         tablerow.append(TableRow(cellType:.SearchFlightsTVCell))
+        tablerow.append((TableRow(height: 30, cellType:.EmptyTVCell)))
         commonTVData = tablerow
         commonTableView.reloadData()
     }

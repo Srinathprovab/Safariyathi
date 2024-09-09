@@ -69,7 +69,7 @@ extension BookingDetailsVC {
                                          "GuestRegistrationTVCell",
                                          "GuestLoginButtonsTVCell",
                                          "FareSummaryTVCell",
-                                         "TermsAndPrivacyCheckBoxTVCell"])
+                                         "TermsAndPrivacyCheckBoxTVCell", "ContactInformationTVCell"])
         
         setupTVcells()
     }
@@ -85,9 +85,9 @@ extension BookingDetailsVC {
         
         tablerow.append(TableRow(cellType:.GuestLoginButtonsTVCell))
         tablerow.append(TableRow(cellType:.GuestRegistrationTVCell))
+        tablerow.append(TableRow(cellType:.ContactInformationTVCell))
         tablerow.append(TableRow(cellType:.FareSummaryTVCell))
-        
-        
+    
         
         tablerow.append(TableRow(title:"By booking this item, you agree to pay the total amount shown, which includes Service Fees, on the right and to the , User Terms, Privacy policy .",cellType:.TermsAndPrivacyCheckBoxTVCell))
         

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,36 +15,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="214" id="KGk-i7-Jjw" customClass="TabselectTVCell" customModule="Safariyati" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="420" height="214"/>
+            <rect key="frame" x="0.0" y="0.0" width="420" height="240"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="420" height="214"/>
+                <rect key="frame" x="0.0" y="0.0" width="420" height="240"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSB-Kj-P1z">
-                        <rect key="frame" x="0.0" y="0.0" width="420" height="214"/>
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="240"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbg" translatesAutoresizingMaskIntoConstraints="NO" id="xgE-TC-GyN">
-                                <rect key="frame" x="0.0" y="0.0" width="420" height="214"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="214" id="z8u-G4-jpQ"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbg" translatesAutoresizingMaskIntoConstraints="NO" id="xgE-TC-GyN">
+                                <rect key="frame" x="0.0" y="0.0" width="420" height="240"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbg1" translatesAutoresizingMaskIntoConstraints="NO" id="2VJ-Hk-eMN">
-                                <rect key="frame" x="0.0" y="114" width="420" height="100"/>
+                                <rect key="frame" x="0.0" y="140" width="420" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="G3K-r8-MzL"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-0R-udU">
-                                <rect key="frame" x="0.0" y="179" width="420" height="35"/>
-                                <color key="backgroundColor" red="0.9137254901960784" green="0.97254901960784312" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="205" width="420" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="c6n-OT-CLw"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GG3-O3-LId">
-                                <rect key="frame" x="20" y="114" width="380" height="90"/>
+                                <rect key="frame" x="20" y="140" width="380" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AF2-CI-JI4">
                                         <rect key="frame" x="0.0" y="0.0" width="95" height="90"/>
@@ -93,14 +90,14 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="PJf-df-44N">
-                                <rect key="frame" x="135" y="40" width="150" height="54"/>
+                                <rect key="frame" x="135" y="66" width="150" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="SIR-9K-qHd"/>
                                     <constraint firstAttribute="width" constant="150" id="gUe-Hy-BoX"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygM-fp-dU3">
-                                <rect key="frame" x="340" y="30" width="70" height="30"/>
+                                <rect key="frame" x="340" y="56" width="70" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OMR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHY-1t-M3d">
                                         <rect key="frame" x="10" y="6.6666666666666643" width="32.666666666666664" height="17"/>
@@ -139,7 +136,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiW-05-Ole">
-                                <rect key="frame" x="10" y="33" width="24" height="24"/>
+                                <rect key="frame" x="10" y="59" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="9hD-m1-7vM"/>
                                     <constraint firstAttribute="width" constant="24" id="Puo-FM-KCC"/>
@@ -163,8 +160,9 @@
                             <constraint firstAttribute="trailing" secondItem="2VJ-Hk-eMN" secondAttribute="trailing" id="G2k-tq-nkk"/>
                             <constraint firstItem="xgE-TC-GyN" firstAttribute="top" secondItem="rSB-Kj-P1z" secondAttribute="top" id="HWn-8s-nTx"/>
                             <constraint firstAttribute="bottom" secondItem="2VJ-Hk-eMN" secondAttribute="bottom" id="TiR-Gz-giq"/>
+                            <constraint firstAttribute="height" constant="240" id="UI0-tQ-HtE"/>
                             <constraint firstItem="KBo-0R-udU" firstAttribute="leading" secondItem="rSB-Kj-P1z" secondAttribute="leading" id="UKD-G5-KDA"/>
-                            <constraint firstItem="ygM-fp-dU3" firstAttribute="top" secondItem="rSB-Kj-P1z" secondAttribute="top" constant="30" id="ZbP-mh-cev"/>
+                            <constraint firstItem="ygM-fp-dU3" firstAttribute="top" secondItem="rSB-Kj-P1z" secondAttribute="top" constant="56" id="ZbP-mh-cev"/>
                             <constraint firstAttribute="bottom" secondItem="GG3-O3-LId" secondAttribute="bottom" constant="10" id="e9z-cD-eZC"/>
                             <constraint firstItem="GG3-O3-LId" firstAttribute="leading" secondItem="rSB-Kj-P1z" secondAttribute="leading" constant="20" id="hIP-MP-AlR"/>
                             <constraint firstAttribute="trailing" secondItem="GG3-O3-LId" secondAttribute="trailing" constant="20" id="hVv-wd-SBR"/>
@@ -194,7 +192,7 @@
         <image name="insurencetab" width="66" height="92"/>
         <image name="logo" width="151" height="54"/>
         <image name="menu" width="30" height="30"/>
-        <image name="tabbg" width="375" height="219"/>
+        <image name="tabbg" width="375" height="229"/>
         <image name="tabbg1" width="375" height="98"/>
     </resources>
 </document>

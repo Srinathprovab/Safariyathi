@@ -48,10 +48,23 @@ enum TVCellType {
     case FareSummaryTVCell
     case PassengerDetailsTVCell
     case BookingReceiptTVCell
-    
-    
-    
-    
+    case SearchHotelTVCell
+    case HotelResultTVCell
+    case HotelImagesTVCell
+    case RoomsTVcell
+    case HotelCheckinInfoTVCell
+    case NewRoomDetailsTVCell
+    case MainRoomTVCell
+    case AmentiesTVCell
+    case HotelDetailsTVCell
+    case BookingHotelDetailsTVCell
+    case AddDeatilsOfGuestTVCell
+    case UserSpecificationOptionsTVCell
+    case UserSpecificationTVCell
+    case ContactInformationTVCell
+    case NewHotelPriceSummeryTVCell
+    case TotalNoofTravellerTVCell
+    case ButtonTVCell
 }
 
 enum CVCellType {

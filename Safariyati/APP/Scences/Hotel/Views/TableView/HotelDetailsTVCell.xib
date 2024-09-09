@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="KGk-i7-Jjw" customClass="HotelDetailsTVCell" customModule="Safariyati" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="367" height="110"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKu-WQ-Lkb" customClass="BorderedView" customModule="Safariyati" customModuleProvider="target">
+                        <rect key="frame" x="10" y="0.0" width="347" height="110"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clifton International Hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttk-oP-cio">
+                                <rect key="frame" x="10" y="9.9999999999999982" width="185" height="19.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Sheikh hamad bin abdullah road, near fewa tower, al-fujairah, 4388, united arab emirates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mir-dN-2pD">
+                                <rect key="frame" x="40" y="36.333333333333336" width="291" height="28.666666666666664"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="nine2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel Facilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AW7-lp-aNH">
+                                <rect key="frame" x="10" y="80" width="105.66666666666667" height="19.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotelloc" translatesAutoresizingMaskIntoConstraints="NO" id="leT-NV-wct">
+                                <rect key="frame" x="10" y="40.666666666666664" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="aXg-G2-AQY"/>
+                                    <constraint firstAttribute="width" constant="20" id="ic4-di-nhs"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mir-dN-2pD" firstAttribute="leading" secondItem="leT-NV-wct" secondAttribute="trailing" constant="10" id="BkG-d2-hkV"/>
+                            <constraint firstAttribute="bottom" secondItem="AW7-lp-aNH" secondAttribute="bottom" constant="10.67" id="EcZ-ba-cbh"/>
+                            <constraint firstItem="ttk-oP-cio" firstAttribute="top" secondItem="YKu-WQ-Lkb" secondAttribute="top" constant="10" id="F1Q-6S-qDq"/>
+                            <constraint firstItem="ttk-oP-cio" firstAttribute="leading" secondItem="YKu-WQ-Lkb" secondAttribute="leading" constant="10" id="cgl-Wx-I68"/>
+                            <constraint firstAttribute="trailing" secondItem="Mir-dN-2pD" secondAttribute="trailing" constant="16" id="eWa-PP-xQJ"/>
+                            <constraint firstAttribute="height" constant="110" id="ekb-5Q-Dah"/>
+                            <constraint firstItem="leT-NV-wct" firstAttribute="centerY" secondItem="Mir-dN-2pD" secondAttribute="centerY" id="udc-JP-UMI"/>
+                            <constraint firstItem="Mir-dN-2pD" firstAttribute="top" secondItem="ttk-oP-cio" secondAttribute="bottom" constant="7" id="uy1-QG-oIU"/>
+                            <constraint firstItem="AW7-lp-aNH" firstAttribute="top" secondItem="Mir-dN-2pD" secondAttribute="bottom" constant="15" id="wKJ-Y8-Q63"/>
+                            <constraint firstItem="leT-NV-wct" firstAttribute="leading" secondItem="ttk-oP-cio" secondAttribute="leading" id="x6A-ha-Drv"/>
+                            <constraint firstItem="AW7-lp-aNH" firstAttribute="leading" secondItem="ttk-oP-cio" secondAttribute="leading" id="y0V-J0-eHH"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="BorderColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="YKu-WQ-Lkb" secondAttribute="bottom" id="Q2K-Ab-d4w"/>
+                    <constraint firstItem="YKu-WQ-Lkb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="g5s-Yv-Cx5"/>
+                    <constraint firstItem="YKu-WQ-Lkb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="i6Q-kw-d3b"/>
+                    <constraint firstAttribute="trailing" secondItem="YKu-WQ-Lkb" secondAttribute="trailing" constant="10" id="lCr-Ti-BGq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="subtitleLabel" destination="Mir-dN-2pD" id="diC-V8-apS"/>
+                <outlet property="titleLabel" destination="ttk-oP-cio" id="0K7-bV-urG"/>
+            </connections>
+            <point key="canvasLocation" x="20.610687022900763" y="-8.4507042253521139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="hotelloc" width="20.333333969116211" height="20"/>
+        <namedColor name="BorderColor">
+            <color red="0.90196078431372551" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nine2Color">
+            <color red="0.5725490196078431" green="0.57647058823529407" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

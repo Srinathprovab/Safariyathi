@@ -39,7 +39,7 @@ class TabbarVC: UITabBarController {
         let myTabBarItem2 = (self.tabBar.items?[1])! as UITabBarItem
         myTabBarItem2.image = UIImage(named: "tab2")
         myTabBarItem2.selectedImage = UIImage(named: "tab2")?.withRenderingMode(.alwaysOriginal).withTintColor(HexColor("#E0142D"))
-        myTabBarItem2.title = "Trips"
+        myTabBarItem2.title = "My Bookings"
         myTabBarItem2.imageInsets = UIEdgeInsets(top: -3, left: 0, bottom: -6, right: 0)
         let titleAttributes2: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont.InterRegular(size: 14) // Set your desired font size
@@ -50,7 +50,7 @@ class TabbarVC: UITabBarController {
         let myTabBarItem3 = (self.tabBar.items?[2])! as UITabBarItem
         myTabBarItem3.image = UIImage(named: "tab3")
         myTabBarItem3.selectedImage = UIImage(named: "tab3")?.withRenderingMode(.alwaysOriginal).withTintColor(HexColor("#E0142D"))
-        myTabBarItem3.title = "Profile"
+        myTabBarItem3.title = "Account"
         myTabBarItem3.imageInsets = UIEdgeInsets(top: -3, left: 0, bottom: -6, right: 0)
         let titleAttributes3: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont.InterRegular(size: 14) // Set your desired font size

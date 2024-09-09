@@ -50,7 +50,7 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
         gotoSearchFlightsVC()
     }
     override func didTapOnHotelBtnAction(cell: TabselectTVCell) {
-        showToast(message: "Hotels module not yet implemented")
+        gotoSearchHotelVC()
     }
     override func didTapOnHolidaysBtnAction(cell: TabselectTVCell) {
         showToast(message: "Holidays module not yet implemented")
@@ -67,16 +67,28 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
         present(vc, animated: true)
     }
     
+    func gotoSearchHotelVC() {
+        defaults.set("Hotels", forKey: UserDefaultsKeys.tabselect)
+        guard let vc = HotelViewController.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    
+    
+    
+    
 }
 
 
 extension HomeVC {
     func setupUI() {
+        
         setupMenu()
-        commonTableView.backgroundColor = HexColor("E9F8FF")
+        commonTableView.backgroundColor = HexColor("FFFFFF")
         commonTableView.registerTVCells(["TabselectTVCell",
                                          "BestFlightTVCell",
-                                         "TopDestinationsTVCell"])
+                                         "TopDestinationsTVCell","EmptyTVCell"])
         setupTV()
     }
     
@@ -87,6 +99,7 @@ extension HomeVC {
         tablerow.append((TableRow(cellType:.TabselectTVCell)))
         tablerow.append((TableRow(cellType:.BestFlightTVCell)))
         tablerow.append((TableRow(cellType:.TopDestinationsTVCell)))
+        tablerow.append((TableRow(height: 30, cellType:.EmptyTVCell)))
         
         commonTVData = tablerow
         commonTableView.reloadData()

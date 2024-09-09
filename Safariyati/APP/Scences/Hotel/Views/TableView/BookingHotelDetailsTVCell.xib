@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Medium.ttf">
+            <string>OpenSans-Medium</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="2Iz-LZ-5q3" customClass="BookingHotelDetailsTVCell" customModule="Safariyati">
+            <rect key="frame" x="0.0" y="0.0" width="498" height="370"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Iz-LZ-5q3" id="hxM-GQ-j5e">
+                <rect key="frame" x="0.0" y="0.0" width="498" height="370"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AF7-6s-BOP">
+                        <rect key="frame" x="0.0" y="0.0" width="498" height="370"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="psw-q9-zsD">
+                        <rect key="frame" x="10" y="0.0" width="478" height="370"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgf-VU-d0D" customClass="BorderedView" customModule="Burhantrips" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="478" height="370"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotelBanner" translatesAutoresizingMaskIntoConstraints="NO" id="cAb-7A-fB9">
+                                        <rect key="frame" x="0.0" y="0.0" width="478" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="225" id="fkI-az-iaN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotelloc" translatesAutoresizingMaskIntoConstraints="NO" id="qVS-gQ-uFW">
+                                        <rect key="frame" x="10" y="263.66666666666669" width="20" height="20"/>
+                                        <color key="tintColor" name="AppGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="9dO-9R-eFW"/>
+                                            <constraint firstAttribute="height" constant="20" id="CUA-tm-rBn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sheikh hamad bin abdullah road, near fewa tower, al-fujairah, 4388, united arab emirates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5Y-bT-cEO">
+                                        <rect key="frame" x="35" y="259.66666666666669" width="393" height="28"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
+                                        <color key="textColor" name="nine2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nBb-hg-l4g">
+                                        <rect key="frame" x="15" y="307.66666666666669" width="448" height="34.666666666666686"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jzD-qk-aUP">
+                                                <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="34.666666666666664"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHW-hL-rms">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="17.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="14"/>
+                                                        <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23-8-2023" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaW-Q0-PCX">
+                                                        <rect key="frame" x="0.0" y="17.333333333333314" width="104.66666666666667" height="17.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="14"/>
+                                                        <color key="textColor" name="TitleColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ZBb-u2-5Df">
+                                                <rect key="frame" x="114.66666666666666" y="0.0" width="104.33333333333334" height="34.666666666666664"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHf-nN-Y3d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="16.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="14"/>
+                                                        <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23-8-2023" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaC-PJ-ENc">
+                                                        <rect key="frame" x="0.0" y="18.333333333333314" width="104.33333333333333" height="16.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="14"/>
+                                                        <color key="textColor" name="TitleColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="QP8-XR-F4g">
+                                                <rect key="frame" x="228.99999999999997" y="0.0" width="104.66666666666666" height="34.666666666666664"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Guest(s)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aE-Ak-3xW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="16.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="14"/>
+                                                        <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DY-0W-Rgf">
+                                                        <rect key="frame" x="0.0" y="18.333333333333314" width="104.66666666666667" height="16.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="14"/>
+                                                        <color key="textColor" name="TitleColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0G6-8O-cQL">
+                                                <rect key="frame" x="343.66666666666669" y="0.0" width="104.33333333333331" height="34.666666666666664"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Rooms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbK-TU-EBh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="16.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="14"/>
+                                                        <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqg-YL-tme">
+                                                        <rect key="frame" x="0.0" y="18.333333333333314" width="104.33333333333333" height="16.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="14"/>
+                                                        <color key="textColor" name="TitleColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCT-kE-hKP" customClass="AARatingBar" customModule="AARatingBar">
+                                        <rect key="frame" x="388" y="237" width="80" height="15"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="IzV-VS-QnZ"/>
+                                            <constraint firstAttribute="width" constant="80" id="Nu4-g5-m4a"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" systemColor="systemYellowColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saffron Boutique Hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4y-Ay-073">
+                                        <rect key="frame" x="15" y="235" width="358" height="18.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="nBb-hg-l4g" firstAttribute="top" secondItem="f5Y-bT-cEO" secondAttribute="bottom" constant="20" id="5Vl-HC-VRr"/>
+                                    <constraint firstItem="f5Y-bT-cEO" firstAttribute="centerY" secondItem="qVS-gQ-uFW" secondAttribute="centerY" id="CUz-PV-KXD"/>
+                                    <constraint firstItem="qVS-gQ-uFW" firstAttribute="leading" secondItem="vgf-VU-d0D" secondAttribute="leading" constant="10" id="JOa-jM-aKR"/>
+                                    <constraint firstAttribute="trailing" secondItem="nBb-hg-l4g" secondAttribute="trailing" constant="15" id="KZX-AW-scd"/>
+                                    <constraint firstItem="qVS-gQ-uFW" firstAttribute="top" secondItem="n4y-Ay-073" secondAttribute="bottom" constant="10" id="Q9a-Cn-pUC"/>
+                                    <constraint firstAttribute="height" constant="370" id="RyW-L7-GEt"/>
+                                    <constraint firstItem="cAb-7A-fB9" firstAttribute="leading" secondItem="vgf-VU-d0D" secondAttribute="leading" id="TUs-wD-Fnf"/>
+                                    <constraint firstItem="NCT-kE-hKP" firstAttribute="centerY" secondItem="n4y-Ay-073" secondAttribute="centerY" id="Vfr-un-MXW"/>
+                                    <constraint firstAttribute="trailing" secondItem="f5Y-bT-cEO" secondAttribute="trailing" constant="50" id="Whh-Kk-DtM"/>
+                                    <constraint firstItem="nBb-hg-l4g" firstAttribute="leading" secondItem="vgf-VU-d0D" secondAttribute="leading" constant="15" id="Ynp-Rj-egm"/>
+                                    <constraint firstItem="NCT-kE-hKP" firstAttribute="leading" secondItem="n4y-Ay-073" secondAttribute="trailing" constant="15" id="hvj-Qp-wCk"/>
+                                    <constraint firstAttribute="trailing" secondItem="NCT-kE-hKP" secondAttribute="trailing" constant="10" id="ktd-Co-jHx"/>
+                                    <constraint firstItem="n4y-Ay-073" firstAttribute="leading" secondItem="vgf-VU-d0D" secondAttribute="leading" constant="15" id="oJa-Lv-6IN"/>
+                                    <constraint firstItem="f5Y-bT-cEO" firstAttribute="leading" secondItem="qVS-gQ-uFW" secondAttribute="trailing" constant="5" id="sGs-Xv-Ska"/>
+                                    <constraint firstItem="n4y-Ay-073" firstAttribute="top" secondItem="cAb-7A-fB9" secondAttribute="bottom" constant="10" id="sdT-Yb-8Wl"/>
+                                    <constraint firstAttribute="trailing" secondItem="cAb-7A-fB9" secondAttribute="trailing" id="w1G-iC-mgc"/>
+                                    <constraint firstItem="cAb-7A-fB9" firstAttribute="top" secondItem="vgf-VU-d0D" secondAttribute="top" id="xQk-PX-xBj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="BorderColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vgf-VU-d0D" secondAttribute="bottom" id="cYh-eO-CVY"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" name="AppHolderViewColor"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="AF7-6s-BOP" secondAttribute="trailing" id="35e-sT-fsy"/>
+                    <constraint firstItem="AF7-6s-BOP" firstAttribute="top" secondItem="hxM-GQ-j5e" secondAttribute="top" id="EqC-Xh-5nb"/>
+                    <constraint firstItem="AF7-6s-BOP" firstAttribute="leading" secondItem="hxM-GQ-j5e" secondAttribute="leading" id="IMR-Sp-Fzp"/>
+                    <constraint firstAttribute="bottom" secondItem="AF7-6s-BOP" secondAttribute="bottom" id="Mfr-yL-MWZ"/>
+                    <constraint firstAttribute="bottom" secondItem="psw-q9-zsD" secondAttribute="bottom" id="YID-tQ-PRm"/>
+                    <constraint firstItem="psw-q9-zsD" firstAttribute="top" secondItem="hxM-GQ-j5e" secondAttribute="top" id="iRW-9Q-qU0"/>
+                    <constraint firstAttribute="trailing" secondItem="psw-q9-zsD" secondAttribute="trailing" constant="10" id="lP4-1C-wUF"/>
+                    <constraint firstItem="psw-q9-zsD" firstAttribute="leading" secondItem="hxM-GQ-j5e" secondAttribute="leading" constant="10" id="mRl-fA-fLk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="ueR-O9-t7e"/>
+            <connections>
+                <outlet property="checkinTitleLabel" destination="KHW-hL-rms" id="flk-ZP-q2a"/>
+                <outlet property="checkoutTitleLabel" destination="ZHf-nN-Y3d" id="CpM-Xk-ysr"/>
+                <outlet property="checkoutlbl" destination="vaC-PJ-ENc" id="yOH-1q-qeI"/>
+                <outlet property="chickinlbl" destination="HaW-Q0-PCX" id="8xX-bQ-ec9"/>
+                <outlet property="guestTitelLabel" destination="6aE-Ak-3xW" id="E3r-Kh-B3X"/>
+                <outlet property="guestlbl" destination="6DY-0W-Rgf" id="1m9-n2-GGw"/>
+                <outlet property="hotelimage" destination="cAb-7A-fB9" id="qEF-VO-3cF"/>
+                <outlet property="hotellocationlbl" destination="f5Y-bT-cEO" id="2KQ-dR-Uww"/>
+                <outlet property="hotelnamelbl" destination="n4y-Ay-073" id="BPi-Za-jlb"/>
+                <outlet property="ratingView" destination="NCT-kE-hKP" id="3DL-8S-u0d"/>
+                <outlet property="roomCountLabel" destination="jqg-YL-tme" id="Rew-Bo-KlM"/>
+                <outlet property="roomCountStackView" destination="0G6-8O-cQL" id="aNT-k0-0D1"/>
+                <outlet property="roomsTitleLabel" destination="CbK-TU-EBh" id="hwn-NK-G15"/>
+            </connections>
+            <point key="canvasLocation" x="230.53435114503816" y="42.253521126760567"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="hotelBanner" width="335" height="197"/>
+        <image name="hotelloc" width="20.333333969116211" height="20"/>
+        <namedColor name="AppGreenColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppHolderViewColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BorderColor">
+            <color red="0.90196078431372551" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TitleColor">
+            <color red="0.12941176470588237" green="0.18823529411764706" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nine2Color">
+            <color red="0.5725490196078431" green="0.57647058823529407" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

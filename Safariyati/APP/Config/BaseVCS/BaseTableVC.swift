@@ -8,15 +8,9 @@
 import UIKit
 import MaterialComponents
 
-class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate {
-    
-    
-    
-    
-    
-    
-    
-    
+class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate, SearchHotelTVCellDelegate, HotelImagesTVCellDelegate, RoomsTVcellDelegate, BookingHotelDetailsTVCellDelegate, AddDeatilsOfGuestTVCellDelegate, MainRoomTVCellDelegate, ButtonTVCellDelegate {
+   
+   
     @IBOutlet weak var commonScrollView: UITableView!
     @IBOutlet weak var commonTableView: UITableView!
     @IBOutlet weak var commonTVTopConstraint: NSLayoutConstraint!
@@ -98,9 +92,13 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
         }
         
     }
-    
-    
-    
+    func didtapAddRoomBtn(cell: SearchHotelTVCell) {}
+    func btnAction(cell: ButtonTVCell) {}
+    func didTapOnDualBtn1(cell: ButtonTVCell) {}
+    func didTapOnDualBtn2(cell: ButtonTVCell) {}
+    func didTaponBookNow(cell: MainRoomTVCell) {}
+    func didTapOnMoreBtnAction(cell: HotelImagesTVCell) {}
+    func didtaponSearchBtn(cell: SearchHotelTVCell) {}
     func didTaponMenuBtnAction(cell: TabselectTVCell) {}
     func didTapOnSelectCurrencyBtnAction(cell: TabselectTVCell) {}
     func didTapOnFlightBtnAction(cell: TabselectTVCell) {}
@@ -141,7 +139,17 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnLoginBtnAction(cell: GuestRegistrationTVCell) {}
     
     
-    
+    // hotel
+    func didTapOnExpandAdultViewbtnAction(cell: AddDeatilsOfGuestTVCell) {}
+    func tfeditingChanged(tf: UITextField) {}
+    func didTapOnTitleBtnAction(cell: AddDeatilsOfGuestTVCell) {}
+    func didTapOnMrBtnAction(cell: AddDeatilsOfGuestTVCell) {}
+    func didTapOnMrsBtnAction(cell: AddDeatilsOfGuestTVCell) {}
+    func didTapOnVoucherBtn(cell: BookingHotelDetailsTVCell) {}
+    func didTapOnRoomsBtn(cell: RoomsTVcell) {}
+    func didTapOnHotelsDetailsBtn(cell: RoomsTVcell) {}
+    func didTapOnAmenitiesBtn(cell: RoomsTVcell) {}
+
 }
 
 extension BaseTableVC: UITableViewDelegate {
@@ -333,13 +341,104 @@ extension BaseTableVC: UITableViewDataSource {
                 commonCell = cell
                 
                 
+        // Hotel
+                
+            case .SearchHotelTVCell:
+                let cell: SearchHotelTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+            case .HotelResultTVCell:
+                let cell: HotelResultTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .HotelImagesTVCell:
+                let cell: HotelImagesTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+                
+            case .RoomsTVcell:
+                let cell: RoomsTVcell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+                
+            case .HotelCheckinInfoTVCell:
+                let cell: HotelCheckinInfoTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+//                cell.delegate = self
+                commonCell = cell
+                
+                
+            case .NewRoomDetailsTVCell:
+                let cell: NewRoomDetailsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+//                cell.delegate = self
+                commonCell = cell
+                
+            case .MainRoomTVCell:
+                let cell: MainRoomTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+            case .AmentiesTVCell:
+                let cell: AmentiesTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+//                cell.delegate = self
+                commonCell = cell
+                
+            case .HotelDetailsTVCell:
+                let cell: HotelDetailsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+//                cell.delegate = self
+                commonCell = cell
+                
+            case .BookingHotelDetailsTVCell:
+                let cell: BookingHotelDetailsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+                
+            case .AddDeatilsOfGuestTVCell:
+                let cell: AddDeatilsOfGuestTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+            case .UserSpecificationOptionsTVCell:
+                let cell: UserSpecificationOptionsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+//                cell.delegate = self
+                commonCell = cell
+                
+                
+            case .UserSpecificationTVCell:
+                let cell: UserSpecificationTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+//                cell.delegate = self
+                commonCell = cell
+                
+            case .ContactInformationTVCell:
+                let cell: ContactInformationTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+//                cell.delegate = self
+                commonCell = cell
+                
+            case .NewHotelPriceSummeryTVCell:
+                let cell: NewHotelPriceSummeryTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+//                cell.delegate = self
+                commonCell = cell
+                
+            case .TotalNoofTravellerTVCell:
+                let cell: TotalNoofTravellerTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+//                cell.delegate = self
+                commonCell = cell
+                
+                
+            case .ButtonTVCell:
+                let cell: ButtonTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
                 
                 
                 
                 
                 
-                
-                
+        
             default:
                 print("handle this case in getCurrentCellAt")
             }
