@@ -173,6 +173,21 @@
 		6DEC8E362C633A55000C0DD9 /* ButtonTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEC8E332C633A55000C0DD9 /* ButtonTVCell.swift */; };
 		6DEC8E392C633BC1000C0DD9 /* LongEmptyTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC8E382C633BC1000C0DD9 /* LongEmptyTVCell.xib */; };
 		6DEC8E3A2C633BC1000C0DD9 /* LongEmptyTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEC8E372C633BC1000C0DD9 /* LongEmptyTVCell.swift */; };
+		8414D98A2C9182EC00DF0663 /* AirportCodeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9892C9182EC00DF0663 /* AirportCodeListModel.swift */; };
+		8414D98C2C91837C00DF0663 /* AirportCodeListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D98B2C91837C00DF0663 /* AirportCodeListVM.swift */; };
+		8414D98F2C91A0F800DF0663 /* ActiveBookingSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D98E2C91A0F800DF0663 /* ActiveBookingSourceModel.swift */; };
+		8414D9912C91A13200DF0663 /* FlightSearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9902C91A13200DF0663 /* FlightSearchVM.swift */; };
+		8414D9942C91A55400DF0663 /* FlightPresearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9932C91A55400DF0663 /* FlightPresearchModel.swift */; };
+		8414D9962C91A8F800DF0663 /* FlightListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9952C91A8F800DF0663 /* FlightListModel.swift */; };
+		8414D9982C91A93E00DF0663 /* Search_params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9972C91A93E00DF0663 /* Search_params.swift */; };
+		8414D99A2C91A95300DF0663 /* J_flight_list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9992C91A95300DF0663 /* J_flight_list.swift */; };
+		8414D99C2C91AA8900DF0663 /* Flight_details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D99B2C91AA8900DF0663 /* Flight_details.swift */; };
+		8414D99E2C91AA9700DF0663 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D99D2C91AA9700DF0663 /* Price.swift */; };
+		8414D9A02C91AB2300DF0663 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D99F2C91AB2300DF0663 /* Summary.swift */; };
+		8414D9A22C91AB3A00DF0663 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9A12C91AB3A00DF0663 /* Details.swift */; };
+		8414D9A42C91AB5200DF0663 /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9A32C91AB5200DF0663 /* Origin.swift */; };
+		8414D9A62C91AB8500DF0663 /* FlightClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9A52C91AB8500DF0663 /* FlightClass.swift */; };
+		8414D9A82C91ABBA00DF0663 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414D9A72C91ABBA00DF0663 /* Destination.swift */; };
 		84373E032C21A35D0029CAB3 /* SingleToneClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84373E022C21A35D0029CAB3 /* SingleToneClass.swift */; };
 		846AE9CD2C21750300AC8321 /* ProcessingToPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AE9CC2C21750300AC8321 /* ProcessingToPaymentVC.swift */; };
 		846AE9D92C218C1200AC8321 /* BookingConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AE9D82C218C1200AC8321 /* BookingConfirmationVC.swift */; };
@@ -183,6 +198,8 @@
 		846AE9ED2C2195CA00AC8321 /* AddPassengerInfoTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AE9EA2C2195CA00AC8321 /* AddPassengerInfoTVCell.swift */; };
 		846AE9F22C219DD900AC8321 /* BookingReceiptTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846AE9F12C219DD900AC8321 /* BookingReceiptTVCell.xib */; };
 		846AE9F32C219DD900AC8321 /* BookingReceiptTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AE9F02C219DD900AC8321 /* BookingReceiptTVCell.swift */; };
+		8492804A2C92D29100A78202 /* NoInternetConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849280492C92D29100A78202 /* NoInternetConnectionVC.swift */; };
+		8492804C2C92FCB000A78202 /* LoderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492804B2C92FCB000A78202 /* LoderVC.swift */; };
 		849C70532C2299F6008F9F6B /* Calender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849C70522C2299F6008F9F6B /* Calender.storyboard */; };
 		849C70552C229A22008F9F6B /* Calvc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C70542C229A22008F9F6B /* Calvc.swift */; };
 		849C705F2C229B59008F9F6B /* calendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C705D2C229B58008F9F6B /* calendarCVCell.swift */; };
@@ -192,6 +209,14 @@
 		849C70632C22AF0C008F9F6B /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65A719F92BBFE369009C05D3 /* Inter-Medium.ttf */; };
 		849C70642C22AF0C008F9F6B /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65A719F72BBFE369009C05D3 /* Inter-Regular.ttf */; };
 		849C70652C22AF0C008F9F6B /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65A719FC2BBFE369009C05D3 /* Inter-SemiBold.ttf */; };
+		84C4084D2C93FD5D00C2504B /* SimilarFlightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4084C2C93FD5D00C2504B /* SimilarFlightsVC.swift */; };
+		84C4084F2C94087C00C2504B /* SingalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4084E2C94087C00C2504B /* SingalClass.swift */; };
+		84C408522C94166E00C2504B /* FlightDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C408512C94166E00C2504B /* FlightDetailsModel.swift */; };
+		84C408542C94168800C2504B /* FlightDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C408532C94168800C2504B /* FlightDetails.swift */; };
+		84C408562C94169600C2504B /* JourneySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C408552C94169600C2504B /* JourneySummary.swift */; };
+		84C408582C9416A700C2504B /* Baggage_details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C408572C9416A700C2504B /* Baggage_details.swift */; };
+		84C4085A2C9416AE00C2504B /* PriceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C408592C9416AE00C2504B /* PriceDetails.swift */; };
+		84C4085C2C94170F00C2504B /* FlightDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4085B2C94170F00C2504B /* FlightDetailsVM.swift */; };
 		8BEB4D35259C93D87C78CFE3 /* Pods_SafariyatiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C8F04407717B070F2F8692 /* Pods_SafariyatiTests.framework */; };
 		F1B3A614991CD327FBBCE6E4 /* Pods_Safariyati_SafariyatiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E8CA32E91485BC30034A10 /* Pods_Safariyati_SafariyatiUITests.framework */; };
 /* End PBXBuildFile section */
@@ -391,6 +416,21 @@
 		6DEC8E382C633BC1000C0DD9 /* LongEmptyTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongEmptyTVCell.xib; sourceTree = "<group>"; };
 		7855170A7BBFE9727910E08F /* Pods-Safariyati-SafariyatiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safariyati-SafariyatiUITests.debug.xcconfig"; path = "Target Support Files/Pods-Safariyati-SafariyatiUITests/Pods-Safariyati-SafariyatiUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7997A873247B3F031C6DFCEA /* Pods-Safariyati.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safariyati.release.xcconfig"; path = "Target Support Files/Pods-Safariyati/Pods-Safariyati.release.xcconfig"; sourceTree = "<group>"; };
+		8414D9892C9182EC00DF0663 /* AirportCodeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportCodeListModel.swift; sourceTree = "<group>"; };
+		8414D98B2C91837C00DF0663 /* AirportCodeListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AirportCodeListVM.swift; path = Safariyati/APP/Scences/Flight/ViewModels/AirportCodeListVM.swift; sourceTree = SOURCE_ROOT; };
+		8414D98E2C91A0F800DF0663 /* ActiveBookingSourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBookingSourceModel.swift; sourceTree = "<group>"; };
+		8414D9902C91A13200DF0663 /* FlightSearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchVM.swift; sourceTree = "<group>"; };
+		8414D9932C91A55400DF0663 /* FlightPresearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPresearchModel.swift; sourceTree = "<group>"; };
+		8414D9952C91A8F800DF0663 /* FlightListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightListModel.swift; sourceTree = "<group>"; };
+		8414D9972C91A93E00DF0663 /* Search_params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search_params.swift; sourceTree = "<group>"; };
+		8414D9992C91A95300DF0663 /* J_flight_list.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = J_flight_list.swift; sourceTree = "<group>"; };
+		8414D99B2C91AA8900DF0663 /* Flight_details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight_details.swift; sourceTree = "<group>"; };
+		8414D99D2C91AA9700DF0663 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		8414D99F2C91AB2300DF0663 /* Summary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		8414D9A12C91AB3A00DF0663 /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		8414D9A32C91AB5200DF0663 /* Origin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Origin.swift; sourceTree = "<group>"; };
+		8414D9A52C91AB8500DF0663 /* FlightClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightClass.swift; sourceTree = "<group>"; };
+		8414D9A72C91ABBA00DF0663 /* Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		84373E022C21A35D0029CAB3 /* SingleToneClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleToneClass.swift; sourceTree = "<group>"; };
 		846AE9CC2C21750300AC8321 /* ProcessingToPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingToPaymentVC.swift; sourceTree = "<group>"; };
 		846AE9D82C218C1200AC8321 /* BookingConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmationVC.swift; sourceTree = "<group>"; };
@@ -401,10 +441,20 @@
 		846AE9EB2C2195CA00AC8321 /* AddPassengerInfoTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPassengerInfoTVCell.xib; sourceTree = "<group>"; };
 		846AE9F02C219DD900AC8321 /* BookingReceiptTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingReceiptTVCell.swift; sourceTree = "<group>"; };
 		846AE9F12C219DD900AC8321 /* BookingReceiptTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingReceiptTVCell.xib; sourceTree = "<group>"; };
+		849280492C92D29100A78202 /* NoInternetConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetConnectionVC.swift; sourceTree = "<group>"; };
+		8492804B2C92FCB000A78202 /* LoderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoderVC.swift; sourceTree = "<group>"; };
 		849C70522C2299F6008F9F6B /* Calender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calender.storyboard; sourceTree = "<group>"; };
 		849C70542C229A22008F9F6B /* Calvc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calvc.swift; sourceTree = "<group>"; };
 		849C705D2C229B58008F9F6B /* calendarCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calendarCVCell.swift; sourceTree = "<group>"; };
 		849C705E2C229B59008F9F6B /* calendarCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = calendarCVCell.xib; sourceTree = "<group>"; };
+		84C4084C2C93FD5D00C2504B /* SimilarFlightsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarFlightsVC.swift; sourceTree = "<group>"; };
+		84C4084E2C94087C00C2504B /* SingalClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingalClass.swift; sourceTree = "<group>"; };
+		84C408512C94166E00C2504B /* FlightDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsModel.swift; sourceTree = "<group>"; };
+		84C408532C94168800C2504B /* FlightDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetails.swift; sourceTree = "<group>"; };
+		84C408552C94169600C2504B /* JourneySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneySummary.swift; sourceTree = "<group>"; };
+		84C408572C9416A700C2504B /* Baggage_details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Baggage_details.swift; sourceTree = "<group>"; };
+		84C408592C9416AE00C2504B /* PriceDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetails.swift; sourceTree = "<group>"; };
+		84C4085B2C94170F00C2504B /* FlightDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsVM.swift; sourceTree = "<group>"; };
 		89188CCEA5E5A656BE4E9718 /* Pods-SafariyatiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariyatiTests.debug.xcconfig"; path = "Target Support Files/Pods-SafariyatiTests/Pods-SafariyatiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		90CE53CEA5C6EDC6EF9D0DE0 /* Pods_Safariyati.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safariyati.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C8F04407717B070F2F8692 /* Pods_SafariyatiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariyatiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -651,9 +701,9 @@
 		65A0A9B12BC3D1ED00919446 /* Flight */ = {
 			isa = PBXGroup;
 			children = (
+				8414D98D2C9183EB00DF0663 /* ViewModels */,
 				65A0A9BA2BC3D25200919446 /* SB */,
 				65A0A9B72BC3D22A00919446 /* Models */,
-				65A0A9B62BC3D22300919446 /* ViewModels */,
 				65A0A9B32BC3D20800919446 /* Views */,
 				65A0A9B22BC3D1F600919446 /* VC */,
 			);
@@ -668,10 +718,12 @@
 				65562BF62BC5417000E7883F /* SelectCityVC.swift */,
 				653378282BC6513D00E8B940 /* AddTravellerVC.swift */,
 				653378342BC6940300E8B940 /* SearchResultVC.swift */,
+				84C4084C2C93FD5D00C2504B /* SimilarFlightsVC.swift */,
 				653378412BC6AE3B00E8B940 /* FlightDetailsVC.swift */,
 				653378432BC6C1AD00E8B940 /* SelectFareVC.swift */,
 				653378452BC6C1BD00E8B940 /* BookingDetailsVC.swift */,
 				846AE9CC2C21750300AC8321 /* ProcessingToPaymentVC.swift */,
+				849280492C92D29100A78202 /* NoInternetConnectionVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -703,16 +755,12 @@
 			path = TVCells;
 			sourceTree = "<group>";
 		};
-		65A0A9B62BC3D22300919446 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		65A0A9B72BC3D22A00919446 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84C408502C94165600C2504B /* FlightDetailsModel */,
+				8414D9922C91A54000DF0663 /* FlightPresearchmodel */,
+				8414D9882C9182D400DF0663 /* AirportCodeListModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -800,7 +848,6 @@
 			children = (
 				65A719762BBFE2C7009C05D3 /* BaseVCS */,
 				65A7197C2BBFE2C7009C05D3 /* Constants */,
-				65A719812BBFE2C7009C05D3 /* CommonMethods */,
 				65A719822BBFE2C7009C05D3 /* Service Manager */,
 				65A719852BBFE2C7009C05D3 /* Extensions */,
 				65A7198F2BBFE2C7009C05D3 /* UIFonts */,
@@ -817,6 +864,7 @@
 				65A719782BBFE2C7009C05D3 /* TableViewCell.swift */,
 				65A719792BBFE2C7009C05D3 /* BaseTableVC.swift */,
 				65A7197A2BBFE2C7009C05D3 /* UIModels.swift */,
+				84C4084E2C94087C00C2504B /* SingalClass.swift */,
 			);
 			path = BaseVCS;
 			sourceTree = "<group>";
@@ -831,13 +879,6 @@
 				84373E022C21A35D0029CAB3 /* SingleToneClass.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		65A719812BBFE2C7009C05D3 /* CommonMethods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommonMethods;
 			sourceTree = "<group>";
 		};
 		65A719822BBFE2C7009C05D3 /* Service Manager */ = {
@@ -936,8 +977,6 @@
 			isa = PBXGroup;
 			children = (
 				65A71A062BBFE51A009C05D3 /* SB */,
-				65A71A0A2BBFE541009C05D3 /* ViewModel */,
-				65A71A092BBFE538009C05D3 /* Model */,
 				65A71A082BBFE52F009C05D3 /* Views */,
 				65A71A072BBFE524009C05D3 /* ViewController */,
 			);
@@ -961,6 +1000,7 @@
 				65562BF22BC501FF00E7883F /* MoreVC.swift */,
 				65562BF42BC506EA00E7883F /* MoreDetailsVC.swift */,
 				651B59052BC7EAE700132165 /* SelectCurrencyVC.swift */,
+				8492804B2C92FCB000A78202 /* LoderVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -972,20 +1012,6 @@
 				65A71A0F2BC00602009C05D3 /* CVCells */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		65A71A092BBFE538009C05D3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		65A71A0A2BBFE541009C05D3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		65A71A0F2BC00602009C05D3 /* CVCells */ = {
@@ -1275,6 +1301,43 @@
 			path = CollcetionView;
 			sourceTree = "<group>";
 		};
+		8414D9882C9182D400DF0663 /* AirportCodeListModel */ = {
+			isa = PBXGroup;
+			children = (
+				8414D9892C9182EC00DF0663 /* AirportCodeListModel.swift */,
+				8414D98E2C91A0F800DF0663 /* ActiveBookingSourceModel.swift */,
+			);
+			path = AirportCodeListModel;
+			sourceTree = "<group>";
+		};
+		8414D98D2C9183EB00DF0663 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8414D98B2C91837C00DF0663 /* AirportCodeListVM.swift */,
+				8414D9902C91A13200DF0663 /* FlightSearchVM.swift */,
+				84C4085B2C94170F00C2504B /* FlightDetailsVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8414D9922C91A54000DF0663 /* FlightPresearchmodel */ = {
+			isa = PBXGroup;
+			children = (
+				8414D9932C91A55400DF0663 /* FlightPresearchModel.swift */,
+				8414D9952C91A8F800DF0663 /* FlightListModel.swift */,
+				8414D9972C91A93E00DF0663 /* Search_params.swift */,
+				8414D99B2C91AA8900DF0663 /* Flight_details.swift */,
+				8414D9992C91A95300DF0663 /* J_flight_list.swift */,
+				8414D99D2C91AA9700DF0663 /* Price.swift */,
+				8414D99F2C91AB2300DF0663 /* Summary.swift */,
+				8414D9A12C91AB3A00DF0663 /* Details.swift */,
+				8414D9A32C91AB5200DF0663 /* Origin.swift */,
+				8414D9A72C91ABBA00DF0663 /* Destination.swift */,
+				8414D9A52C91AB8500DF0663 /* FlightClass.swift */,
+			);
+			path = FlightPresearchmodel;
+			sourceTree = "<group>";
+		};
 		846AE9CE2C218B7D00AC8321 /* Booking Confirmation  */ = {
 			isa = PBXGroup;
 			children = (
@@ -1427,6 +1490,18 @@
 				849C705E2C229B59008F9F6B /* calendarCVCell.xib */,
 			);
 			path = CalendarCVCell1;
+			sourceTree = "<group>";
+		};
+		84C408502C94165600C2504B /* FlightDetailsModel */ = {
+			isa = PBXGroup;
+			children = (
+				84C408512C94166E00C2504B /* FlightDetailsModel.swift */,
+				84C408532C94168800C2504B /* FlightDetails.swift */,
+				84C408552C94169600C2504B /* JourneySummary.swift */,
+				84C408572C9416A700C2504B /* Baggage_details.swift */,
+				84C408592C9416AE00C2504B /* PriceDetails.swift */,
+			);
+			path = FlightDetailsModel;
 			sourceTree = "<group>";
 		};
 		A46FA58688AE43FD17A296BF /* Frameworks */ = {
@@ -1796,11 +1871,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C408582C9416A700C2504B /* Baggage_details.swift in Sources */,
 				653378352BC6940300E8B940 /* SearchResultVC.swift in Sources */,
 				846AE9E42C21937B00AC8321 /* PassengerDetailsTVCell.swift in Sources */,
+				8414D9A22C91AB3A00DF0663 /* Details.swift in Sources */,
 				65562BF72BC5417000E7883F /* SelectCityVC.swift in Sources */,
 				65A719C52BBFE2C7009C05D3 /* ServiceManager.swift in Sources */,
 				653378292BC6513D00E8B940 /* AddTravellerVC.swift in Sources */,
+				8414D99C2C91AA8900DF0663 /* Flight_details.swift in Sources */,
 				6533782D2BC6885400E8B940 /* CabinClassCVCell.swift in Sources */,
 				6D2143B62C6092C500992020 /* HotelCheckinInfoTVCell.swift in Sources */,
 				6DE5A7F62C5CDE95000C0EDB /* HotelResultTVCell.swift in Sources */,
@@ -1812,13 +1890,16 @@
 				6D7A50772C61EE260033218E /* UserSpecificationOptionsTVCell.swift in Sources */,
 				6D34ED602C60EB0F00E59EB4 /* AmentiesLabelTVCell.swift in Sources */,
 				6D7A506F2C61E2EF0033218E /* AddDeatilsOfGuestTVCell.swift in Sources */,
+				8414D9912C91A13200DF0663 /* FlightSearchVM.swift in Sources */,
 				6DA902B42C60A641007C9962 /* ButtonCollectionViewCell.swift in Sources */,
 				6D30D5712C5CA4A900C0A51D /* SearchHotelTVCell.swift in Sources */,
 				6DA902B02C60A582007C9962 /* HotelImagesCVCell.swift in Sources */,
 				65A719CA2BBFE2C7009C05D3 /* UIKitHelper.swift in Sources */,
 				651B58F62BC7AAB400132165 /* ModifySearchVC.swift in Sources */,
 				65A719BF2BBFE2C7009C05D3 /* UIModels.swift in Sources */,
+				84C408542C94168800C2504B /* FlightDetails.swift in Sources */,
 				657684C02BC815DB00F0FF80 /* TermsAndPrivacyCheckBoxTVCell.swift in Sources */,
+				84C4085A2C9416AE00C2504B /* PriceDetails.swift in Sources */,
 				65A719F02BBFE2C7009C05D3 /* BaseViewModelProtocol.swift in Sources */,
 				65A719C72BBFE2C7009C05D3 /* TableViewHelper.swift in Sources */,
 				651B59012BC7BDBA00132165 /* AddFareInfoTVCell.swift in Sources */,
@@ -1830,19 +1911,23 @@
 				651B58FC2BC7BBA000132165 /* SelectFareTVCell.swift in Sources */,
 				651B58E92BC794EA00132165 /* AddFlightltineraryInfoTVCell.swift in Sources */,
 				6D7A50832C6221B60033218E /* TotalNoofTravellerTVCell.swift in Sources */,
+				8414D98A2C9182EC00DF0663 /* AirportCodeListModel.swift in Sources */,
 				65A719ED2BBFE2C7009C05D3 /* NSObject+Helper.swift in Sources */,
 				65E4B5BA2BCBE90700E29405 /* SignupTVCell.swift in Sources */,
 				653378322BC688FB00E8B940 /* CabinClassTVCell.swift in Sources */,
 				6D30D5692C5CA2D200C0A51D /* HotelViewController.swift in Sources */,
 				651B58F32BC7A68100132165 /* ExchangeOrRefundTVCell.swift in Sources */,
 				651B58EE2BC79FD200132165 /* BaggageTVCell.swift in Sources */,
+				84C4084D2C93FD5D00C2504B /* SimilarFlightsVC.swift in Sources */,
 				6DE5A7FC2C5CEF9D000C0EDB /* HotelSearchResultVC.swift in Sources */,
 				6533783F2BC69A0500E8B940 /* SearchResultTVCell.swift in Sources */,
 				65A719D02BBFE2C7009C05D3 /* FontManager.swift in Sources */,
 				65A719EE2BBFE2C7009C05D3 /* Decodable.swift in Sources */,
+				8414D9A02C91AB2300DF0663 /* Summary.swift in Sources */,
 				653378422BC6AE3B00E8B940 /* FlightDetailsVC.swift in Sources */,
 				65562BFB2BC5438700E7883F /* CityInfoTVCell.swift in Sources */,
 				65A965DA2BC16692000E0487 /* MenuBGTVCell.swift in Sources */,
+				84C4085C2C94170F00C2504B /* FlightDetailsVM.swift in Sources */,
 				6DA902BC2C60AE7E007C9962 /* NewRoomDetailsTVCell.swift in Sources */,
 				65A719492BBFE02D009C05D3 /* ViewController.swift in Sources */,
 				651B59112BC7EFDE00132165 /* GuestRegistrationTVCell.swift in Sources */,
@@ -1858,6 +1943,7 @@
 				65A719C62BBFE2C7009C05D3 /* BorderView.swift in Sources */,
 				849C705F2C229B59008F9F6B /* calendarCVCell.swift in Sources */,
 				65A719452BBFE02D009C05D3 /* AppDelegate.swift in Sources */,
+				8414D9A82C91ABBA00DF0663 /* Destination.swift in Sources */,
 				6DEC8E2E2C633796000C0DD9 /* AddRoomsVC.swift in Sources */,
 				65A71A152BC0068A009C05D3 /* TabselectTVCell.swift in Sources */,
 				65562BF32BC501FF00E7883F /* MoreVC.swift in Sources */,
@@ -1866,6 +1952,7 @@
 				65A965E42BC18087000E0487 /* EmptyTVCell.swift in Sources */,
 				65A0A9C52BC40F0E00919446 /* SearchFlightsTVCell.swift in Sources */,
 				84373E032C21A35D0029CAB3 /* SingleToneClass.swift in Sources */,
+				8414D99A2C91A95300DF0663 /* J_flight_list.swift in Sources */,
 				846AE9F32C219DD900AC8321 /* BookingReceiptTVCell.swift in Sources */,
 				65A719472BBFE02D009C05D3 /* SceneDelegate.swift in Sources */,
 				65A719CF2BBFE2C7009C05D3 /* UITapGestureRecognizer.swift in Sources */,
@@ -1873,10 +1960,14 @@
 				651B58E42BC7944C00132165 /* AddFlightltineraryTVCell.swift in Sources */,
 				653378262BC646CE00E8B940 /* SelectTravellerTVCell.swift in Sources */,
 				653378442BC6C1AD00E8B940 /* SelectFareVC.swift in Sources */,
+				8414D9A42C91AB5200DF0663 /* Origin.swift in Sources */,
 				65A719CD2BBFE2C7009C05D3 /* TextFieldExtension.swift in Sources */,
 				6D7A50672C61DCE60033218E /* BookingHotelDetailsTVCell.swift in Sources */,
+				8492804C2C92FCB000A78202 /* LoderVC.swift in Sources */,
 				65E550802BC8F90C00C9864D /* NoteTVCell.swift in Sources */,
 				65A965DF2BC17BE6000E0487 /* MenuTitleTVCell.swift in Sources */,
+				8414D9982C91A93E00DF0663 /* Search_params.swift in Sources */,
+				8414D9942C91A55400DF0663 /* FlightPresearchModel.swift in Sources */,
 				6DEC8E3A2C633BC1000C0DD9 /* LongEmptyTVCell.swift in Sources */,
 				65A965C42BC14420000E0487 /* BestFlightCVCell.swift in Sources */,
 				6D2FE7B52C635731001247B3 /* ModifyHotelSearchVC.swift in Sources */,
@@ -1892,20 +1983,29 @@
 				65A719CC2BBFE2C7009C05D3 /* StringExtension.swift in Sources */,
 				6D7A507F2C61F98A0033218E /* NewHotelPriceSummeryTVCell.swift in Sources */,
 				65A719C92BBFE2C7009C05D3 /* ButtonExtension.swift in Sources */,
+				8492804A2C92D29100A78202 /* NoInternetConnectionVC.swift in Sources */,
 				6D7A50602C61DA070033218E /* GuestDetailsVC.swift in Sources */,
+				84C4084F2C94087C00C2504B /* SingalClass.swift in Sources */,
 				65A719C82BBFE2C7009C05D3 /* UIViewControllerExtension.swift in Sources */,
 				6D7A507B2C61F7600033218E /* ContactInformationTVCell.swift in Sources */,
 				6D7A50732C61EC7D0033218E /* UserSpecificationTVCell.swift in Sources */,
 				6DA902B82C60A98A007C9962 /* RoomsTVcell.swift in Sources */,
 				65A965D22BC16150000E0487 /* MenuVC.swift in Sources */,
 				65E4B5AF2BCBE01D00E29405 /* SigninVC.swift in Sources */,
+				8414D98F2C91A0F800DF0663 /* ActiveBookingSourceModel.swift in Sources */,
 				846AE9CD2C21750300AC8321 /* ProcessingToPaymentVC.swift in Sources */,
 				6D2143B32C60921E00992020 /* RoomSelectionViewController.swift in Sources */,
 				65A965C92BC1595F000E0487 /* TopDestinationsTVCell.swift in Sources */,
+				8414D99E2C91AA9700DF0663 /* Price.swift in Sources */,
 				65A719EC2BBFE2C7009C05D3 /* DeviceName.swift in Sources */,
 				846AE9D92C218C1200AC8321 /* BookingConfirmationVC.swift in Sources */,
+				84C408562C94169600C2504B /* JourneySummary.swift in Sources */,
+				84C408522C94166E00C2504B /* FlightDetailsModel.swift in Sources */,
+				8414D98C2C91837C00DF0663 /* AirportCodeListVM.swift in Sources */,
+				8414D9A62C91AB8500DF0663 /* FlightClass.swift in Sources */,
 				65A719EF2BBFE2C7009C05D3 /* Loader.swift in Sources */,
 				65A719C12BBFE2C7009C05D3 /* Constants.swift in Sources */,
+				8414D9962C91A8F800DF0663 /* FlightListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2088,7 +2188,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5TLY5PME9K;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2101,7 +2201,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2128,7 +2228,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5TLY5PME9K;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2141,7 +2241,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2210,9 +2310,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5TLY5PME9K;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HolidaysCenter.SafariyatiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2229,9 +2333,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5TLY5PME9K;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HolidaysCenter.SafariyatiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

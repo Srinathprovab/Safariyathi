@@ -90,7 +90,7 @@ class DotLoaderView: UIView {
             UIView.animate(
                 withDuration: animationDuration,
                 delay: Double(index) * (animationDuration / 2),
-                options: [.repeat, .autoreverse],
+                options: [.repeat, .transitionCurlUp],
                 animations: {
                     dot.alpha = 0.0
                 },
@@ -98,6 +98,12 @@ class DotLoaderView: UIView {
             )
         }
     }
+    
+    func stopAnimating() {
+            for dot in dots {
+                dot.layer.removeAllAnimations()
+            }
+        }
 
     // Calculate the intrinsic content size
     override var intrinsicContentSize: CGSize {

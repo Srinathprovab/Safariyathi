@@ -46,8 +46,8 @@ var keyStr = String()
 var dateSelectKey = ""
 
 
-var BASE_URL = "https://provab.net/travgate/pro_new/mobile/index.php/"
-var BASE_URL1 = "https://provab.net/travgate/pro_new/mobile/index.php/"
+var BASE_URL = "https://safariyati.com/beta/android_ios_webservices/mobile/index.php/"
+var BASE_URL1 = "https://safariyati.com/beta/android_ios_webservices/mobile/index.php/"
 var accessToken = "e3VzZXJuYW1lOmFudWpob29kYSxwYXNzd29yZDp0cmF2Z2F0ZUBtb2JpbGVhcHAsYXV0aHR5cGU6dGVzdH0="
 var flightscount = 1
 var regnowloginBtntap = "reg"
@@ -55,7 +55,9 @@ var callapibool = false
 
 
 
-
+var selectedsearch_id = String()
+var selectedselectedResultindex = String()
+var selectedbooking_source = String()
 // hotel
 
 var imagesArray = ["hotelBanner", "hotelBanner", "hotelBanner", "hotelBanner", "hotelBanner", "hotelBanner"]
@@ -68,56 +70,18 @@ var totalRooms = 0
 var totalAdults = 0
 var totalChildren = 0
 
-
+var flightiputspayload = [String:Any]()
 
 
 /* URL endpoints */
 struct ApiEndpoints {
     
     static let indexpage = "general/getTopFlightHotelDestination"
-    static let get_airport_code_list = "ajax/get_airport_code_list"
-    static let general_searchdata = "general/searchdata"
-    static let general_removeRecentSearch = "general/removeRecentSearch"
+    static let ajax_get_airport_code_list = "ajax/get_airport_code_list"
+    static let general_get_active_booking_source = "general/get_active_booking_source"
     static let general_mobile_pre_flight_search = "general/mobile_pre_flight_search"
+    static let general_search_flight = "general/search_flight"
     static let flight_getFlightDetails = "flight/getFlightDetails"
-    static let flight_mobile_pre_process_booking = "flight/mobile_pre_process_booking"
-    static let flight_mobile_pre_booking = "flight/mobile_pre_booking"
-    static let mobileprocesspassengerdetail = "mobile_process_passenger_detail"
-    static let getCountryList = "getCountryList"
-    static let general_mobile_pre_flight_search_loader = "general/mobile_pre_flight_search_loader"
-    static let general_mobile_pre_hotel_search_loader = "general/mobile_pre_hotel_search_loader"
-    static let general_get_airlines_list = "general/get_airlines_list"
-    static let mobilepreprocessbooking = "mobile_pre_process_booking"
-    static let general_getMobileCurrency = "general/getMobileCurrency"
-    static let general_mobile_contact_us = "general/mobile_contact_us"
-    static let ajax_mobile_get_fare_rules = "ajax/mobile_get_fare_rules"
-    
-    //LOGIN
-    static let auth_mobile_login = "auth/mobile_login"
-    static let auth_mobile_logout = "auth/mobile_logout"
-    static let auth_deleteuser = "auth/deleteuser"
-    static let auth_mobile_forgot_password = "auth/mobile_forgot_password"
-    static let auth_mobile_register_on_light_box = "auth/mobile_register_on_light_box"
-    static let user_mobile_profile = "user/mobile_profile"
-    static let gethotelcitylist = "get_hotel_city_list"
-    static let getAirlineList = "general/getAirlineList"
-    
-    
-    //Hotels
-    static let general_getActiveBookingSource = "general/getActiveBookingSource"
-    static let ajaxHotelSearch_pagination = "ajaxHotelSearch_pagination"
-    static let mobileprehotelsearch = "mobile_pre_hotel_search"
-    static let general_mobileHotelSearch = "general/mobileHotelSearch"
-    static let hotelmobiledetails = "mobile_details"
-    static let hotel_mobile_booking = "hotel/mobile_booking"
-    static let hotel_mobile_hotel_pre_booking = "hotel/mobile_hotel_pre_booking"
-    
-    //VISA
-    static let visa_enquiry_form = "visa/visa_enquiry_form"
-    static let cruise_get_cruise_list = "cruise/get_cruise_list"
-    static let cruise_get_more_info = "cruise/get_more_info/"
-    static let cruise_cruise_enquiry_form = "cruise/cruise_enquiry_form"
-    
     
 }
 
@@ -178,6 +142,8 @@ struct UserDefaultsKeys {
     static var tolocid = "to_loc_id"
     static var fromcityname = "fromcityname"
     static var tocityname = "tocityname"
+    static var fromcitynamewithcode = "fromcitynamewithcode"
+    static var tocitynamewithcode = "tocitynamewithcode"
     static var fcity = "fcity"
     static var tcity = "tcity"
     static var fcariername = "fcariername"

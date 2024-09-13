@@ -87,7 +87,63 @@ class ModifySearchVC: BaseTableVC {
     }
     
     override func didTapOnSearchFlightsBtnAction(cell:SearchFlightsTVCell) {
-        gotoSearchResultVC()
+        
+        flightiputspayload.removeAll()
+        flightiputspayload["trip_type"] = defaults.string(forKey: UserDefaultsKeys.journeyType)
+        flightiputspayload["adult"] = defaults.string(forKey: UserDefaultsKeys.adultCount)
+        flightiputspayload["child"] = defaults.string(forKey: UserDefaultsKeys.childCount)
+        flightiputspayload["infant"] = defaults.string(forKey: UserDefaultsKeys.infantsCount)
+        flightiputspayload["v_class"] = defaults.string(forKey: UserDefaultsKeys.selectClass)
+        flightiputspayload["from"] = defaults.string(forKey: UserDefaultsKeys.fromCity)
+        flightiputspayload["from_loc_id"] = defaults.string(forKey: UserDefaultsKeys.fromlocid)
+        flightiputspayload["to"] = defaults.string(forKey: UserDefaultsKeys.toCity)
+        flightiputspayload["to_loc_id"] = defaults.string(forKey: UserDefaultsKeys.tolocid)
+        flightiputspayload["depature"] = defaults.string(forKey: UserDefaultsKeys.calDepDate)
+        flightiputspayload["return"] = defaults.string(forKey: UserDefaultsKeys.calRetDate)
+        flightiputspayload["out_jrn"] = "All Times"
+        flightiputspayload["ret_jrn"] = "All Times"
+        flightiputspayload["direct_flight"] = ""
+        flightiputspayload["psscarrier"] = ""
+        flightiputspayload["search_flight"] = "Search"
+        flightiputspayload["user_id"] = defaults.string(forKey: UserDefaultsKeys.userid) ?? "0"
+        flightiputspayload["search_source"] = "Postman"
+        flightiputspayload["currency"] = defaults.string(forKey: UserDefaultsKeys.selectedCurrency) ?? "KWD"
+        
+        
+        let journeyType = defaults.string(forKey: UserDefaultsKeys.journeyType)
+        let from = defaults.string(forKey: UserDefaultsKeys.fromCity)
+        let to = defaults.string(forKey: UserDefaultsKeys.toCity)
+        let dep = defaults.string(forKey: UserDefaultsKeys.calDepDate)
+        let ret = defaults.string(forKey: UserDefaultsKeys.calRetDate)
+        
+        
+        
+        if journeyType == "oneway" {
+            if from == "Origin" || from == nil{
+                showToast(message: "Select From Location")
+            }else if to == "Destination" || to == nil{
+                showToast(message: "Select To Location")
+            }else if dep == "Add Date" || dep == nil{
+                showToast(message: "Select Departure Date")
+            }else {
+                gotoSearchResultVC()
+            }
+        }else {
+            if from == "Origin" || from == nil{
+                showToast(message: "Select From Location")
+            }else if to == "Destination" || to == nil{
+                showToast(message: "Select To Location")
+            }else if dep == "Add Date" || dep == nil{
+                showToast(message: "Select Departure Date")
+            }else if ret == "Add Date" || ret == nil{
+                showToast(message: "Select Return Date")
+            }else {
+                gotoSearchResultVC()
+            }
+        }
+        
+        
+        
     }
     
     func gotoSelectCityVC(str:String) {
@@ -103,6 +159,7 @@ class ModifySearchVC: BaseTableVC {
     }
     
     func gotoSearchResultVC() {
+        callapibool = true
         guard let vc = SearchResultVC.newInstance.self else {return}
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
@@ -122,8 +179,18 @@ class ModifySearchVC: BaseTableVC {
             
             let formatter = DateFormatter()
             formatter.dateFormat = "dd-MM-yyyy"
-            defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calDepDate)
-            defaults.set(formatter.string(from: cell.retDatePicker.date), forKey: UserDefaultsKeys.calRetDate)
+            
+            
+            if cell.departureTF.isFirstResponder == true {
+                defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calDepDate)
+                defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calRetDate)
+                
+                cell.retDatePicker.minimumDate = cell.depDatePicker.date
+            }else {
+                defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calDepDate)
+                defaults.set(formatter.string(from: cell.retDatePicker.date), forKey: UserDefaultsKeys.calRetDate)
+                
+            }
         }
         
         commonTableView.reloadData()

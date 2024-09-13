@@ -364,7 +364,7 @@ class ServiceManager {
             method: .post,
             parameters: parameters as? Parameters,
             encoding: URLEncoding.default,
-            headers: headers).validate().responseJSON { resp in
+            headers: nil).validate().responseJSON { resp in
                 
                // print(resp.value as Any)
                 print(resp.response?.statusCode as Any)

@@ -17,6 +17,7 @@ class AddFlightInfoTVCell: UITableViewCell {
     @IBOutlet weak var fromtimelbl: UILabel!
     @IBOutlet weak var tocitycodelbl: UILabel!
     @IBOutlet weak var totimelbl: UILabel!
+    @IBOutlet weak var stopslbl: UILabel!
     
     
     

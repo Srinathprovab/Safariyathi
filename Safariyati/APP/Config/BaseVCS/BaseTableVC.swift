@@ -15,7 +15,7 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     @IBOutlet weak var commonTableView: UITableView!
     @IBOutlet weak var commonTVTopConstraint: NSLayoutConstraint!
     
-    // var loaderVC: LoderVC?
+    var loaderVC: LoderVC?
     var commonTVData = [TableRow]()
     
     override func viewDidLoad() {
@@ -523,3 +523,48 @@ extension UITableView {
 //        removeLoader()
 //    }
 //}
+
+
+
+//MARK: Loder Child View
+extension BaseTableVC {
+    
+    
+    func setupLoaderVC() {
+        // Instantiate LoderVC from the storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name
+        loaderVC = storyboard.instantiateViewController(withIdentifier: "LoderVC") as? LoderVC
+        addChild(loaderVC!)
+        
+        // Set the frame or constraints for the child view controller's view
+        loaderVC?.view.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        
+        loaderVC?.dotsview.startAnimation()
+        // Add the child view controller's view to the parent view controller's view
+        view.addSubview(loaderVC!.view)
+        
+        // Notify the child view controller that it has been added
+        loaderVC?.didMove(toParent: self)
+    }
+    
+    // Function to remove the child view controller
+    func removeLoader() {
+       // loaderVC?.stopGifAnimation()
+        loaderVC?.dotsview.stopAnimating()
+        loaderVC?.willMove(toParent: nil)
+        loaderVC?.view.removeFromSuperview()
+        loaderVC?.removeFromParent()
+        loaderVC = nil // Set loaderVC to nil to ensure deallocation
+    }
+
+    
+    // Function to show the loader
+    func showLoderScreen() {
+        setupLoaderVC()
+    }
+    
+    // Function to hide the loader
+    func hideLoderScreen() {
+        removeLoader()
+    }
+}

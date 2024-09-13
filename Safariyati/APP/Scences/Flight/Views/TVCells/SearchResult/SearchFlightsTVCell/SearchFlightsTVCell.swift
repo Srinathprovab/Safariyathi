@@ -38,6 +38,9 @@ class SearchFlightsTVCell: TableViewCell {
     @IBOutlet weak var retbtn: UIButton!
     
     
+    
+    let newdateFormatter = DateFormatter()
+    let dateFormat = "dd-MM-yyyy"
     let depDatePicker = UIDatePicker()
     let retdepDatePicker = UIDatePicker()
     let retDatePicker = UIDatePicker()
@@ -60,42 +63,69 @@ class SearchFlightsTVCell: TableViewCell {
         if let jtype = defaults.string(forKey: UserDefaultsKeys.journeyType) {
             if jtype == "oneway" {
                 
-                self.departureTF.text = defaults.string(forKey: UserDefaultsKeys.calDepDate) ?? "Add Date"
+                fromlbl.text = defaults.string(forKey: UserDefaultsKeys.fromcitynamewithcode) ?? "Origin"
+                tolbl.text = defaults.string(forKey: UserDefaultsKeys.tocitynamewithcode) ?? "Destination"
+                self.departureTF.text = updateIfDateIsPast(dateKey: UserDefaultsKeys.calDepDate, defaultLabel: "Add Date")
+                defaults.setValue("Add Date", forKey: UserDefaultsKeys.calRetDate)
                 roundtripView.alpha = 0.5
-                
                 roundtripView.isHidden = true
-                self.returnTF.text = defaults.string(forKey: UserDefaultsKeys.calRetDate) ?? "Add Date"
-               // defaults.set("Add Date", forKey: UserDefaultsKeys.calRetDate)
+                self.returnTF.text = "Add Date"
                 showdepDatePicker()
                 
+            
             }else {
                 
-                
-                self.departureTF.text = defaults.string(forKey: UserDefaultsKeys.calDepDate) ?? "Add Date"
-                self.returnTF.text = defaults.string(forKey: UserDefaultsKeys.calRetDate) ?? "Add Date"
+                fromlbl.text = defaults.string(forKey: UserDefaultsKeys.fromcitynamewithcode) ?? "Origin"
+                tolbl.text = defaults.string(forKey: UserDefaultsKeys.tocitynamewithcode) ?? "Destination"
+                self.departureTF.text = updateIfDateIsPast(dateKey: UserDefaultsKeys.calDepDate, defaultLabel: "Add Date")
+                self.returnTF.text = updateIfDateIsPast(dateKey: UserDefaultsKeys.calRetDate, defaultLabel: "Add Date")
                 roundtripView.alpha = 1
                 roundtripView.isHidden = false
                 
-                //   showreturndepDatePicker()
+                showdepDatePicker()
                 showretDatePicker()
                 
+            
                 
             }
         }
         
         travellerlbl.text = "\(defaults.string(forKey: UserDefaultsKeys.totalTravellerCount) ?? "1") Traveller, \(defaults.string(forKey: UserDefaultsKeys.selectClass) ?? "Economy")"
         
+        
+        
+        updateLabelColor(label: fromlbl, defaultText: "Origin", defaultColor: .Subtitle1Color, selectedColor: .TitleColor)
+        updateLabelColor(label: tolbl, defaultText: "Destination", defaultColor: .Subtitle1Color, selectedColor: .TitleColor)
+        updateLabelColor(label: travellerlbl, defaultText: "", defaultColor: .Subtitle1Color, selectedColor: .TitleColor)
+        
+        
+        func updateLabelColor(label: UILabel, defaultText: String, defaultColor: UIColor, selectedColor: UIColor) {
+            label.textColor = label.text == defaultText ? defaultColor : selectedColor
+        }
+        
+        
     }
     
     func setupUI() {
         
-        depbtn.isHidden = false
-        retbtn.isHidden = false
+        //        depbtn.isHidden = false
+        //        retbtn.isHidden = false
         
         searchBtn.layer.cornerRadius = 4
         departureTF.setLeftPaddingPoints(35)
         returnTF.setLeftPaddingPoints(35)
         
+        newdateFormatter.dateFormat = dateFormat
+        newdateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        
+        if let jtype = defaults.string(forKey: UserDefaultsKeys.journeyType) {
+            if jtype == "oneway" {
+                onewaytap()
+            }else {
+                roundtripTap()
+            }
+        }
     }
     
     
@@ -115,6 +145,11 @@ class SearchFlightsTVCell: TableViewCell {
     
     
     @IBAction func didTapOnOnewayBtnAction(_ sender: Any) {
+        onewaytap()
+    }
+    
+    
+    func onewaytap() {
         flightscount = 1
         onewayRadioImage.image = UIImage(named: "rselect")
         roundtripRadioImage.image = UIImage(named: "runselect")
@@ -125,6 +160,11 @@ class SearchFlightsTVCell: TableViewCell {
     
     
     @IBAction func didTapOnRoundtripBtnAction(_ sender: Any) {
+        roundtripTap()
+    }
+    
+    
+    func roundtripTap() {
         flightscount = 2
         roundtripRadioImage.image = UIImage(named: "rselect")
         onewayRadioImage.image = UIImage(named: "runselect")
@@ -151,11 +191,13 @@ class SearchFlightsTVCell: TableViewCell {
     
 }
 
-//MARK: - showdepDatePicker
+
+
+
 extension SearchFlightsTVCell {
     
     
-    
+    //MARK: - showdepDatePicker
     func showdepDatePicker(){
         //Formate Date
         depDatePicker.datePickerMode = .date
@@ -170,14 +212,14 @@ extension SearchFlightsTVCell {
             depDatePicker.date = calDepDate
             
             if self.returnTF.text == "Add Date" {
-                retdepDatePicker.date = calDepDate
+                retDatePicker.date = calDepDate
             }
             
             
             // Check if returnDate date is smaller than calDepDate date
             if let returnDate = formter.date(from: self.returnTF.text ?? ""),
                returnDate < calDepDate {
-                retdepDatePicker.date = calDepDate
+                retDatePicker.date = calDepDate
                 
                 // Also update the label to reflect the change
                 self.returnTF.text = formter.string(from: calDepDate)
@@ -187,15 +229,23 @@ extension SearchFlightsTVCell {
         }
         
         
-        
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        let label = UILabel()
+        label.text = "Departure Date" // Initial text, can be changed dynamically
+        label.sizeToFit()
+        label.font = .poppinsMedium(size: 16)
+        let labelButton = UIBarButtonItem(customView: label)
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        toolbar.setItems([doneButton,flexibleSpace,flexibleSpace,labelButton,flexibleSpace,flexibleSpace, cancelButton], animated: false)
+        
+        
         
         self.departureTF.inputAccessoryView = toolbar
         self.departureTF.inputView = depDatePicker
@@ -203,14 +253,13 @@ extension SearchFlightsTVCell {
     }
     
     
-    
     //MARK: - showretDatePicker
     func showretDatePicker(){
         //Formate Date
         retDatePicker.datePickerMode = .date
         //        retDatePicker.minimumDate = Date()
-        // Set minimumDate for retDatePicker based on depDatePicker or retdepDatePicker
-        let selectedDate = self.departureTF.isFirstResponder ? depDatePicker.date : retdepDatePicker.date
+        // Set minimumDate for retDatePicker based on depDatePicker or retDatePicker
+        let selectedDate = self.departureTF.isFirstResponder ? depDatePicker.date : depDatePicker.date
         retDatePicker.minimumDate = selectedDate
         
         retDatePicker.preferredDatePickerStyle = .wheels
@@ -239,18 +288,26 @@ extension SearchFlightsTVCell {
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        let label = UILabel()
+        label.text = "Return Date" // Initial text, can be changed dynamically
+        label.sizeToFit()
+        label.font = .poppinsMedium(size: 16)
+        let labelButton = UIBarButtonItem(customView: label)
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        toolbar.setItems([doneButton,flexibleSpace,flexibleSpace,labelButton,flexibleSpace,flexibleSpace, cancelButton], animated: false)
+        
         
         self.returnTF.inputAccessoryView = toolbar
         self.returnTF.inputView = retDatePicker
         
         
+        self.returnTF.becomeFirstResponder()
+        
     }
-    
     
     
     @objc func donedatePicker(){
@@ -260,5 +317,27 @@ extension SearchFlightsTVCell {
     
     @objc func cancelDatePicker(){
         delegate?.cancelDatePicker(cell:self)
+    }
+    
+    
+    //MARK: - updateIfDateIsPast
+    func updateIfDateIsPast(dateKey: String, defaultLabel: String) -> String {
+        if let dateString = defaults.string(forKey: dateKey),
+           let storedDate = newdateFormatter.date(from: dateString) {
+            if storedDate < Date() {
+                // Update to today's date if the stored date is in the past
+                let todayDateString = newdateFormatter.string(from: Date())
+                defaults.set(todayDateString, forKey: dateKey)
+                return todayDateString
+            } else {
+                // Return the stored date if it's not in the past
+                return dateString
+            }
+        } else {
+            // If the date is not set, update to today's date
+            let todayDateString = newdateFormatter.string(from: Date())
+            defaults.set(todayDateString, forKey: dateKey)
+            return todayDateString
+        }
     }
 }

@@ -37,9 +37,10 @@ class BookingConfirmationVC: BaseTableVC {
                                          "BookingReceiptTVCell",
                                          "PassengerDetailsTVCell",
                                          "EmptyTVCell"])
+        
         setupFlightItienaryTVCell()
+        
     }
-    
     
     
     
@@ -79,6 +80,7 @@ class BookingConfirmationVC: BaseTableVC {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
+    
     
 }
 

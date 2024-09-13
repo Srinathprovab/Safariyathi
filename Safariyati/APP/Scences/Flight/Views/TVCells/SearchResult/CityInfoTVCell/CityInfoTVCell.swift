@@ -15,6 +15,11 @@ class CityInfoTVCell: TableViewCell {
     @IBOutlet weak var codelbl: UILabel!
     
     
+    var fromcity = String()
+    var id = String()
+    var cityname = String()
+    var code = String()
+    var list :AirportCodeListModel?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,6 +29,18 @@ class CityInfoTVCell: TableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    override func updateUI() {
+        list = cellInfo?.moreData as? AirportCodeListModel
+        fromcity = list?.label ?? ""
+        titlelbl.text = "\(list?.city ?? "")"
+        subtitlelbl.text = "\(list?.name ?? "")"
+        code = list?.code ?? ""
+        codelbl.text = list?.code ?? ""
+        id = list?.id ?? ""
+        cityname = list?.city ?? "''"
     }
     
     

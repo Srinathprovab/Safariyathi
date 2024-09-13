@@ -38,19 +38,25 @@ class SearchFlightsVC: BaseTableVC {
     //MARK: - setupUI
     func setupUI() {
         
-        setupOneWay()
+       
         backBtn.addTarget(self, action: #selector(didTapOnBackButtonAction), for: .touchUpInside)
         commonTableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         commonTableView.layer.cornerRadius = 20
         commonTableView.backgroundColor = .WhiteColor
         commonTableView.registerTVCells(["SearchFlightsTVCell","EmptyTVCell"])
-      
         
-        setupTV()
+        
+        
+        if let journeyType = defaults.string(forKey: UserDefaultsKeys.journeyType), journeyType == "oneway" {
+            setupOneWay()
+        }else {
+            setupRoundTrip()
+        }
+        
     }
     
     @objc func didTapOnBackButtonAction() {
-      //  dismiss(animated: true, completion: nil)
+        //  dismiss(animated: true, completion: nil)
         gotoTabbarVC()
     }
     
@@ -66,12 +72,12 @@ class SearchFlightsVC: BaseTableVC {
     
     func setupOneWay() {
         defaults.setValue("oneway", forKey: UserDefaultsKeys.journeyType)
-        commonTableView.reloadData()
+        setupTV()
     }
     
     func setupRoundTrip() {
         defaults.setValue("circle", forKey: UserDefaultsKeys.journeyType)
-        commonTableView.reloadData()
+        setupTV()
     }
     
     
@@ -89,7 +95,63 @@ class SearchFlightsVC: BaseTableVC {
     }
     
     override func didTapOnSearchFlightsBtnAction(cell:SearchFlightsTVCell) {
-        gotoSearchResultVC()
+        
+        flightiputspayload.removeAll()
+        flightiputspayload["trip_type"] = defaults.string(forKey: UserDefaultsKeys.journeyType)
+        flightiputspayload["adult"] = defaults.string(forKey: UserDefaultsKeys.adultCount)
+        flightiputspayload["child"] = defaults.string(forKey: UserDefaultsKeys.childCount)
+        flightiputspayload["infant"] = defaults.string(forKey: UserDefaultsKeys.infantsCount)
+        flightiputspayload["v_class"] = defaults.string(forKey: UserDefaultsKeys.selectClass)
+        flightiputspayload["from"] = defaults.string(forKey: UserDefaultsKeys.fromCity)
+        flightiputspayload["from_loc_id"] = defaults.string(forKey: UserDefaultsKeys.fromlocid)
+        flightiputspayload["to"] = defaults.string(forKey: UserDefaultsKeys.toCity)
+        flightiputspayload["to_loc_id"] = defaults.string(forKey: UserDefaultsKeys.tolocid)
+        flightiputspayload["depature"] = defaults.string(forKey: UserDefaultsKeys.calDepDate)
+        flightiputspayload["return"] = defaults.string(forKey: UserDefaultsKeys.calRetDate)
+        flightiputspayload["out_jrn"] = "All Times"
+        flightiputspayload["ret_jrn"] = "All Times"
+        flightiputspayload["direct_flight"] = ""
+        flightiputspayload["psscarrier"] = ""
+        flightiputspayload["search_flight"] = "Search"
+        flightiputspayload["user_id"] = defaults.string(forKey: UserDefaultsKeys.userid) ?? "0"
+        flightiputspayload["search_source"] = "Postman"
+        flightiputspayload["currency"] = defaults.string(forKey: UserDefaultsKeys.selectedCurrency) ?? "KWD"
+        
+        
+        let journeyType = defaults.string(forKey: UserDefaultsKeys.journeyType)
+        let from = defaults.string(forKey: UserDefaultsKeys.fromCity)
+        let to = defaults.string(forKey: UserDefaultsKeys.toCity)
+        let dep = defaults.string(forKey: UserDefaultsKeys.calDepDate)
+        let ret = defaults.string(forKey: UserDefaultsKeys.calRetDate)
+        
+        
+        
+        if journeyType == "oneway" {
+            if from == "Origin" || from == nil{
+                showToast(message: "Select From Location")
+            }else if to == "Destination" || to == nil{
+                showToast(message: "Select To Location")
+            }else if dep == "Add Date" || dep == nil{
+                showToast(message: "Select Departure Date")
+            }else {
+                gotoSearchResultVC()
+            }
+        }else {
+            if from == "Origin" || from == nil{
+                showToast(message: "Select From Location")
+            }else if to == "Destination" || to == nil{
+                showToast(message: "Select To Location")
+            }else if dep == "Add Date" || dep == nil{
+                showToast(message: "Select Departure Date")
+            }else if ret == "Add Date" || ret == nil{
+                showToast(message: "Select Return Date")
+            }else {
+                gotoSearchResultVC()
+            }
+        }
+        
+        
+        
     }
     
     func gotoSelectCityVC(str:String) {
@@ -106,6 +168,7 @@ class SearchFlightsVC: BaseTableVC {
     }
     
     func gotoSearchResultVC() {
+        callapibool = true
         guard let vc = SearchResultVC.newInstance.self else {return}
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
@@ -133,8 +196,18 @@ class SearchFlightsVC: BaseTableVC {
             
             let formatter = DateFormatter()
             formatter.dateFormat = "dd-MM-yyyy"
-            defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calDepDate)
-            defaults.set(formatter.string(from: cell.retDatePicker.date), forKey: UserDefaultsKeys.calRetDate)
+            
+            
+            if cell.departureTF.isFirstResponder == true {
+                defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calDepDate)
+                defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calRetDate)
+                
+                cell.retDatePicker.minimumDate = cell.depDatePicker.date
+            }else {
+                defaults.set(formatter.string(from: cell.depDatePicker.date), forKey: UserDefaultsKeys.calDepDate)
+                defaults.set(formatter.string(from: cell.retDatePicker.date), forKey: UserDefaultsKeys.calRetDate)
+                
+            }
         }
         
         commonTableView.reloadData()
@@ -154,7 +227,7 @@ class SearchFlightsVC: BaseTableVC {
     }
     
     override func didTapOnReturnBtnAction(cell:SearchFlightsTVCell) {
-         gotoCalenderVC(key: "ret", titleStr: "Ruturn Date")
+        gotoCalenderVC(key: "ret", titleStr: "Ruturn Date")
     }
     
     func gotoCalenderVC(key:String,titleStr:String) {
@@ -184,23 +257,55 @@ extension SearchFlightsVC {
 
 
 
-extension SearchFlightsVC {
+extension SearchFlightsVC  {
+    
+    
     func addObserver() {
+        
+        
+        DispatchQueue.main.async {
+            //  self.callGetRecentSearchAPI()
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(nointernet), name: Notification.Name("offline"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resultnil), name: NSNotification.Name("resultnil"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(nointrnetreload), name: Notification.Name("nointrnetreload"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reload"), object: nil)
+        
+        
     }
     
     
     @objc func reload() {
-        commonTableView.reloadData()
+        DispatchQueue.main.async {[self] in
+            commonTableView.reloadData()
+        }
     }
+    
+    @objc func nointrnetreload() {
+        
+        DispatchQueue.main.async {[self] in
+            commonTableView.reloadData()
+        }
+    }
+    
+    //MARK: - resultnil
+    @objc func resultnil() {
+        guard let vc = NoInternetConnectionVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.key = "noresult"
+        self.present(vc, animated: true)
+    }
+    
+    
+    //MARK: - nointernet
+    @objc func nointernet() {
+        
+        guard let vc = NoInternetConnectionVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.key = "nointernet"
+        self.present(vc, animated: true)
+    }
+    
+    
 }
-
-//extension SearchFlightsVC: UIViewControllerTransitioningDelegate {
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return SlideInFromLeftTransitionAnimator() // Use SlideInFromLeftTransitionAnimator for presenting from left to right
-//    }
-//
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return SlideInFromRightTransitionAnimator() // Use SlideInFromRightTransitionAnimator for dismissing from right to left
-//    }
-//}

@@ -13,6 +13,45 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
+        
+        // Do any additional setup after loading the view.
+        if !UserDefaults.standard.bool(forKey: "ExecuteOnce") {
+            
+            defaults.set("Origin", forKey: UserDefaultsKeys.fromcityname)
+            defaults.set("Destination", forKey: UserDefaultsKeys.tocityname)
+            
+            defaults.set("KWD", forKey: UserDefaultsKeys.selectedCurrency)
+            defaults.set("ALL", forKey: UserDefaultsKeys.fcariername)
+            defaults.set("ALL", forKey: UserDefaultsKeys.fcariercode)
+            
+            defaults.set("1", forKey: UserDefaultsKeys.adultCount)
+            defaults.set("0", forKey: UserDefaultsKeys.childCount)
+            defaults.set("0", forKey: UserDefaultsKeys.infantsCount)
+            defaults.set("1", forKey: UserDefaultsKeys.totalTravellerCount)
+            defaults.set("Economy", forKey: UserDefaultsKeys.selectClass)
+            
+         
+            
+//            defaults.set("1 Passenger", forKey: UserDefaultsKeys.visatotalpassengercount)
+//            defaults.set("1", forKey: UserDefaultsKeys.activitesadultCount)
+//            defaults.set("2", forKey: UserDefaultsKeys.guestcount)
+//            
+//            
+//            
+//            defaults.set("Select Nationality", forKey: UserDefaultsKeys.hnationality)
+//            defaults.set("", forKey: UserDefaultsKeys.hnationalitycode)
+            
+            
+            
+            UserDefaults.standard.set(true, forKey: "ExecuteOnce")
+            
+        }
+        
+        
+        
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
             self.gotodashBoardScreen()
         })

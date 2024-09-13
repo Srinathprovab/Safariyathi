@@ -23,11 +23,14 @@ class Loader {
                 }
                 
             }else {
-                if loderBool == false {
-                    loaderShow(loder: "loder", v: view)
-                }else {
-                    //loaderShow(loder: "loder", v: view)
-                }
+//                if loderBool == false {
+//                    loaderShow(loder: "loder", v: view)
+//                }else {
+//                    //loaderShow(loder: "loder", v: view)
+//                }
+                
+                
+               
             }
             
             

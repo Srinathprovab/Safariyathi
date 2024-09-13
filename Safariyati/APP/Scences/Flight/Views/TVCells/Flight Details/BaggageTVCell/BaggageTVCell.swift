@@ -19,6 +19,7 @@ class BaggageTVCell: TableViewCell {
     var adultcount = String()
     var childcount = String()
     var infantcount = String()
+    var baggageDetaild : Baggage_details?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,7 +35,8 @@ class BaggageTVCell: TableViewCell {
     
     override func updateUI() {
         
-        titlelbl.text = cellInfo?.title ?? ""
+       
+        baggageDetaild = cellInfo?.moreData as? Baggage_details
         
         adultcount = defaults.string(forKey: UserDefaultsKeys.adultCount) ?? "1"
         childcount = defaults.string(forKey: UserDefaultsKeys.childCount) ?? "0"
@@ -56,6 +58,9 @@ class BaggageTVCell: TableViewCell {
             childCheckdinlbl.isHidden = false
             infantCheckdinlbl.isHidden = false
         }
+        
+        titlelbl.text = "\(baggageDetaild?.origin_loc ?? "") - \(baggageDetaild?.destination_loc ?? "")"
+        cabinBaggagelbl.text = "Cabin Baggage- \(baggageDetaild?.cabin_baggage ?? "")"
         
     }
     

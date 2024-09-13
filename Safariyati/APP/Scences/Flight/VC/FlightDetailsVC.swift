@@ -7,14 +7,15 @@
 
 import UIKit
 
-class FlightDetailsVC: BaseTableVC {
+class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate {
+   
     
     
     @IBOutlet weak var tabsHolderView: UIView!
     @IBOutlet weak var flightItineraryBtn: UIButton!
     @IBOutlet weak var baggageInoBtn: UIButton!
     @IBOutlet weak var exchangeBtn: UIButton!
-    
+    @IBOutlet weak var kwdlbl: UILabel!
     
     static var newInstance: FlightDetailsVC? {
         let storyboard = UIStoryboard(name: Storyboard.Flights.name,
@@ -23,12 +24,27 @@ class FlightDetailsVC: BaseTableVC {
         return vc
     }
     
+    
     var tablerow = [TableRow]()
+    var fdvm:FlightDetailsVM?
+    var payload = [String:Any]()
+    var flightdetails = [[FlightDetails]]()
+    var Baggagedetails = [Baggage_details]()
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        addObserver()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setupUI()
+        
+    fdvm = FlightDetailsVM(self)
     }
     
     func setupUI() {
@@ -39,14 +55,14 @@ class FlightDetailsVC: BaseTableVC {
         baggageInoBtn.layer.cornerRadius = 4
         exchangeBtn.layer.cornerRadius = 4
         
-        setupItienaryBtn()
+       
         
         
         commonTableView.registerTVCells(["AddFlightltineraryTVCell",
                                          "BaggageTVCell",
                                          "ExchangeOrRefundTVCell",
                                          "NoteTVCell"])
-        setupItienaryBtn()
+      
         
     }
     
@@ -55,6 +71,7 @@ class FlightDetailsVC: BaseTableVC {
     
     
     @IBAction func didTapOnCloseBtnAction(_ sender: Any) {
+        callapibool = false
         dismiss(animated: true)
     }
     
@@ -124,12 +141,41 @@ class FlightDetailsVC: BaseTableVC {
 
 extension FlightDetailsVC {
     
+    
+    func callGetFlightDetailsAPI(){
+        payload.removeAll()
+        
+    
+        payload["search_id"] = selectedsearch_id
+        payload["selectedResultindex"] = selectedselectedResultindex
+        payload["user_id"] = defaults.string(forKey: UserDefaultsKeys.userid) ?? "0"
+        payload["booking_source"] = selectedbooking_source
+        
+        fdvm?.CALL_GET_FLIGHT_DETAILS_API(dictParam: payload)
+    }
+    
+    func flightDetailsRespons(response: FlightDetailsModel) {
+        
+        flightdetails = response.flightDetails ?? [[]]
+        Baggagedetails = response.baggage_details ?? []
+        kwdlbl.text = "\(response.priceDetails?.api_currency ?? "") \(response.priceDetails?.grand_total ?? "")"
+        
+        DispatchQueue.main.async {
+            self.setupItienaryBtn()
+        }
+    }
+    
+    
     func setupFlightItienaryTVCell() {
         tablerow.removeAll()
         
-        tablerow.append(TableRow(title:"",
-                                 characterLimit: 2,
-                                 cellType: .AddFlightltineraryTVCell))
+        
+
+        for (_,value) in flightdetails.enumerated() {
+            
+            tablerow.append(TableRow(moreData: value,
+                                     cellType: .AddFlightltineraryTVCell))
+        }
         
         commonTVData = tablerow
         commonTableView.reloadData()
@@ -141,11 +187,14 @@ extension FlightDetailsVC {
     func setupBaggageTVCell() {
         tablerow.removeAll()
         
-        tablerow.append(TableRow(title:"Dubai- Kuwait",
-                                 cellType: .BaggageTVCell))
         
-        tablerow.append(TableRow(title:"Kuwait-Dubai",
-                                 cellType: .BaggageTVCell))
+        Baggagedetails.forEach { i in
+            tablerow.append(TableRow(moreData: i,
+                                     cellType: .BaggageTVCell))
+        }
+       
+        
+        
         
         commonTVData = tablerow
         commonTableView.reloadData()
@@ -176,5 +225,60 @@ extension FlightDetailsVC {
         
         
     }
+    
+}
+
+
+
+extension FlightDetailsVC  {
+    
+    
+    func addObserver() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(nointernet), name: Notification.Name("offline"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resultnil), name: NSNotification.Name("resultnil"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(nointrnetreload), name: Notification.Name("nointrnetreload"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reload"), object: nil)
+        
+        if callapibool == true {
+            DispatchQueue.main.async {
+                self.callGetFlightDetailsAPI()
+            }
+        }
+        
+    }
+    
+    
+    @objc func reload() {
+        DispatchQueue.main.async {[self] in
+            commonTableView.reloadData()
+        }
+    }
+    
+    @objc func nointrnetreload() {
+        
+        DispatchQueue.main.async {
+            self.callGetFlightDetailsAPI()
+        }
+    }
+    
+    //MARK: - resultnil
+    @objc func resultnil() {
+        guard let vc = NoInternetConnectionVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.key = "noresult"
+        self.present(vc, animated: true)
+    }
+    
+    
+    //MARK: - nointernet
+    @objc func nointernet() {
+        
+        guard let vc = NoInternetConnectionVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.key = "nointernet"
+        self.present(vc, animated: true)
+    }
+    
     
 }

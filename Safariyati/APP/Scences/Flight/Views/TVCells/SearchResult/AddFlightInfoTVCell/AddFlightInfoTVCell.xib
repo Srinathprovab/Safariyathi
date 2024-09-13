@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -123,6 +123,12 @@
                                             <constraint firstItem="A2M-LZ-3WH" firstAttribute="top" secondItem="krT-Fi-tke" secondAttribute="bottom" id="k71-VN-cKS"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wz4-R2-L3z">
+                                        <rect key="frame" x="228.66666666666666" y="44.666666666666671" width="30.999999999999972" height="14.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="WhightColor"/>
                                 <constraints>
@@ -132,9 +138,11 @@
                                     <constraint firstAttribute="height" constant="69" id="FRx-TM-oYO"/>
                                     <constraint firstItem="yxf-Dc-J1Q" firstAttribute="leading" secondItem="Kra-Po-UTu" secondAttribute="trailing" id="Fd0-ks-1GA"/>
                                     <constraint firstItem="sDX-2t-EDV" firstAttribute="centerY" secondItem="Ms9-QS-jPP" secondAttribute="centerY" id="Jc8-YX-LtF"/>
+                                    <constraint firstItem="Wz4-R2-L3z" firstAttribute="top" secondItem="Ms9-QS-jPP" secondAttribute="bottom" constant="2" id="MHy-uF-ss7"/>
                                     <constraint firstItem="yxf-Dc-J1Q" firstAttribute="centerY" secondItem="Ms9-QS-jPP" secondAttribute="centerY" id="P1n-9b-hsV"/>
                                     <constraint firstItem="Kra-Po-UTu" firstAttribute="centerY" secondItem="sDX-2t-EDV" secondAttribute="centerY" id="QEs-N4-EhW"/>
                                     <constraint firstItem="8tB-3H-YMv" firstAttribute="centerY" secondItem="Ms9-QS-jPP" secondAttribute="centerY" id="Qjc-t6-Ske"/>
+                                    <constraint firstItem="Wz4-R2-L3z" firstAttribute="centerX" secondItem="Ms9-QS-jPP" secondAttribute="centerX" id="ciE-vg-FsU"/>
                                     <constraint firstItem="7J7-Z4-ezT" firstAttribute="centerY" secondItem="Ms9-QS-jPP" secondAttribute="centerY" id="dGi-dc-hDd"/>
                                     <constraint firstItem="zoj-Rv-mEj" firstAttribute="leading" secondItem="sDX-2t-EDV" secondAttribute="trailing" id="eJ1-Iw-lI0"/>
                                     <constraint firstItem="Ms9-QS-jPP" firstAttribute="centerX" secondItem="PZY-fH-DhU" secondAttribute="centerX" id="g4q-f5-XbE"/>
@@ -173,6 +181,7 @@
                 <outlet property="fromcitycodelbl" destination="rRP-du-Lr2" id="DpI-c6-fEY"/>
                 <outlet property="fromtimelbl" destination="58G-QK-y6D" id="6yV-eS-vvj"/>
                 <outlet property="opratorImg" destination="AhC-78-2ic" id="psh-pE-XVH"/>
+                <outlet property="stopslbl" destination="Wz4-R2-L3z" id="xUE-wG-cNj"/>
                 <outlet property="tocitycodelbl" destination="krT-Fi-tke" id="P9f-dI-nOu"/>
                 <outlet property="totimelbl" destination="A2M-LZ-3WH" id="453-93-X2o"/>
             </connections>
