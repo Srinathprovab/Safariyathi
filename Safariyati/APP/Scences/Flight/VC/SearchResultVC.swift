@@ -231,6 +231,55 @@ extension SearchResultVC {
         }
         dateslbl.text = "\(labelText) | \(classname ?? "")"
         
+        prices.removeAll()
+        noofStopsA.removeAll()
+        fareTypeA.removeAll()
+        airlinesA.removeAll()
+        connectingFlightsA.removeAll()
+        connectingAirportA.removeAll()
+        
+        list.forEach { i in
+            i.forEach { j in
+                
+                prices.append("\(j.price?.api_total_display_fare ?? 0.0)")
+                j.flight_details?.summary?.forEach({ k in
+                   
+                        airlinesA.append("\(k.operator_name ?? "") (\(k.operator_code ?? ""))")
+                        
+                        switch k.no_of_stops {
+                        case 0:
+                            noofStopsA.append("0 Stop")
+                            break
+                        case 1:
+                            noofStopsA.append("1 Stop")
+                            break
+                        case 2:
+                            noofStopsA.append("1+ Stops")
+                            break
+                        default:
+                            break
+                        }
+                    })
+                   
+               
+                
+                j.flight_details?.details?.forEach({ l in
+                    l.forEach { m in
+                        connectingFlightsA.append("\(m.operator_name ?? "") (\(m.operator_code ?? ""))")
+                        connectingAirportA.append("\( m.destination?.city ?? "") (\(m.destination?.loc ?? ""))")
+                    }
+                })
+            }
+        }
+        
+       
+        prices = Array(Set(prices))
+        noofStopsA = Array(Set(noofStopsA))
+        fareTypeA = Array(Set(fareTypeA))
+        airlinesA = Array(Set(airlinesA))
+        connectingFlightsA = Array(Set(connectingFlightsA))
+        connectingAirportA = Array(Set(connectingAirportA))
+        
         
         DispatchQueue.main.async {
             self.setupTVcells(list: list)

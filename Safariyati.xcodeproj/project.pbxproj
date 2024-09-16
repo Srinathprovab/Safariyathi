@@ -217,6 +217,9 @@
 		84C408582C9416A700C2504B /* Baggage_details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C408572C9416A700C2504B /* Baggage_details.swift */; };
 		84C4085A2C9416AE00C2504B /* PriceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C408592C9416AE00C2504B /* PriceDetails.swift */; };
 		84C4085C2C94170F00C2504B /* FlightDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4085B2C94170F00C2504B /* FlightDetailsVM.swift */; };
+		84EB65522C97EF8400886440 /* Cancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB65512C97EF8400886440 /* Cancellation.swift */; };
+		84EB65542C97EF8B00886440 /* Changecharges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB65532C97EF8B00886440 /* Changecharges.swift */; };
+		84EB65562C98061300886440 /* FilterSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB65552C98061300886440 /* FilterSearchVC.swift */; };
 		8BEB4D35259C93D87C78CFE3 /* Pods_SafariyatiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C8F04407717B070F2F8692 /* Pods_SafariyatiTests.framework */; };
 		F1B3A614991CD327FBBCE6E4 /* Pods_Safariyati_SafariyatiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E8CA32E91485BC30034A10 /* Pods_Safariyati_SafariyatiUITests.framework */; };
 /* End PBXBuildFile section */
@@ -455,6 +458,9 @@
 		84C408572C9416A700C2504B /* Baggage_details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Baggage_details.swift; sourceTree = "<group>"; };
 		84C408592C9416AE00C2504B /* PriceDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetails.swift; sourceTree = "<group>"; };
 		84C4085B2C94170F00C2504B /* FlightDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsVM.swift; sourceTree = "<group>"; };
+		84EB65512C97EF8400886440 /* Cancellation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancellation.swift; sourceTree = "<group>"; };
+		84EB65532C97EF8B00886440 /* Changecharges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changecharges.swift; sourceTree = "<group>"; };
+		84EB65552C98061300886440 /* FilterSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSearchVC.swift; sourceTree = "<group>"; };
 		89188CCEA5E5A656BE4E9718 /* Pods-SafariyatiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariyatiTests.debug.xcconfig"; path = "Target Support Files/Pods-SafariyatiTests/Pods-SafariyatiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		90CE53CEA5C6EDC6EF9D0DE0 /* Pods_Safariyati.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safariyati.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C8F04407717B070F2F8692 /* Pods_SafariyatiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariyatiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -724,6 +730,7 @@
 				653378452BC6C1BD00E8B940 /* BookingDetailsVC.swift */,
 				846AE9CC2C21750300AC8321 /* ProcessingToPaymentVC.swift */,
 				849280492C92D29100A78202 /* NoInternetConnectionVC.swift */,
+				84EB65552C98061300886440 /* FilterSearchVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1500,6 +1507,8 @@
 				84C408552C94169600C2504B /* JourneySummary.swift */,
 				84C408572C9416A700C2504B /* Baggage_details.swift */,
 				84C408592C9416AE00C2504B /* PriceDetails.swift */,
+				84EB65512C97EF8400886440 /* Cancellation.swift */,
+				84EB65532C97EF8B00886440 /* Changecharges.swift */,
 			);
 			path = FlightDetailsModel;
 			sourceTree = "<group>";
@@ -1899,6 +1908,7 @@
 				65A719BF2BBFE2C7009C05D3 /* UIModels.swift in Sources */,
 				84C408542C94168800C2504B /* FlightDetails.swift in Sources */,
 				657684C02BC815DB00F0FF80 /* TermsAndPrivacyCheckBoxTVCell.swift in Sources */,
+				84EB65562C98061300886440 /* FilterSearchVC.swift in Sources */,
 				84C4085A2C9416AE00C2504B /* PriceDetails.swift in Sources */,
 				65A719F02BBFE2C7009C05D3 /* BaseViewModelProtocol.swift in Sources */,
 				65A719C72BBFE2C7009C05D3 /* TableViewHelper.swift in Sources */,
@@ -1937,6 +1947,7 @@
 				65A719F22BBFE2C7009C05D3 /* StoryboardExtension.swift in Sources */,
 				846AE9ED2C2195CA00AC8321 /* AddPassengerInfoTVCell.swift in Sources */,
 				65A71A0E2BBFFD89009C05D3 /* TabbarVC.swift in Sources */,
+				84EB65522C97EF8400886440 /* Cancellation.swift in Sources */,
 				6533783A2BC6946C00E8B940 /* AddFlightInfoTVCell.swift in Sources */,
 				65E4B5B12BCBE07C00E29405 /* SignupVC.swift in Sources */,
 				656538F72BCE3014006C4A4A /* FareSummaryTVCell.swift in Sources */,
@@ -1973,6 +1984,7 @@
 				6D2FE7B52C635731001247B3 /* ModifyHotelSearchVC.swift in Sources */,
 				65A719BE2BBFE2C7009C05D3 /* BaseTableVC.swift in Sources */,
 				65A719BC2BBFE2C7009C05D3 /* BaseVC.swift in Sources */,
+				84EB65542C97EF8B00886440 /* Changecharges.swift in Sources */,
 				651B59062BC7EAE700132165 /* SelectCurrencyVC.swift in Sources */,
 				651B590C2BC7EC8100132165 /* BDFlightDetailsTVCell.swift in Sources */,
 				65A719C42BBFE2C7009C05D3 /* SessionManager.swift in Sources */,
@@ -2198,8 +2210,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2238,8 +2250,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -70,8 +70,17 @@ var totalRooms = 0
 var totalAdults = 0
 var totalChildren = 0
 
-var flightiputspayload = [String:Any]()
+var prices = [String]()
+var noofStopsA = [String]()
+var fareTypeA = [String]()
+var airlinesA = [String]()
+var connectingFlightsA = [String]()
+var connectingAirportA = [String]()
 
+
+var flightiputspayload = [String:Any]()
+var cancelationcharges :Cancellation?
+var changecharges : Changecharges?
 
 /* URL endpoints */
 struct ApiEndpoints {

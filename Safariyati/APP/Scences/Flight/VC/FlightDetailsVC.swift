@@ -30,7 +30,7 @@ class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate {
     var payload = [String:Any]()
     var flightdetails = [[FlightDetails]]()
     var Baggagedetails = [Baggage_details]()
-    
+   
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -159,6 +159,9 @@ extension FlightDetailsVC {
         flightdetails = response.flightDetails ?? [[]]
         Baggagedetails = response.baggage_details ?? []
         kwdlbl.text = "\(response.priceDetails?.api_currency ?? "") \(response.priceDetails?.grand_total ?? "")"
+        cancelationcharges = response.cancellation
+        changecharges = response.changecharges
+        
         
         DispatchQueue.main.async {
             self.setupItienaryBtn()
@@ -207,13 +210,15 @@ extension FlightDetailsVC {
         tablerow.removeAll()
         
         tablerow.append(TableRow(title:"Cancellation Charges :",
+                                 key: "cancellation",
                                  cellType: .ExchangeOrRefundTVCell))
         
         tablerow.append(TableRow(title:"Exchange Charges :",
+                                 key: "change",
                                  cellType: .ExchangeOrRefundTVCell))
         
-        tablerow.append(TableRow(title:"AHT Charges :",
-                                 cellType: .ExchangeOrRefundTVCell))
+     //   tablerow.append(TableRow(title:"AHT Charges :",
+      //                           cellType: .ExchangeOrRefundTVCell))
         
         
         tablerow.append(TableRow(cellType: .NoteTVCell))

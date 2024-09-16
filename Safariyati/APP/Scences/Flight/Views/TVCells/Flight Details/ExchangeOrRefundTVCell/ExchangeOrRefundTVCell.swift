@@ -11,7 +11,9 @@ class ExchangeOrRefundTVCell: TableViewCell {
 
     
     @IBOutlet weak var titlelbl: UILabel!
-    
+    @IBOutlet weak var adultlbl: UILabel!
+    @IBOutlet weak var childlbl: UILabel!
+    @IBOutlet weak var infantlbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +29,16 @@ class ExchangeOrRefundTVCell: TableViewCell {
     
     override func updateUI() {
         titlelbl.text = cellInfo?.title ?? ""
+        
+        if cellInfo?.key == "change" {
+            adultlbl.text = changecharges?.aDT
+            childlbl.text = changecharges?.cNN
+            infantlbl.text = changecharges?.iNF
+        }else {
+            adultlbl.text = cancelationcharges?.aDT
+            childlbl.text = cancelationcharges?.cNN
+            infantlbl.text = cancelationcharges?.iNF
+        }
     }
     
 }
