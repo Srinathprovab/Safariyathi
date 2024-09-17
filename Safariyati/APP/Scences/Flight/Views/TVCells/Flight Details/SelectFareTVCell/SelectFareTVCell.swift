@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SelectFareTVCellDelegate {
+    func didTapOnSelectedFare(cell:AddFareInfoTVCell)
+}
+
 class SelectFareTVCell: TableViewCell {
     
     
@@ -15,6 +19,8 @@ class SelectFareTVCell: TableViewCell {
     
     var fareTitleArray = ["Economy light","ECONOMY sMART","Economy Flex"]
     
+    
+    var delegate:SelectFareTVCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,7 +35,7 @@ class SelectFareTVCell: TableViewCell {
     
     
     override func updateUI() {
-        tvHeight.constant = CGFloat(350 * (fareTitleArray.count ))
+        tvHeight.constant = CGFloat(350 * (faredata.count ))
         selectFareTV.reloadData()
     }
     
@@ -59,24 +65,35 @@ extension SelectFareTVCell:UITableViewDelegate,UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fareTitleArray.count
+        return faredata.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var c = UITableViewCell()
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? AddFareInfoTVCell {
             
-            cell.titlelbl.text = fareTitleArray[indexPath.row]
+            
+            
+            let data = faredata[indexPath.row]
+            cell.faredata = data
+            cell.titlelbl.text = data.fare_heading
+            cell.faretypelbl.text = data.fare_heading
+            cell.handbaglbl.text = data.hand_bag
+            cell.cancellationlbl.text = data.cancellation
+            cell.datachangelbl.text = data.date_change
+            cell.baggagelbl.text = data.include_bag
+            cell.amountlbl.text = data.fare_price
+            cell.cancellationlbl.textColor = cell.cancellationlbl.text == "NonRefundable" ? UIColor.Buttoncolor : UIColor.ApplabelColor
+            
             
             if indexPath.row == 0 {
                 
                 // Select the first row initially
                 let indexPath = IndexPath(row: 0, section: 0)
                 selectFareTV.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-                
-                
                 cell.img.image = UIImage(named: "rselect")?.withRenderingMode(.alwaysOriginal).withTintColor(.Buttoncolor)
             }
+            
             
             c = cell
             
@@ -88,6 +105,7 @@ extension SelectFareTVCell:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? AddFareInfoTVCell {
             cell.img.image = UIImage(named: "rselect")?.withRenderingMode(.alwaysOriginal).withTintColor(.Buttoncolor)
+            delegate?.didTapOnSelectedFare(cell: cell)
         }
     }
     

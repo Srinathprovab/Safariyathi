@@ -8,7 +8,8 @@
 import UIKit
 import MaterialComponents
 
-class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate, SearchHotelTVCellDelegate, HotelImagesTVCellDelegate, RoomsTVcellDelegate, BookingHotelDetailsTVCellDelegate, AddDeatilsOfGuestTVCellDelegate, MainRoomTVCellDelegate, ButtonTVCellDelegate {
+class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate, SearchHotelTVCellDelegate, HotelImagesTVCellDelegate, RoomsTVcellDelegate, BookingHotelDetailsTVCellDelegate, AddDeatilsOfGuestTVCellDelegate, MainRoomTVCellDelegate, ButtonTVCellDelegate, SelectFareTVCellDelegate {
+    
    
    
     @IBOutlet weak var commonScrollView: UITableView!
@@ -149,6 +150,8 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnRoomsBtn(cell: RoomsTVcell) {}
     func didTapOnHotelsDetailsBtn(cell: RoomsTVcell) {}
     func didTapOnAmenitiesBtn(cell: RoomsTVcell) {}
+    func didTapOnSelectedFare(cell: AddFareInfoTVCell) {}
+    
 
 }
 
@@ -283,6 +286,7 @@ extension BaseTableVC: UITableViewDataSource {
                 
             case .SelectFareTVCell:
                 let cell: SelectFareTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
                 commonCell = cell
                 
                 

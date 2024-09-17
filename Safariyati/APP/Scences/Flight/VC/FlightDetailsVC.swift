@@ -8,7 +8,7 @@
 import UIKit
 
 class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate {
-   
+    
     
     
     @IBOutlet weak var tabsHolderView: UIView!
@@ -30,7 +30,15 @@ class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate {
     var payload = [String:Any]()
     var flightdetails = [[FlightDetails]]()
     var Baggagedetails = [Baggage_details]()
-   
+    
+    
+    deinit {
+        flightdetails.removeAll()
+        Baggagedetails.removeAll()
+        cancelationcharges = nil
+        changecharges = nil
+        bagdata.removeAll()
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +52,7 @@ class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate {
         // Do any additional setup after loading the view.
         setupUI()
         
-    fdvm = FlightDetailsVM(self)
+        fdvm = FlightDetailsVM(self)
     }
     
     func setupUI() {
@@ -55,14 +63,14 @@ class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate {
         baggageInoBtn.layer.cornerRadius = 4
         exchangeBtn.layer.cornerRadius = 4
         
-       
+        
         
         
         commonTableView.registerTVCells(["AddFlightltineraryTVCell",
                                          "BaggageTVCell",
                                          "ExchangeOrRefundTVCell",
                                          "NoteTVCell"])
-      
+        
         
     }
     
@@ -132,6 +140,7 @@ class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate {
     }
     
     func gotoBookingDetailsVC() {
+        callapibool = true
         guard let vc = BookingDetailsVC.newInstance.self else {return}
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
@@ -145,7 +154,7 @@ extension FlightDetailsVC {
     func callGetFlightDetailsAPI(){
         payload.removeAll()
         
-    
+        
         payload["search_id"] = selectedsearch_id
         payload["selectedResultindex"] = selectedselectedResultindex
         payload["user_id"] = defaults.string(forKey: UserDefaultsKeys.userid) ?? "0"
@@ -155,12 +164,18 @@ extension FlightDetailsVC {
     }
     
     func flightDetailsRespons(response: FlightDetailsModel) {
+        flightdetails.removeAll()
+        Baggagedetails.removeAll()
+        cancelationcharges = nil
+        changecharges = nil
+        bagdata.removeAll()
         
         flightdetails = response.flightDetails ?? [[]]
         Baggagedetails = response.baggage_details ?? []
         kwdlbl.text = "\(response.priceDetails?.api_currency ?? "") \(response.priceDetails?.grand_total ?? "")"
         cancelationcharges = response.cancellation
         changecharges = response.changecharges
+        bagdata = response.bag_data ?? []
         
         
         DispatchQueue.main.async {
@@ -173,7 +188,7 @@ extension FlightDetailsVC {
         tablerow.removeAll()
         
         
-
+        
         for (_,value) in flightdetails.enumerated() {
             
             tablerow.append(TableRow(moreData: value,
@@ -191,11 +206,16 @@ extension FlightDetailsVC {
         tablerow.removeAll()
         
         
-        Baggagedetails.forEach { i in
+        //        Baggagedetails.forEach { i in
+        //            tablerow.append(TableRow(moreData: i,
+        //                                     cellType: .BaggageTVCell))
+        //        }
+        
+        bagdata.forEach { i in
             tablerow.append(TableRow(moreData: i,
                                      cellType: .BaggageTVCell))
         }
-       
+        
         
         
         
@@ -217,11 +237,11 @@ extension FlightDetailsVC {
                                  key: "change",
                                  cellType: .ExchangeOrRefundTVCell))
         
-     //   tablerow.append(TableRow(title:"AHT Charges :",
-      //                           cellType: .ExchangeOrRefundTVCell))
+        //   tablerow.append(TableRow(title:"AHT Charges :",
+        //                           cellType: .ExchangeOrRefundTVCell))
         
         
-        tablerow.append(TableRow(cellType: .NoteTVCell))
+        // tablerow.append(TableRow(cellType: .NoteTVCell))
         
         
         

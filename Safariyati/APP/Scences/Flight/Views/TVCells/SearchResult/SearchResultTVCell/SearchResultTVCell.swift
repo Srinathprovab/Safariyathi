@@ -23,8 +23,10 @@ class SearchResultTVCell: TableViewCell {
     @IBOutlet weak var refundablebottomView: UIView!
     
     
+    var selectedaccesskey = String()
     var selectedresult = String()
     var bookingsource = String()
+    var bookingsourcekey = String()
     var newsimilarList = [[J_flight_list]]()
     var jflightlist :J_flight_list?
     var flightlist = [Summary]()
@@ -47,8 +49,8 @@ class SearchResultTVCell: TableViewCell {
         flightlist = jflightlist?.flight_details?.summary ?? []
         selectedresult = jflightlist?.selectedResult ?? ""
         bookingsource = jflightlist?.booking_source_key ?? ""
-
-        
+        selectedaccesskey = jflightlist?.access_key ?? ""
+        bookingsourcekey = jflightlist?.booking_source ?? ""
         
        //
         

@@ -20,6 +20,7 @@ class BaggageTVCell: TableViewCell {
     var childcount = String()
     var infantcount = String()
     var baggageDetaild : Baggage_details?
+    var bagdata : Bag_data?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,11 +37,13 @@ class BaggageTVCell: TableViewCell {
     override func updateUI() {
         
        
-        baggageDetaild = cellInfo?.moreData as? Baggage_details
+       // baggageDetaild = cellInfo?.moreData as? Baggage_details
+        bagdata = cellInfo?.moreData as? Bag_data
         
         adultcount = defaults.string(forKey: UserDefaultsKeys.adultCount) ?? "1"
         childcount = defaults.string(forKey: UserDefaultsKeys.childCount) ?? "0"
         infantcount = defaults.string(forKey: UserDefaultsKeys.infantsCount) ?? "0"
+        adultCheckdinlbl.text = "For Adult - \(bagdata?.aDT_BAG ?? "")"
         childCheckdinlbl.isHidden = true
         infantCheckdinlbl.isHidden = true
         
@@ -50,17 +53,21 @@ class BaggageTVCell: TableViewCell {
             infantCheckdinlbl.isHidden = true
         }else if adultcount == "1" && childcount == "1" && infantcount == "0" {
             childCheckdinlbl.isHidden = false
+            childCheckdinlbl.text = "For Child - \(bagdata?.cNN_BAG ?? "")"
             infantCheckdinlbl.isHidden = true
         }else if adultcount == "1" && childcount == "0" && infantcount == "1" {
             childCheckdinlbl.isHidden = true
             infantCheckdinlbl.isHidden = false
+            infantCheckdinlbl.text = "For Infant - \(bagdata?.iNF_BAG ?? "")"
         }else {
             childCheckdinlbl.isHidden = false
             infantCheckdinlbl.isHidden = false
+            childCheckdinlbl.text = "For Child - \(bagdata?.cNN_BAG ?? "")"
+            infantCheckdinlbl.text = "For Infant - \(bagdata?.iNF_BAG ?? "")"
         }
         
-        titlelbl.text = "\(baggageDetaild?.origin_loc ?? "") - \(baggageDetaild?.destination_loc ?? "")"
-        cabinBaggagelbl.text = "Cabin Baggage- \(baggageDetaild?.cabin_baggage ?? "")"
+        titlelbl.text = "\(bagdata?.origin ?? "") - \(bagdata?.destination ?? "")"
+        cabinBaggagelbl.text = "Cabin Baggage - 7 KG"
         
     }
     

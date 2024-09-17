@@ -7,7 +7,10 @@
 
 import UIKit
 
-class BookingDetailsVC: BaseTableVC {
+class BookingDetailsVC: BaseTableVC, BookingDetailsVMDelegate {
+   
+    
+    @IBOutlet weak var holderview: UIView!
     
     static var newInstance: BookingDetailsVC? {
         let storyboard = UIStoryboard(name: Storyboard.Flights.name,
@@ -16,13 +19,25 @@ class BookingDetailsVC: BaseTableVC {
         return vc
     }
     
+    
+    var payload = [String:Any]()
     var tablerow = [TableRow]()
+    var bdvm:BookingDetailsVM?
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        addObserver()
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setupUI()
+        
+        bdvm = BookingDetailsVM(self)
     }
     
     
@@ -43,6 +58,7 @@ class BookingDetailsVC: BaseTableVC {
     
     
     @IBAction func didTapOnCloseBtnAction(_ sender: Any) {
+        callapibool = false
         dismiss(animated: true)
     }
     
@@ -63,7 +79,28 @@ class BookingDetailsVC: BaseTableVC {
 extension BookingDetailsVC {
     
     
+    func callMobilePreBookingAPI() {
+        payload.removeAll()
+        payload["search_id"] = selectedsearch_id
+        payload["selectedResult"] = selectedselectedResultindex
+        payload["booking_source"] = selectedbooking_source
+        payload["user_id"] = defaults.string(forKey: UserDefaultsKeys.userid) ?? "0"
+        
+        bdvm?.CALL_MOBILE_PRE_PROCESS_BOOKING_API(dictParam: payload)
+    }
+    
+    func preprocessBookingDetails(response: BookingDetailsModel) {
+        
+        holderview.isHidden = false
+        DispatchQueue.main.async { [self] in
+            setupTVcells()
+        }
+    }
+    
+    
+    
     func setupUI() {
+        holderview.isHidden = true
         commonTableView.backgroundColor = .WhiteColor
         commonTableView.registerTVCells(["BDFlightDetailsTVCell",
                                          "GuestRegistrationTVCell",
@@ -71,7 +108,7 @@ extension BookingDetailsVC {
                                          "FareSummaryTVCell",
                                          "TermsAndPrivacyCheckBoxTVCell", "ContactInformationTVCell"])
         
-        setupTVcells()
+       
     }
     
     
@@ -94,6 +131,61 @@ extension BookingDetailsVC {
         
         commonTVData = tablerow
         commonTableView.reloadData()
+    }
+    
+    
+}
+
+
+
+extension BookingDetailsVC  {
+    
+    
+    func addObserver() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(nointernet), name: Notification.Name("offline"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resultnil), name: NSNotification.Name("resultnil"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(nointrnetreload), name: Notification.Name("nointrnetreload"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reload"), object: nil)
+        
+        if callapibool == true {
+            DispatchQueue.main.async {
+                self.callMobilePreBookingAPI()
+            }
+        }
+        
+    }
+    
+    
+    @objc func reload() {
+        DispatchQueue.main.async {[self] in
+            commonTableView.reloadData()
+        }
+    }
+    
+    @objc func nointrnetreload() {
+        
+        DispatchQueue.main.async {
+            self.callMobilePreBookingAPI()
+        }
+    }
+    
+    //MARK: - resultnil
+    @objc func resultnil() {
+        guard let vc = NoInternetConnectionVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.key = "noresult"
+        self.present(vc, animated: true)
+    }
+    
+    
+    //MARK: - nointernet
+    @objc func nointernet() {
+        
+        guard let vc = NoInternetConnectionVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.key = "nointernet"
+        self.present(vc, animated: true)
     }
     
     

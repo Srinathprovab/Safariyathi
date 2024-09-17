@@ -70,6 +70,8 @@ class SearchResultVC: BaseTableVC, FlightSearchVMDelegate {
     
     //MARK: - SearchResultTVCell Delegate Methods
     override func didTapOnSelectFareBtnAction(cell: SearchResultTVCell) {
+        selectedbooking_source_key = cell.bookingsourcekey
+        selected_access_key = cell.selectedaccesskey
         gotoSelectFareVC()
     }
     
@@ -97,6 +99,7 @@ class SearchResultVC: BaseTableVC, FlightSearchVMDelegate {
     }
     
     func gotoSelectFareVC() {
+        callapibool = true
         guard let vc = SelectFareVC.newInstance.self else {return}
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
@@ -214,6 +217,7 @@ extension SearchResultVC {
     
     func appendFilterValues(list:[[J_flight_list]]) {
         
+        basicloderBool = true
         holderView.isHidden = false
         hideLoderScreen()
         

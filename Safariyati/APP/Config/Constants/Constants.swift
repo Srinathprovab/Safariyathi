@@ -41,7 +41,7 @@ var key = ""
 let screenHeight = UIScreen.main.bounds.size.height
 //var data : Data?
 var loderBool = false
-var basicloderBool = false
+var basicloderBool = true
 var keyStr = String()
 var dateSelectKey = ""
 
@@ -58,6 +58,10 @@ var callapibool = false
 var selectedsearch_id = String()
 var selectedselectedResultindex = String()
 var selectedbooking_source = String()
+var selectedbooking_source_key = String()
+var selected_access_key = String()
+
+
 // hotel
 
 var imagesArray = ["hotelBanner", "hotelBanner", "hotelBanner", "hotelBanner", "hotelBanner", "hotelBanner"]
@@ -81,6 +85,9 @@ var connectingAirportA = [String]()
 var flightiputspayload = [String:Any]()
 var cancelationcharges :Cancellation?
 var changecharges : Changecharges?
+var bagdata = [Bag_data]()
+var faredata = [SelectFareData]()
+var selectedfaredata :SelectFareData?
 
 /* URL endpoints */
 struct ApiEndpoints {
@@ -91,6 +98,9 @@ struct ApiEndpoints {
     static let general_mobile_pre_flight_search = "general/mobile_pre_flight_search"
     static let general_search_flight = "general/search_flight"
     static let flight_getFlightDetails = "flight/getFlightDetails"
+    static let flight_get_fare_family = "flight/get_fare_family"
+    static let flight_mobile_pre_process_booking = "flight/mobile_pre_process_booking"
+    
     
 }
 

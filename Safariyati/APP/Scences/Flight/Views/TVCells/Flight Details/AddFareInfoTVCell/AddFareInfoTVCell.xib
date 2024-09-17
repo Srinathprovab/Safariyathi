@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -632,6 +633,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="amountlbl" destination="gn7-gW-M3L" id="Ihf-8K-wZc"/>
+                <outlet property="baggagelbl" destination="q37-xH-cnW" id="y8e-3L-hme"/>
+                <outlet property="cancellationlbl" destination="abm-C6-1iq" id="SRX-aX-Sxe"/>
+                <outlet property="datachangelbl" destination="aoJ-JE-cO9" id="mls-DE-Syr"/>
+                <outlet property="faretypelbl" destination="Sgs-Lq-9ms" id="IIS-Ev-qv4"/>
+                <outlet property="handbaglbl" destination="iCf-Ts-d9i" id="6sc-DJ-OO3"/>
                 <outlet property="img" destination="998-J4-lgf" id="gYA-s4-gQ0"/>
                 <outlet property="titlelbl" destination="WLm-qo-0g2" id="h3X-UH-0HM"/>
             </connections>
@@ -647,7 +654,7 @@
         <image name="fare6" width="16" height="16"/>
         <image name="runselect" width="20" height="20"/>
         <namedColor name="BorderColor">
-            <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.90196078431372551" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Buttoncolor">
             <color red="0.87800002098083496" green="0.078000001609325409" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
