@@ -13,7 +13,7 @@ class CabinClassTVCell: TableViewCell {
     @IBOutlet weak var cabinclassCV: UICollectionView!
     
     
-    var classesArray = ["Economy","Business","Frist","Premium Economy"]
+    var classesArray = ["Economy","Premium Economy","Business","Frist"]
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

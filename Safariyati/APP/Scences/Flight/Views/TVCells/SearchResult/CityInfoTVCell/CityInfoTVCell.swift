@@ -15,6 +15,7 @@ class CityInfoTVCell: TableViewCell {
     @IBOutlet weak var codelbl: UILabel!
     
     
+    var airportname = String()
     var fromcity = String()
     var id = String()
     var cityname = String()
@@ -41,6 +42,7 @@ class CityInfoTVCell: TableViewCell {
         codelbl.text = list?.code ?? ""
         id = list?.id ?? ""
         cityname = list?.city ?? "''"
+        airportname = "\(list?.name ?? "")"
     }
     
     

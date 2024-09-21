@@ -108,11 +108,13 @@ extension SelectCityVC {
                     defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.fromCity)
                     defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.fromcityname)
                     defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.fromcitynamewithcode)
+                    defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.fromairportname)
                 }else {
                     defaults.setValue(cell.id, forKey: UserDefaultsKeys.tolocid)
                     defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.toCity)
                     defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.tocityname)
                     defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.tocitynamewithcode)
+                    defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.toairportname)
                 }
             }else {
                 if titlelbl.text == "FROM" {
@@ -120,11 +122,13 @@ extension SelectCityVC {
                     defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.fromCity)
                     defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.fromcityname)
                     defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.fromcitynamewithcode)
+                    defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.fromairportname)
                 }else {
                     defaults.setValue(cell.id, forKey: UserDefaultsKeys.tolocid)
                     defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.toCity)
                     defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.tocityname)
                     defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.tocitynamewithcode)
+                    defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.toairportname)
                 }
             }
             
@@ -158,7 +162,7 @@ extension SelectCityVC {
         
     }
     
-
+    
     
     func callGetAirportCodeListAPI(term:String) {
         payload.removeAll()
@@ -169,7 +173,8 @@ extension SelectCityVC {
     func ShowCityList(response: [AirportCodeListModel]) {
         cityList.removeAll()
         cityList = response
-       
+        
+        print(response)
         
         DispatchQueue.main.async {
             self.setupTV(list: self.cityList)

@@ -9,14 +9,19 @@ import UIKit
 
 class BestFlightCVCell: UICollectionViewCell {
     
+    @IBOutlet weak var holderview: UIView!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var titlelbl: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        contentView.backgroundColor = HexColor("E9F8FF")
+       
+        holderview.layer.cornerRadius = 10
+        holderview.clipsToBounds = true
         img.layer.cornerRadius = 10
+        img.clipsToBounds = true
+        setuplabels(lbl: titlelbl, text: "", textcolor: .WhiteColor, font: .InterBold(size: 16), align: .center)
     }
 
 }

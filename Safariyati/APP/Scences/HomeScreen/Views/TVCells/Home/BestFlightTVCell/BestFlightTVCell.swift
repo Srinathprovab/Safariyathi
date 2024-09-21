@@ -10,7 +10,7 @@ import UIKit
 class BestFlightTVCell: TableViewCell {
     
     
-    
+    @IBOutlet weak var titlelbl: UILabel!
     @IBOutlet weak var bestFlightsCV: UICollectionView!
     
     
@@ -38,6 +38,7 @@ class BestFlightTVCell: TableViewCell {
     
     
     func setupUI(){
+        setuplabels(lbl: titlelbl, text: "Recommended Best Flight", textcolor: .ApplabelColor, font: .InterBold(size: 16), align: .center)
         setupCV()
     }
     
@@ -75,7 +76,7 @@ extension BestFlightTVCell:UICollectionViewDelegate,UICollectionViewDataSource, 
         customPageControl.activeImage = UIImage(named: "dot1") // Provide your active dot image
         customPageControl.inactiveImage = UIImage(named: "dot2") // Provide your inactive dot image
         
-        customPageControl.numberOfPages = 10 // Update with your actual number of items
+        customPageControl.numberOfPages = flighttopdestinations.count // Update with your actual number of items
         customPageControl.currentPage = 0
         customPageControl.translatesAutoresizingMaskIntoConstraints = false
         addSubview(customPageControl)
@@ -95,13 +96,31 @@ extension BestFlightTVCell:UICollectionViewDelegate,UICollectionViewDataSource, 
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return flighttopdestinations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var commonCell = UICollectionViewCell()
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BestFlightCVCell {
             
+            let data = flighttopdestinations[indexPath.row]
+            
+            cell.img.sd_setImage(with: URL(string: data.image ?? ""), placeholderImage:UIImage(contentsOfFile:"placeholder.png"), options: [.retryFailed], completed: { (image, error, cacheType, imageURL) in
+                if let error = error {
+                    // Handle error loading image
+                   // print("Error loading image: \(error.localizedDescription)")
+                    // Check if the error is due to a 404 Not Found response
+                    if (error as NSError).code == NSURLErrorBadServerResponse {
+                        // Set placeholder image for 404 error
+                        cell.img.image = UIImage(named: "noimage")
+                    } else {
+                        // Set placeholder image for other errors
+                        cell.img.image = UIImage(named: "noimage")
+                    }
+                }
+            })
+            
+            cell.titlelbl.text = "\(data.from_city_name ?? "")(\(data.from_city_loc ?? "")) - \(data.to_city_name ?? "")(\(data.to_city_loc ?? ""))"
             
             
             commonCell = cell
@@ -123,16 +142,21 @@ extension BestFlightTVCell {
     }
     
     @objc func scrollToNextPage() {
+         let totalItems = flighttopdestinations.count 
+
+        
         currentPage += 1
-        if currentPage == 10 { // Update with your actual number of items
+        if currentPage >= totalItems {
             currentPage = 0
         }
+        
         let indexPath = IndexPath(item: currentPage, section: 0)
         bestFlightsCV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         
-        // Use customPageControl instead of pageControl
-        customPageControl?.currentPage = currentPage // Update page control's current page
+        // Use customPageControl to update the current page
+        customPageControl?.currentPage = currentPage
     }
+
     
     
     

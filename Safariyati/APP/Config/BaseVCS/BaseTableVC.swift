@@ -8,9 +8,9 @@
 import UIKit
 import MaterialComponents
 
-class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate, SearchHotelTVCellDelegate, HotelImagesTVCellDelegate, RoomsTVcellDelegate, BookingHotelDetailsTVCellDelegate, AddDeatilsOfGuestTVCellDelegate, MainRoomTVCellDelegate, ButtonTVCellDelegate, SelectFareTVCellDelegate {
-    
+class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate, SearchHotelTVCellDelegate, HotelImagesTVCellDelegate, RoomsTVcellDelegate, BookingHotelDetailsTVCellDelegate, AddDeatilsOfGuestTVCellDelegate, MainRoomTVCellDelegate, ButtonTVCellDelegate, SelectFareTVCellDelegate, AcceptTermsAndConditionTVCellDelegate, AddDeatilsOfTravellerTVCellDelegate, ContactInformationTVCellDelegate {
    
+    
    
     @IBOutlet weak var commonScrollView: UITableView!
     @IBOutlet weak var commonTableView: UITableView!
@@ -152,6 +152,20 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnAmenitiesBtn(cell: RoomsTVcell) {}
     func didTapOnSelectedFare(cell: AddFareInfoTVCell) {}
     
+    func didTapOnExpandAdultViewbtnAction(cell: AddDeatilsOfTravellerTVCell) {}
+    func didTapOnTitleBtnAction(cell: AddDeatilsOfTravellerTVCell) {}
+    func donedatePicker(cell: AddDeatilsOfTravellerTVCell) {}
+        func cancelDatePicker(cell: AddDeatilsOfTravellerTVCell) {}
+    func didTapOnSelectIssuingCountryBtn(cell: AddDeatilsOfTravellerTVCell) {}
+    func didTapOnFlyerProgramBtnAction(cell: AddDeatilsOfTravellerTVCell) {}
+    func didTapOnTAndCAction(cell: AcceptTermsAndConditionTVCell) {}
+    func didTapOnPrivacyPolicyAction(cell: AcceptTermsAndConditionTVCell) {}
+    func didTapOnCountryCodeBtn(cell: ContactInformationTVCell) {}
+    func editingTextField(tf: UITextField) {}
+    func didTapOnDropDownBtn(cell: ContactInformationTVCell) {}
+    
+    
+   
 
 }
 
@@ -419,7 +433,7 @@ extension BaseTableVC: UITableViewDataSource {
                 
             case .ContactInformationTVCell:
                 let cell: ContactInformationTVCell = commonTV.dequeTVCell(indexPath: indexPath)
-//                cell.delegate = self
+                cell.delegate = self
                 commonCell = cell
                 
             case .NewHotelPriceSummeryTVCell:
@@ -439,10 +453,33 @@ extension BaseTableVC: UITableViewDataSource {
                 commonCell = cell
                 
                 
+            case .AcceptTermsAndConditionTVCell:
+                let cell: AcceptTermsAndConditionTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+            case .AddDeatilsOfTravellerTVCell:
+                let cell: AddDeatilsOfTravellerTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
                 
                 
                 
-        
+            case .FareFamilyTVCell:
+                let cell: FareFamilyTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .FareBaggageTVCells:
+                let cell: FareBaggageTVCells = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .FareBreakdownTVCell:
+                let cell: FareBreakdownTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+       
             default:
                 print("handle this case in getCurrentCellAt")
             }
@@ -543,7 +580,7 @@ extension BaseTableVC {
         // Set the frame or constraints for the child view controller's view
         loaderVC?.view.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
         
-        loaderVC?.dotsview.startAnimation()
+        
         // Add the child view controller's view to the parent view controller's view
         view.addSubview(loaderVC!.view)
         
@@ -554,7 +591,7 @@ extension BaseTableVC {
     // Function to remove the child view controller
     func removeLoader() {
        // loaderVC?.stopGifAnimation()
-        loaderVC?.dotsview.stopAnimating()
+        loaderVC?.stopGifAnimation()
         loaderVC?.willMove(toParent: nil)
         loaderVC?.view.removeFromSuperview()
         loaderVC?.removeFromParent()

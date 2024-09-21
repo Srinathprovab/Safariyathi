@@ -47,7 +47,8 @@ class SearchFlightsVC: BaseTableVC {
         
         
         
-        if let journeyType = defaults.string(forKey: UserDefaultsKeys.journeyType), journeyType == "oneway" {
+         let journeyType = defaults.string(forKey: UserDefaultsKeys.journeyType)
+             if journeyType == "oneway" {
             setupOneWay()
         }else {
             setupRoundTrip()

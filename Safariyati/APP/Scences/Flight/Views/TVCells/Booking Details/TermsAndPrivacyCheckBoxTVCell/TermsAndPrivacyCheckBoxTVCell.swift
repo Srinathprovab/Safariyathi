@@ -39,8 +39,10 @@ class TermsAndPrivacyCheckBoxTVCell: TableViewCell {
         termsBool.toggle()
         if termsBool {
             checkBoxImg.image = UIImage(named: "checkbox")?.withRenderingMode(.alwaysOriginal).withTintColor(.Buttoncolor)
+            checkTermsAndCondationStatus = true
         }else {
             checkBoxImg.image = UIImage(named: "uncheck")?.withRenderingMode(.alwaysOriginal)
+            checkTermsAndCondationStatus = false
         }
     }
     

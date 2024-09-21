@@ -25,7 +25,7 @@ struct BookingDetailsModel : Codable {
     //    let session_expiry_details : Session_expiry_details?
     //    let app_supported_currency : App_supported_currency?
     //    let app_supported_currency_usd : App_supported_currency_usd?
-    let converted_currency_rate : Int?
+  //  let converted_currency_rate : Int?
     let flight_terms_cancellation_policy : String?
     let total_price : Double?
     let reward_usable : Int?
@@ -34,6 +34,8 @@ struct BookingDetailsModel : Codable {
     let reducing_amount : Int?
     //   let safe_search_data : Safe_search_data?
     let frequent_flyers : String?
+    let priceDetails : PriceDetails?
+    
     
     enum CodingKeys: String, CodingKey {
         
@@ -52,7 +54,7 @@ struct BookingDetailsModel : Codable {
         //        case session_expiry_details = "session_expiry_details"
         //        case app_supported_currency = "app_supported_currency"
         //        case app_supported_currency_usd = "app_supported_currency_usd"
-        case converted_currency_rate = "converted_currency_rate"
+     //   case converted_currency_rate = "converted_currency_rate"
         case flight_terms_cancellation_policy = "flight_terms_cancellation_policy"
         case total_price = "total_price"
         case reward_usable = "reward_usable"
@@ -61,6 +63,7 @@ struct BookingDetailsModel : Codable {
         case reducing_amount = "reducing_amount"
         //   case safe_search_data = "safe_search_data"
         case frequent_flyers = "frequent_flyers"
+        case priceDetails = "priceDetails"
     }
     
     init(from decoder: Decoder) throws {
@@ -80,7 +83,7 @@ struct BookingDetailsModel : Codable {
         //        session_expiry_details = try values.decodeIfPresent(Session_expiry_details.self, forKey: .session_expiry_details)
         //        app_supported_currency = try values.decodeIfPresent(App_supported_currency.self, forKey: .app_supported_currency)
         //        app_supported_currency_usd = try values.decodeIfPresent(App_supported_currency_usd.self, forKey: .app_supported_currency_usd)
-        converted_currency_rate = try values.decodeIfPresent(Int.self, forKey: .converted_currency_rate)
+    //    converted_currency_rate = try values.decodeIfPresent(Int.self, forKey: .converted_currency_rate)
         flight_terms_cancellation_policy = try values.decodeIfPresent(String.self, forKey: .flight_terms_cancellation_policy)
         total_price = try values.decodeIfPresent(Double.self, forKey: .total_price)
         reward_usable = try values.decodeIfPresent(Int.self, forKey: .reward_usable)
@@ -89,6 +92,7 @@ struct BookingDetailsModel : Codable {
         reducing_amount = try values.decodeIfPresent(Int.self, forKey: .reducing_amount)
     //    safe_search_data = try values.decodeIfPresent(Safe_search_data.self, forKey: .safe_search_data)
         frequent_flyers = try values.decodeIfPresent(String.self, forKey: .frequent_flyers)
+        priceDetails = try values.decodeIfPresent(PriceDetails.self, forKey: .priceDetails)
     }
     
 }

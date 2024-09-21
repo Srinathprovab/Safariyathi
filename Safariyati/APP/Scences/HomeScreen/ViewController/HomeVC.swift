@@ -7,7 +7,15 @@
 
 import UIKit
 
-class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
+class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate, IndexVMDelegate {
+    
+    
+    
+    deinit {
+        flighttopdestinations.removeAll()
+        topdestinationhotel.removeAll()
+        perfectholidays.removeAll()
+    }
     
     static var newInstance: HomeVC? {
         let storyboard = UIStoryboard(name: Storyboard.Main.name,
@@ -16,6 +24,9 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
         return vc
     }
     
+    
+    
+    var vm : IndexVM?
     var tablerow = [TableRow]()
     private var sideMenuViewController: MenuVC!
     private var sideMenuShadowView: UIView!
@@ -30,11 +41,20 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
     var gestureEnabled: Bool = true
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setupUI()
+        addObserver()
+        
+        vm = IndexVM(self)
+        
+        
     }
     
     
@@ -46,7 +66,7 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
         showToast(message: "Currency module not yet implemented")
     }
     override func didTapOnFlightBtnAction(cell: TabselectTVCell) {
-//        showToast(message: "Flight module not yet implemented")
+        //        showToast(message: "Flight module not yet implemented")
         gotoSearchFlightsVC()
     }
     override func didTapOnHotelBtnAction(cell: TabselectTVCell) {
@@ -82,14 +102,37 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate {
 
 
 extension HomeVC {
+    
+    
+    
+    func callIndexapi() {
+        vm?.CALL_INDEX_PAGE_API(dictParam: [:])
+    }
+    
+    func indexPageResponse(response: IndexModel) {
+        
+        flighttopdestinations.removeAll()
+        topdestinationhotel.removeAll()
+        perfectholidays.removeAll()
+        
+        flighttopdestinations = response.flight_top_destinations ?? []
+        topdestinationhotel = response.top_destination_hotel ?? []
+        perfectholidays = response.perfect_holidays ?? []
+        
+        DispatchQueue.main.async { [self] in
+            setupTV()
+        }
+    }
+    
     func setupUI() {
         
         setupMenu()
         commonTableView.backgroundColor = HexColor("FFFFFF")
         commonTableView.registerTVCells(["TabselectTVCell",
                                          "BestFlightTVCell",
-                                         "TopDestinationsTVCell","EmptyTVCell"])
-        setupTV()
+                                         "TopDestinationsTVCell",
+                                         "EmptyTVCell"])
+        
     }
     
     func setupTV() {
@@ -97,8 +140,10 @@ extension HomeVC {
         
         
         tablerow.append((TableRow(cellType:.TabselectTVCell)))
+        tablerow.append((TableRow(height: 30, cellType:.EmptyTVCell)))
         tablerow.append((TableRow(cellType:.BestFlightTVCell)))
-        tablerow.append((TableRow(cellType:.TopDestinationsTVCell)))
+        tablerow.append((TableRow(title:"Top Destinations",key:"hotel",cellType:.TopDestinationsTVCell)))
+        tablerow.append((TableRow(title:"Top Holidays",key:"holidays",cellType:.TopDestinationsTVCell)))
         tablerow.append((TableRow(height: 30, cellType:.EmptyTVCell)))
         
         commonTVData = tablerow
@@ -315,3 +360,58 @@ extension HomeVC: UIGestureRecognizerDelegate {
 
 
 
+
+
+extension HomeVC  {
+    
+    
+    func addObserver() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(nointernet), name: Notification.Name("offline"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resultnil), name: NSNotification.Name("resultnil"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(nointrnetreload), name: Notification.Name("nointrnetreload"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reload"), object: nil)
+        
+        
+        
+        DispatchQueue.main.async {
+            self.callIndexapi()
+        }
+        
+        
+    }
+    
+    
+    @objc func reload() {
+        DispatchQueue.main.async {[self] in
+            commonTableView.reloadData()
+        }
+    }
+    
+    @objc func nointrnetreload() {
+        
+        DispatchQueue.main.async {
+            self.callIndexapi()
+        }
+    }
+    
+    //MARK: - resultnil
+    @objc func resultnil() {
+        guard let vc = NoInternetConnectionVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.key = "noresult"
+        self.present(vc, animated: true)
+    }
+    
+    
+    //MARK: - nointernet
+    @objc func nointernet() {
+        
+        guard let vc = NoInternetConnectionVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.key = "nointernet"
+        self.present(vc, animated: true)
+    }
+    
+    
+}

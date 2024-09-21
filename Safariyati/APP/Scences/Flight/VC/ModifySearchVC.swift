@@ -49,6 +49,7 @@ class ModifySearchVC: BaseTableVC {
     }
     
     @objc func didTapOnBackButtonAction() {
+        callapibool = false
         dismiss(animated: true, completion: nil)
     }
     

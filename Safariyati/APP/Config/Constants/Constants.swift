@@ -54,6 +54,9 @@ var regnowloginBtntap = "reg"
 var callapibool = false
 
 
+var flighttopdestinations = [Flight_top_destinations]()
+var topdestinationhotel = [Top_destination_hotel]()
+var perfectholidays = [Perfect_holidays]()
 
 var selectedsearch_id = String()
 var selectedselectedResultindex = String()
@@ -61,6 +64,15 @@ var selectedbooking_source = String()
 var selectedbooking_source_key = String()
 var selected_access_key = String()
 
+var ageCategory: AgeCategory = .adult
+var passportExpireDateBool = false
+var payemail = String()
+var paymobile = String()
+var paymobilecountrycode = String()
+var mobilenoMaxLengthBool = false
+var checkTermsAndCondationStatus = false
+var countrylist = [Country_list]()
+var passengertypeArray = [String]()
 
 // hotel
 
@@ -92,6 +104,7 @@ var selectedfaredata :SelectFareData?
 /* URL endpoints */
 struct ApiEndpoints {
     
+    static let general_home = "general/home"
     static let indexpage = "general/getTopFlightHotelDestination"
     static let ajax_get_airport_code_list = "ajax/get_airport_code_list"
     static let general_get_active_booking_source = "general/get_active_booking_source"
@@ -99,8 +112,9 @@ struct ApiEndpoints {
     static let general_search_flight = "general/search_flight"
     static let flight_getFlightDetails = "flight/getFlightDetails"
     static let flight_get_fare_family = "flight/get_fare_family"
+    static let general_getCountryList_bysearch = "general/getCountryList_bysearch"
     static let flight_mobile_pre_process_booking = "flight/mobile_pre_process_booking"
-    
+    static let flight_mobile_process_passenger_detail = "flight/mobile_process_passenger_detail"
     
 }
 
@@ -168,6 +182,8 @@ struct UserDefaultsKeys {
     static var fcariername = "fcariername"
     static var fcariercode = "fcariercode"
     
+    static var fromairportname = "fromairportname"
+    static var toairportname = "toairportname"
     //ROUND TRIP
     //    static var rlocationcity = "rlocation_city"
     //    static var rfromCity = "rfromCity"

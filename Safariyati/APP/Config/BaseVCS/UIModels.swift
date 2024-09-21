@@ -65,6 +65,17 @@ enum TVCellType {
     case NewHotelPriceSummeryTVCell
     case TotalNoofTravellerTVCell
     case ButtonTVCell
+    case AcceptTermsAndConditionTVCell
+    case AddDeatilsOfTravellerTVCell
+    case FareFamilyTVCell
+    case FareBaggageTVCells
+    case FareBreakdownTVCell
+    
+    
+    
+    
+    
+    
 }
 
 enum CVCellType {

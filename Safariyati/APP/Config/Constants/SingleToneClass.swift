@@ -55,8 +55,10 @@ class MySingleton {
         
         if !UserDefaults.standard.bool(forKey: "ExecuteOnce") {
             
-            defaults.set("KWD", forKey: UserDefaultsKeys.selectedCurrency)
-            defaults.set("KWD", forKey: UserDefaultsKeys.selectedCurrencyType)
+            defaults.set("OMR", forKey: UserDefaultsKeys.selectedCurrency)
+            defaults.set("OMR", forKey: UserDefaultsKeys.selectedCurrencyType)
+            defaults.set("oneway", forKey: UserDefaultsKeys.journeyType)
+            
             
             UserDefaults.standard.set(true, forKey: "ExecuteOnce")
         }
@@ -139,47 +141,69 @@ class MySingleton {
         backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
             self?.endBackgroundTask()
         }
-
+        
         // Reset the totalTime to its initial value (e.g., 60 seconds)
         totalTime = time
-
+        
         // Schedule the timer in the common run loop mode
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         RunLoop.current.add(timer!, forMode: .common)
     }
-
-
+    
+    
     @objc func updateTimer() {
         if totalTime != 0 {
             totalTime -= 1
             delegate?.updateTimer()
-        } else {
+        }
+        
+//        else if totalTime == 60 {
+//            triggerLocalNotification()
+//        }
+        
+        else {
             sessionStop()
             delegate?.timerDidFinish()
             endBackgroundTask()
         }
     }
-
+    
     @objc func sessionStop() {
         if let timer = timer {
             timer.invalidate()
             self.timer = nil
         }
     }
-
+    
     func stopTimer() {
         if let timer = timer {
             timer.invalidate()
             self.timer = nil
         }
     }
-
-
+    
+//     func triggerLocalNotification() {
+//            let content = UNMutableNotificationContent()
+//            content.title = "Time Alert"
+//            content.body = "The timer is about to expire in 60 seconds!"
+//            content.sound = .default
+//
+//            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+//
+//            UNUserNotificationCenter.current().add(request) { error in
+//                if let error = error {
+//                    //print("Error scheduling local notification: \(error)")
+//                }
+//            }
+//        }
+    
+    
     private func endBackgroundTask() {
         guard backgroundTask != .invalid else { return }
         UIApplication.shared.endBackgroundTask(backgroundTask)
         backgroundTask = .invalid
     }
+    
     
     
     func setAttributedTextnew(str1:String,str2:String,lbl:UILabel,str1font:UIFont,str2font:UIFont,str1Color:UIColor,str2Color:UIColor)  {

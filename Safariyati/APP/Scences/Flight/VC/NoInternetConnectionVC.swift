@@ -39,16 +39,16 @@ class NoInternetConnectionVC: UIViewController {
     
     func noresultSetup(){
         wifiImg.image = UIImage(named: "oops")
-        setupLabels(lbl: titlelbl, text: "It looks like no results were found for your search criteria.", textcolor: .TitleColor, font: .InterMedium(size: 16))
-        setupLabels(lbl: subTitlelbl, text: "Please change your search details and try again. \nThank you", textcolor: .TitleColor, font: .InterLight(size: 14))
-        setupLabels(lbl: btnlbl, text: " Search Again", textcolor: .WhiteColor, font: .InterBold(size: 16))
+        setupLabels(lbl: titlelbl, text: "Sorry! No result Found", textcolor: .ApplabelColor, font: .InterMedium(size: 16))
+        setupLabels(lbl: subTitlelbl, text: "We’re sorry you were looking for. Please try again", textcolor: .subtitle1, font: .InterLight(size: 14))
+        setupLabels(lbl: btnlbl, text: "Try Again", textcolor: .ApplabelColor, font: .InterBold(size: 16))
     }
     
     func noSeatAvaliableSetup(){
         wifiImg.image = UIImage(named: "oops")
-        setupLabels(lbl: titlelbl, text: "Seat is not available!", textcolor: .TitleColor, font: .InterMedium(size: 16))
-        setupLabels(lbl: subTitlelbl, text: "Please Search Again", textcolor: .TitleColor, font: .InterLight(size: 14))
-        setupLabels(lbl: btnlbl, text: "Search Again", textcolor: .WhiteColor, font: .InterBold(size: 16))
+        setupLabels(lbl: titlelbl, text: "Seat is not available!", textcolor: .ApplabelColor, font: .InterMedium(size: 16))
+        setupLabels(lbl: subTitlelbl, text: "Please Search Again", textcolor: .subtitle1, font: .InterLight(size: 14))
+        setupLabels(lbl: btnlbl, text: "Try Again", textcolor: .ApplabelColor, font: .InterBold(size: 16))
     }
     
     
@@ -64,11 +64,11 @@ class NoInternetConnectionVC: UIViewController {
         wifiImg.image = UIImage(named: "wifi")
         closeImg.image = UIImage(named: "close1")
         
-        setupLabels(lbl: titlelbl, text: "No internet connection", textcolor: .TitleColor, font: .InterMedium(size: 16))
-        setupLabels(lbl: subTitlelbl, text: "Please Check your internet connection", textcolor: .TitleColor, font: .InterLight(size: 14))
-        setupLabels(lbl: btnlbl, text: "Try Again", textcolor: .WhiteColor, font: .poppinsSemiBold(size: 18))
+        setupLabels(lbl: titlelbl, text: "No internet connection!", textcolor: .ApplabelColor, font: .InterMedium(size: 16))
+        setupLabels(lbl: subTitlelbl, text: "Please check your network connection.", textcolor: .subtitle1, font: .InterLight(size: 14))
+        setupLabels(lbl: btnlbl, text: "Try Again", textcolor: .ApplabelColor, font: .poppinsSemiBold(size: 18))
         tryAgainBtn.setTitle("", for: .normal)
-        setupViews(v: btnView, radius: 4, color: .Buttoncolor)
+        setupViews(v: btnView, radius: 4, color: HexColor("#F2F3F6"))
     }
     
     func setupLabels(lbl:UILabel,text:String,textcolor:UIColor,font:UIFont) {
@@ -83,7 +83,7 @@ class NoInternetConnectionVC: UIViewController {
         v.layer.cornerRadius = radius
         v.clipsToBounds = true
         v.layer.borderWidth = 1
-        v.layer.borderColor = UIColor.clear.cgColor
+        v.layer.borderColor = UIColor.BorderColor.cgColor
     }
     
     @IBAction func didTapOnTryAgainBtn(_ sender: Any) {

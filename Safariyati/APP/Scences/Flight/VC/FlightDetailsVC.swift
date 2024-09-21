@@ -7,10 +7,10 @@
 
 import UIKit
 
-class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate {
+class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate, TimerManagerDelegate {
     
     
-    
+    @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var tabsHolderView: UIView!
     @IBOutlet weak var flightItineraryBtn: UIButton!
     @IBOutlet weak var baggageInoBtn: UIButton!
@@ -51,7 +51,7 @@ class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate {
         
         // Do any additional setup after loading the view.
         setupUI()
-        
+        MySingleton.shared.delegate = self
         fdvm = FlightDetailsVM(self)
     }
     
@@ -164,6 +164,7 @@ extension FlightDetailsVC {
     }
     
     func flightDetailsRespons(response: FlightDetailsModel) {
+        holderView.isHidden = false
         flightdetails.removeAll()
         Baggagedetails.removeAll()
         cancelationcharges = nil
@@ -266,6 +267,7 @@ extension FlightDetailsVC  {
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reload"), object: nil)
         
         if callapibool == true {
+            holderView.isHidden = true
             DispatchQueue.main.async {
                 self.callGetFlightDetailsAPI()
             }
@@ -305,5 +307,21 @@ extension FlightDetailsVC  {
         self.present(vc, animated: true)
     }
     
+    
+    //MARK: - updateTimer
+    func updateTimer() {
+        
+    }
+    
+    
+    func timerDidFinish() {
+        gotoPopupScreen()
+    }
+    
+    func gotoPopupScreen() {
+        guard let vc = PopupVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false)
+    }
     
 }

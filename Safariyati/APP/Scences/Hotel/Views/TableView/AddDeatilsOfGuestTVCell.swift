@@ -8,25 +8,25 @@
 import UIKit
 import DropDown
 
-struct Traveler {
-    var mrtitle:String?
-    var gender:String?
-    var firstName: String?
-    var lastName: String?
-    var dob:String?
-    var nationality:String?
-    var passportno:String?
-    var passportIssuingCountry:String?
-    var passportIssuingCountryName:String?
-    var passportExpireDate:String?
-    var frequentFlyrNo:String?
-    var meal:String?
-    var specialAssicintence:String?
-    var passengertype:String?
-    var laedpassenger:String?
-    var middlename:String?
-    
-}
+//struct Traveler {
+//    var mrtitle:String?
+//    var gender:String?
+//    var firstName: String?
+//    var lastName: String?
+//    var dob:String?
+//    var nationality:String?
+//    var passportno:String?
+//    var passportIssuingCountry:String?
+//    var passportIssuingCountryName:String?
+//    var passportExpireDate:String?
+//    var frequentFlyrNo:String?
+//    var meal:String?
+//    var specialAssicintence:String?
+//    var passengertype:String?
+//    var laedpassenger:String?
+//    var middlename:String?
+//    
+//}
 
 
 protocol AddDeatilsOfGuestTVCellDelegate {

@@ -19,7 +19,7 @@ struct Flight_data : Codable {
     //    let taxPrice_Breakdown : String?
     //    let agent_markup_amount : Int?
     //    let admin_markup_amount : Int?
-    //    let refundable : Bool?
+        let refundable : Bool?
     //    let platingCarrier : String?
     //    let fareType : String?
     //    let all_Passenger : String?
@@ -63,7 +63,7 @@ struct Flight_data : Codable {
         //        case taxPrice_Breakdown = "TaxPrice_Breakdown"
         //        case agent_markup_amount = "agent_markup_amount"
         //        case admin_markup_amount = "admin_markup_amount"
-        //        case refundable = "Refundable"
+                case refundable = "Refundable"
         //        case platingCarrier = "PlatingCarrier"
         //        case fareType = "FareType"
         //        case all_Passenger = "All_Passenger"
@@ -108,7 +108,7 @@ struct Flight_data : Codable {
         //        taxPrice_Breakdown = try values.decodeIfPresent(String.self, forKey: .taxPrice_Breakdown)
         //        agent_markup_amount = try values.decodeIfPresent(Int.self, forKey: .agent_markup_amount)
         //        admin_markup_amount = try values.decodeIfPresent(Int.self, forKey: .admin_markup_amount)
-        //        refundable = try values.decodeIfPresent(Bool.self, forKey: .refundable)
+                refundable = try values.decodeIfPresent(Bool.self, forKey: .refundable)
         //        platingCarrier = try values.decodeIfPresent(String.self, forKey: .platingCarrier)
         //        fareType = try values.decodeIfPresent(String.self, forKey: .fareType)
         //        all_Passenger = try values.decodeIfPresent(String.self, forKey: .all_Passenger)

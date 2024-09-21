@@ -9,6 +9,7 @@ import UIKit
 
 class TopDestinationsTVCell: TableViewCell {
 
+    @IBOutlet weak var titlelbl: UILabel!
     @IBOutlet weak var topcitycv: UICollectionView!
     
     
@@ -30,12 +31,14 @@ class TopDestinationsTVCell: TableViewCell {
     }
     
     override func updateUI() {
+        titlelbl.text = cellInfo?.title ?? ""
         topcitycv.restore()
         
     }
     
     
     func setupUI(){
+        setuplabels(lbl: titlelbl, text: "", textcolor: .ApplabelColor, font: .InterBold(size: 16), align: .center)
         setupCV()
     }
     
@@ -47,7 +50,8 @@ extension TopDestinationsTVCell:UICollectionViewDelegate,UICollectionViewDataSou
     
     func setupCV() {
         let nib = UINib(nibName: "BestFlightCVCell", bundle: nil)
-        topcitycv.register(nib, forCellWithReuseIdentifier: "cell")
+        topcitycv.register(nib, forCellWithReuseIdentifier: "hotel")
+        topcitycv.register(nib, forCellWithReuseIdentifier: "holidays")
         topcitycv.delegate = self
         topcitycv.dataSource = self
         let layout = UICollectionViewFlowLayout()
@@ -93,17 +97,70 @@ extension TopDestinationsTVCell:UICollectionViewDelegate,UICollectionViewDataSou
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if cellInfo?.key == "hotel" {
+            return topdestinationhotel.count
+        }else {
+            return perfectholidays.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var commonCell = UICollectionViewCell()
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BestFlightCVCell {
-            
-            cell.titlelbl.text = "Dubai"
-            
-            commonCell = cell
+        
+        
+        if cellInfo?.key == "hotel" {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hotel", for: indexPath) as? BestFlightCVCell {
+                
+                let data = topdestinationhotel[indexPath.row]
+                
+                cell.img.sd_setImage(with: URL(string: data.image ?? ""), placeholderImage:UIImage(contentsOfFile:"placeholder.png"), options: [.retryFailed], completed: { (image, error, cacheType, imageURL) in
+                    if let error = error {
+                        // Handle error loading image
+                       // print("Error loading image: \(error.localizedDescription)")
+                        // Check if the error is due to a 404 Not Found response
+                        if (error as NSError).code == NSURLErrorBadServerResponse {
+                            // Set placeholder image for 404 error
+                            cell.img.image = UIImage(named: "noimage")
+                        } else {
+                            // Set placeholder image for other errors
+                            cell.img.image = UIImage(named: "noimage")
+                        }
+                    }
+                })
+                
+                cell.titlelbl.text = "\(data.city_name ?? "")"
+                
+                commonCell = cell
+            }
+        }else {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "holidays", for: indexPath) as? BestFlightCVCell {
+                
+                let data = perfectholidays[indexPath.row]
+                
+                cell.img.sd_setImage(with: URL(string: data.image ?? ""), placeholderImage:UIImage(contentsOfFile:"placeholder.png"), options: [.retryFailed], completed: { (image, error, cacheType, imageURL) in
+                    if let error = error {
+                        // Handle error loading image
+                       // print("Error loading image: \(error.localizedDescription)")
+                        // Check if the error is due to a 404 Not Found response
+                        if (error as NSError).code == NSURLErrorBadServerResponse {
+                            // Set placeholder image for 404 error
+                            cell.img.image = UIImage(named: "noimage")
+                        } else {
+                            // Set placeholder image for other errors
+                            cell.img.image = UIImage(named: "noimage")
+                        }
+                    }
+                })
+                
+                cell.titlelbl.text = "\(data.package_name ?? "")"
+                
+                commonCell = cell
+            }
         }
+        
+        
+       
         return commonCell
     }
     

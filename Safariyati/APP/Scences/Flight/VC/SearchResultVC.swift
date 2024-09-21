@@ -7,13 +7,16 @@
 
 import UIKit
 
-class SearchResultVC: BaseTableVC, FlightSearchVMDelegate {
+class SearchResultVC: BaseTableVC, FlightSearchVMDelegate, TimerManagerDelegate {
     
     
     @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var filterSortView: BorderedView!
     @IBOutlet weak var cityslbl: UILabel!
     @IBOutlet weak var dateslbl: UILabel!
+    
+    @IBOutlet weak var sessionlbl: UILabel!
+    @IBOutlet weak var flightsfoundlbl: UILabel!
     
     static var newInstance: SearchResultVC? {
         let storyboard = UIStoryboard(name: Storyboard.Flights.name,
@@ -45,6 +48,7 @@ class SearchResultVC: BaseTableVC, FlightSearchVMDelegate {
         // Do any additional setup after loading the view.
         setupUI()
         
+        MySingleton.shared.delegate = self
         flightsearchVM = FlightSearchVM(self)
     }
     
@@ -71,6 +75,8 @@ class SearchResultVC: BaseTableVC, FlightSearchVMDelegate {
     //MARK: - SearchResultTVCell Delegate Methods
     override func didTapOnSelectFareBtnAction(cell: SearchResultTVCell) {
         selectedbooking_source_key = cell.bookingsourcekey
+        selectedbooking_source = cell.bookingsource
+        selectedselectedResultindex = cell.selectedresult
         selected_access_key = cell.selectedaccesskey
         gotoSelectFareVC()
     }
@@ -78,6 +84,7 @@ class SearchResultVC: BaseTableVC, FlightSearchVMDelegate {
     override func didTapOnFlightDetailsBtnAction(cell: SearchResultTVCell) {
         selectedbooking_source = cell.bookingsource
         selectedselectedResultindex = cell.selectedresult
+        selected_access_key = cell.selectedaccesskey
         gotoFlightDetailsVC()
     }
     
@@ -131,6 +138,8 @@ extension SearchResultVC {
     func setupUI() {
         
         holderView.isHidden = true
+        setuplabels(lbl: sessionlbl, text: "", textcolor: .ApplabelColor, font: .InterMedium(size: 14), align: .left)
+        setuplabels(lbl: flightsfoundlbl, text: "", textcolor: .ApplabelColor, font: .InterMedium(size: 14), align: .right)
         commonTableView.backgroundColor = .WhiteColor
         commonTableView.registerTVCells(["SearchResultTVCell", "EmptyTVCell"])
     }
@@ -189,6 +198,7 @@ extension SearchResultVC {
     
     func flightListResponse(response: FlightListModel) {
         
+       
         selectedsearch_id = response.data?.search_id ?? ""
         
         bookingSourceDataArrayCount -= 1
@@ -220,6 +230,11 @@ extension SearchResultVC {
         basicloderBool = true
         holderView.isHidden = false
         hideLoderScreen()
+        
+        
+        MySingleton.shared.stopTimer()
+        MySingleton.shared.startTimer(time: 1500)
+        
         
         cityslbl.text = "\(defaults.string(forKey: UserDefaultsKeys.fromcityname) ?? "") - \(defaults.string(forKey: UserDefaultsKeys.tocityname) ?? "")"
         let adultcount = defaults.integer(forKey: UserDefaultsKeys.adultCount)
@@ -295,6 +310,14 @@ extension SearchResultVC {
     
     func setupTVcells(list:[[J_flight_list]]) {
         tablerow.removeAll()
+        
+        MySingleton.shared.setAttributedTextnew(str1: "\(list.count) ",
+                                                str2: "Flights Found",
+                                                lbl: flightsfoundlbl,
+                                                str1font: .InterMedium(size: 14),
+                                                str2font: .InterMedium(size: 14),
+                                                str1Color: .ApplabelColor,
+                                                str2Color: .Buttoncolor)
         
         
         var updatedUniqueList: [[J_flight_list]] = []
@@ -380,8 +403,9 @@ extension SearchResultVC  {
     
     //MARK: - resultnil
     @objc func resultnil() {
+        hideLoderScreen()
         guard let vc = NoInternetConnectionVC.newInstance.self else {return}
-        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalPresentationStyle = .fullScreen
         vc.key = "noresult"
         self.present(vc, animated: true)
     }
@@ -389,11 +413,41 @@ extension SearchResultVC  {
     
     //MARK: - nointernet
     @objc func nointernet() {
-        
+        hideLoderScreen()
         guard let vc = NoInternetConnectionVC.newInstance.self else {return}
-        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalPresentationStyle = .fullScreen
         vc.key = "nointernet"
         self.present(vc, animated: true)
+    }
+    
+    //MARK: - updateTimer
+    func updateTimer() {
+        let totalTime = MySingleton.shared.totalTime
+        let minutes =  totalTime / 60
+        let seconds = totalTime % 60
+        let formattedTime = String(format: "%02d:%02d", minutes, seconds)
+        
+        
+        MySingleton.shared.setAttributedTextnew(str1: "Your Session Expires In : ",
+                                                str2: "\(formattedTime)",
+                                                lbl: sessionlbl,
+                                                str1font: .InterMedium(size: 14),
+                                                str2font: .InterMedium(size: 14),
+                                                str1Color: .ApplabelColor,
+                                                str2Color: .Buttoncolor)
+        
+        
+    }
+    
+    
+    func timerDidFinish() {
+        gotoPopupScreen()
+    }
+    
+    func gotoPopupScreen() {
+        guard let vc = PopupVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false)
     }
     
     

@@ -305,7 +305,7 @@ extension SearchFlightsTVCell {
         self.returnTF.inputView = retDatePicker
         
         
-        self.returnTF.becomeFirstResponder()
+        //self.returnTF.becomeFirstResponder()
         
     }
     

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -423,9 +424,20 @@
             <connections>
                 <outlet property="adultBottomView" destination="dFA-XX-U7t" id="HbY-iv-cRQ"/>
                 <outlet property="adultView" destination="2cr-li-E8d" id="DMx-e4-7bK"/>
+                <outlet property="adultfarelbl" destination="zMu-zH-9cf" id="3Jw-tH-pC8"/>
+                <outlet property="adultpricelbl" destination="BbL-uv-wxY" id="67J-yb-BgG"/>
+                <outlet property="adulttaxlbl" destination="CTU-oX-lm3" id="q3H-5f-EmL"/>
                 <outlet property="childView" destination="7ga-vF-Zuw" id="nlM-Tq-iSL"/>
+                <outlet property="childfarelbl" destination="xMF-fn-Jxx" id="4y2-HT-Z1y"/>
+                <outlet property="childpricelbl" destination="4tQ-4i-FVW" id="M1q-dp-Cze"/>
+                <outlet property="childtaxlbl" destination="P3n-iQ-L7i" id="Ffr-pL-BtX"/>
                 <outlet property="infantView" destination="vHO-er-7BH" id="t8G-WA-FWD"/>
+                <outlet property="infantfarelbl" destination="Dhd-vS-Bzk" id="XOD-Ob-Vdg"/>
+                <outlet property="infantpricelbl" destination="B0i-6f-H9m" id="LP0-0Q-DrY"/>
+                <outlet property="infanttaxlbl" destination="2Dd-O4-nya" id="xVe-Zf-Arm"/>
+                <outlet property="subtotallbl" destination="mKY-1T-YIL" id="MmP-tf-gZN"/>
                 <outlet property="topview" destination="5Eo-73-mHE" id="V6Z-48-6AZ"/>
+                <outlet property="totallbl" destination="ZUN-LM-LHs" id="emh-4q-8bP"/>
             </connections>
             <point key="canvasLocation" x="56.488549618320612" y="299.29577464788736"/>
         </tableViewCell>

@@ -7,10 +7,11 @@
 
 import UIKit
 
-class SelectFareVC: BaseTableVC, SelectFareVMDelegate {
+class SelectFareVC: BaseTableVC, SelectFareVMDelegate, TimerManagerDelegate {
     
     
     @IBOutlet weak var holderview: UIView!
+    @IBOutlet weak var kwdlbl: UILabel!
     
     static var newInstance: SelectFareVC? {
         let storyboard = UIStoryboard(name: Storyboard.Flights.name,
@@ -33,7 +34,7 @@ class SelectFareVC: BaseTableVC, SelectFareVMDelegate {
         
         // Do any additional setup after loading the view.
         setupUI()
-        
+        MySingleton.shared.delegate = self
         vm = SelectFareVM(self)
     }
     
@@ -44,6 +45,7 @@ class SelectFareVC: BaseTableVC, SelectFareVMDelegate {
     }
     
     @IBAction func didTapOnBookNowBtynAction(_ sender: Any) {
+        callapibool = true
         gotoBookingDetailsVC()
     }
     
@@ -88,9 +90,10 @@ extension SelectFareVC {
     func selectedFareDetails(response: SelectFareModel) {
         
         holderview.isHidden = false
+        
         faredata.removeAll()
         faredata = response.data ?? []
-        
+        kwdlbl.text = response.data?[0].fare_price
         
         
         DispatchQueue.main.async { [self] in
@@ -168,6 +171,37 @@ extension SelectFareVC  {
         vc.modalPresentationStyle = .overCurrentContext
         vc.key = "nointernet"
         self.present(vc, animated: true)
+    }
+    
+    
+    //MARK: - updateTimer
+    func updateTimer() {
+//        let totalTime = MySingleton.shared.totalTime
+//        let minutes =  totalTime / 60
+//        let seconds = totalTime % 60
+//        let formattedTime = String(format: "%02d:%02d", minutes, seconds)
+//
+//
+//        MySingleton.shared.setAttributedTextnew(str1: "Your Session Expires In : ",
+//                                                str2: "\(formattedTime)",
+//                                                lbl: sessionlbl,
+//                                                str1font: .InterMedium(size: 14),
+//                                                str2font: .InterMedium(size: 14),
+//                                                str1Color: .TitleColor,
+//                                                str2Color: .Buttoncolor)
+//
+        
+    }
+    
+    
+    func timerDidFinish() {
+        gotoPopupScreen()
+    }
+    
+    func gotoPopupScreen() {
+        guard let vc = PopupVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false)
     }
     
     
