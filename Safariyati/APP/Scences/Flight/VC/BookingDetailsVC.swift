@@ -213,14 +213,10 @@ extension BookingDetailsVC {
         
         tablerow.append(TableRow(moreData: res.flight_data?[0],cellType:.BDFlightDetailsTVCell))
         
-        
-        
         if defaults.bool(forKey: UserDefaultsKeys.loggedInStatus) == false {
             tablerow.append(TableRow(cellType:.GuestLoginButtonsTVCell))
             tablerow.append(TableRow(cellType:.GuestRegistrationTVCell))
         }
-        
-        
         
         passengertypeArray.removeAll()
         tablerow.append(TableRow(height:20, bgColor:.WhiteColor,cellType:.EmptyTVCell))

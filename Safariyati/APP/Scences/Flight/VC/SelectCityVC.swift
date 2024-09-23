@@ -8,7 +8,7 @@
 import UIKit
 
 class SelectCityVC: BaseTableVC, AirportCodeListVMDelegate, UITextFieldDelegate {
-    
+   
     
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var titlelbl: UILabel!
@@ -27,15 +27,16 @@ class SelectCityVC: BaseTableVC, AirportCodeListVMDelegate, UITextFieldDelegate 
     var payload = [String:Any]()
     var citylistvm:AirportCodeListVM?
     var titleString = String()
+    var keystring = String()
     var tablerow = [TableRow]()
     var isSearchBool = Bool()
     var searchText = String()
     var filtered:[AirportCodeListModel] = []
     var cityList:[AirportCodeListModel] = []
+    var tourList:[TourListData] = []
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
         addObserver()
     }
     
@@ -63,33 +64,33 @@ class SelectCityVC: BaseTableVC, AirportCodeListVMDelegate, UITextFieldDelegate 
 extension SelectCityVC {
     
     func setupUI() {
-        titlelbl.text = titleString
+        
         searchTF.setLeftPaddingPoints(35)
         searchTF.font = .InterRegular(size: 14)
         topView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         topView.layer.cornerRadius = 20
         
         searchTF.becomeFirstResponder()
-        searchTF.placeholder = "Enter City/Airport Name"
+       
         searchTF.font = UIFont.poppinsRegular(size: 16)
         searchTF.addTarget(self, action: #selector(searchTextChanged(_:)), for: .editingChanged)
         searchTF.delegate = self
+        
+       
+        
         
         commonTableView.backgroundColor = .WhiteColor
         commonTableView.registerTVCells(["CityInfoTVCell"])
         
     }
-    
-    
-    
-    
+
     
     func setupTV(list:[AirportCodeListModel]) {
         tablerow.removeAll()
         
         
         list.forEach { i in
-            tablerow.append(TableRow(moreData:i,cellType:.CityInfoTVCell))
+            tablerow.append(TableRow(key:"flight",moreData:i,cellType:.CityInfoTVCell))
         }
         
         commonTVData = tablerow
@@ -102,40 +103,60 @@ extension SelectCityVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? CityInfoTVCell {
             
-            if let journeyType = defaults.string(forKey: UserDefaultsKeys.journeyType),journeyType == "oneway" {
-                if titlelbl.text == "FROM" {
-                    defaults.setValue(cell.id, forKey: UserDefaultsKeys.fromlocid)
-                    defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.fromCity)
-                    defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.fromcityname)
-                    defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.fromcitynamewithcode)
-                    defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.fromairportname)
+            if keystring == "flights" {
+                if let journeyType = defaults.string(forKey: UserDefaultsKeys.journeyType),journeyType == "oneway" {
+                    if titlelbl.text == "FROM" {
+                        defaults.setValue(cell.id, forKey: UserDefaultsKeys.fromlocid)
+                        defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.fromCity)
+                        defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.fromcityname)
+                        defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.fromcitynamewithcode)
+                        defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.fromairportname)
+                    }else {
+                        defaults.setValue(cell.id, forKey: UserDefaultsKeys.tolocid)
+                        defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.toCity)
+                        defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.tocityname)
+                        defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.tocitynamewithcode)
+                        defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.toairportname)
+                    }
                 }else {
-                    defaults.setValue(cell.id, forKey: UserDefaultsKeys.tolocid)
-                    defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.toCity)
-                    defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.tocityname)
-                    defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.tocitynamewithcode)
-                    defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.toairportname)
+                    if titlelbl.text == "FROM" {
+                        defaults.setValue(cell.id, forKey: UserDefaultsKeys.fromlocid)
+                        defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.fromCity)
+                        defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.fromcityname)
+                        defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.fromcitynamewithcode)
+                        defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.fromairportname)
+                    }else {
+                        defaults.setValue(cell.id, forKey: UserDefaultsKeys.tolocid)
+                        defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.toCity)
+                        defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.tocityname)
+                        defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.tocitynamewithcode)
+                        defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.toairportname)
+                    }
                 }
+                
+                
+                NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+                dismiss(animated: true)
             }else {
-                if titlelbl.text == "FROM" {
-                    defaults.setValue(cell.id, forKey: UserDefaultsKeys.fromlocid)
-                    defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.fromCity)
-                    defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.fromcityname)
-                    defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.fromcitynamewithcode)
-                    defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.fromairportname)
-                }else {
-                    defaults.setValue(cell.id, forKey: UserDefaultsKeys.tolocid)
-                    defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.toCity)
-                    defaults.setValue("\(cell.cityname)", forKey: UserDefaultsKeys.tocityname)
-                    defaults.setValue("\(cell.cityname) (\(cell.code))", forKey: UserDefaultsKeys.tocitynamewithcode)
-                    defaults.setValue("\(cell.airportname)", forKey: UserDefaultsKeys.toairportname)
-                }
+                
+                
+                defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.holiday_package_name)
+                defaults.setValue(cell.code, forKey: UserDefaultsKeys.holiday_package_id)
+                
+                NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+//                dismiss(animated: true)
+                gotoHolidayDetailsVC()
             }
-            
-            
-            NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
-            dismiss(animated: true)
         }
+    }
+    
+    
+    
+    func gotoHolidayDetailsVC() {
+        callapibool = true
+        guard let vc = HolidayDetailsVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false)
     }
 }
 
@@ -146,17 +167,31 @@ extension SelectCityVC {
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.setupTV(list: self.cityList)
+       
+        if keystring == "holidays" {
+            self.setupTourListTVCells(list: self.tourList)
+        }else {
+            self.setupTV(list: self.cityList)
+        }
     }
     
     @objc func searchTextChanged(_ sender: UITextField) {
         searchText = sender.text ?? ""
         
-        
-        if searchText == "" {
-            callGetAirportCodeListAPI(term: searchText)
+    
+        if keystring == "holidays" {
+           
+            if searchText == "" {
+                callGetToureListData(term: searchText)
+            }else {
+                callGetToureListData(term: searchText)
+            }
         }else {
-            callGetAirportCodeListAPI(term: searchText)
+            if searchText == "" {
+                callGetAirportCodeListAPI(term: searchText)
+            }else {
+                callGetAirportCodeListAPI(term: searchText)
+            }
         }
         
         
@@ -196,8 +231,16 @@ extension SelectCityVC  {
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reload"), object: nil)
         
         
-        callGetAirportCodeListAPI(term: "")
-        
+       
+        if keystring == "holidays" {
+            titlelbl.text = ""
+            searchTF.placeholder = "Enter City"
+            callGetToureListData(term: "")
+        }else {
+            titlelbl.text = titleString
+            searchTF.placeholder = "Enter City/Airport Name"
+            callGetAirportCodeListAPI(term: "")
+        }
     }
     
     
@@ -226,6 +269,45 @@ extension SelectCityVC  {
         vc.key = "nointernet"
         self.present(vc, animated: true)
     }
+    
+    
+}
+
+
+extension SelectCityVC {
+    
+    
+    func callGetToureListData(term:String) {
+        payload.removeAll()
+        payload["term"] = term
+        citylistvm?.CALL_GET_TOUR_LIST_API(dictParam: payload)
+    }
+    
+    
+    func tourListResponse(response: TourListModel) {
+        tourList.removeAll()
+        tourList = response.data ?? []
+        
+        print(response)
+        
+        DispatchQueue.main.async {
+            self.setupTourListTVCells(list: self.tourList)
+        }
+        
+    }
+    
+    func setupTourListTVCells(list:[TourListData]) {
+        tablerow.removeAll()
+        
+        
+        tourList.forEach { i in
+            tablerow.append(TableRow(key:"holidays",moreData:i,cellType:.CityInfoTVCell))
+        }
+        
+        commonTVData = tablerow
+        commonTableView.reloadData()
+    }
+    
     
     
 }

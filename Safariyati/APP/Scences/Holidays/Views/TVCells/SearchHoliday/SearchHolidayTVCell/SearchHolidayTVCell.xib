@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="252" id="KGk-i7-Jjw" customClass="SearchHolidayTVCell" customModule="Safariyati" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="569" height="252"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="569" height="252"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDQ-3g-KIz">
+                        <rect key="frame" x="0.0" y="0.0" width="569" height="252"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enr-5F-bOg">
+                                <rect key="frame" x="15" y="10" width="539" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-Zf-Yzl" customClass="BorderedView" customModule="Safariyati" customModuleProvider="target">
+                                <rect key="frame" x="15" y="41" width="539" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchholiday" translatesAutoresizingMaskIntoConstraints="NO" id="pay-ye-UIY">
+                                        <rect key="frame" x="10" y="14" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="ZnT-aq-H9t"/>
+                                            <constraint firstAttribute="width" constant="22" id="Zya-bZ-JeA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you Travelling to?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NR-YZ-6kH">
+                                        <rect key="frame" x="42" y="14.666666666666664" width="487" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="SubTitleColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkU-S7-inf">
+                                        <rect key="frame" x="0.0" y="0.0" width="539" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="TxtFldbgColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AN4-4j-TYG"/>
+                                    <constraint firstAttribute="trailing" secondItem="AkU-S7-inf" secondAttribute="trailing" id="Byt-eK-5Hz"/>
+                                    <constraint firstItem="3NR-YZ-6kH" firstAttribute="leading" secondItem="pay-ye-UIY" secondAttribute="trailing" constant="10" id="Lsb-Bh-myO"/>
+                                    <constraint firstAttribute="bottom" secondItem="AkU-S7-inf" secondAttribute="bottom" id="Oca-Qj-8AF"/>
+                                    <constraint firstAttribute="trailing" secondItem="3NR-YZ-6kH" secondAttribute="trailing" constant="10" id="OyE-y5-3bg"/>
+                                    <constraint firstItem="pay-ye-UIY" firstAttribute="centerY" secondItem="fpm-Zf-Yzl" secondAttribute="centerY" id="P5L-WM-7vY"/>
+                                    <constraint firstItem="3NR-YZ-6kH" firstAttribute="centerY" secondItem="pay-ye-UIY" secondAttribute="centerY" id="PNH-pv-4Lg"/>
+                                    <constraint firstItem="AkU-S7-inf" firstAttribute="leading" secondItem="fpm-Zf-Yzl" secondAttribute="leading" id="TeN-Ts-zaK"/>
+                                    <constraint firstItem="pay-ye-UIY" firstAttribute="leading" secondItem="fpm-Zf-Yzl" secondAttribute="leading" constant="10" id="gBl-e1-hH6"/>
+                                    <constraint firstItem="AkU-S7-inf" firstAttribute="top" secondItem="fpm-Zf-Yzl" secondAttribute="top" id="h5P-0Y-8xq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="BorderColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6G-7M-6qJ">
+                                <rect key="frame" x="15" y="101" width="169.33333333333334" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View all Holidays/Staycation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dab-Yn-JxQ">
+                                        <rect key="frame" x="0.0" y="9.3333333333333286" width="169.33333333333334" height="15.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1W-X7-NkV">
+                                        <rect key="frame" x="0.0" y="0.0" width="169.33333333333334" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIg-P9-S1o">
+                                        <rect key="frame" x="0.0" y="29" width="169.33333333333334" height="1"/>
+                                        <color key="backgroundColor" name="SubTitleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="b8C-vm-VSk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="dab-Yn-JxQ" firstAttribute="leading" secondItem="o6G-7M-6qJ" secondAttribute="leading" id="2LJ-d9-IQV"/>
+                                    <constraint firstAttribute="bottom" secondItem="dab-Yn-JxQ" secondAttribute="bottom" constant="5" id="2Mc-1r-96v"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="5V4-rF-2HM"/>
+                                    <constraint firstItem="zIg-P9-S1o" firstAttribute="leading" secondItem="o6G-7M-6qJ" secondAttribute="leading" id="BKv-6F-JUw"/>
+                                    <constraint firstAttribute="trailing" secondItem="C1W-X7-NkV" secondAttribute="trailing" id="Id3-eR-EGe"/>
+                                    <constraint firstItem="C1W-X7-NkV" firstAttribute="leading" secondItem="o6G-7M-6qJ" secondAttribute="leading" id="Qj8-KF-BBx"/>
+                                    <constraint firstAttribute="bottom" secondItem="zIg-P9-S1o" secondAttribute="bottom" id="QoG-VR-DNe"/>
+                                    <constraint firstAttribute="trailing" secondItem="zIg-P9-S1o" secondAttribute="trailing" id="ZZx-mB-Qyb"/>
+                                    <constraint firstItem="C1W-X7-NkV" firstAttribute="top" secondItem="o6G-7M-6qJ" secondAttribute="top" id="coq-sw-5Nj"/>
+                                    <constraint firstAttribute="bottom" secondItem="C1W-X7-NkV" secondAttribute="bottom" id="imU-OR-cSQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="mMF-Yr-JlQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="dab-Yn-JxQ" secondAttribute="trailing" id="y6k-VC-htZ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePt-gh-aUj">
+                                <rect key="frame" x="30" y="181" width="509" height="50"/>
+                                <color key="backgroundColor" name="Buttoncolor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1mQ-j5-YEM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Search Holiday">
+                                    <color key="baseForegroundColor" name="WhightColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o6G-7M-6qJ" firstAttribute="leading" secondItem="wDQ-3g-KIz" secondAttribute="leading" constant="15" id="6nV-nZ-8N4"/>
+                            <constraint firstItem="enr-5F-bOg" firstAttribute="top" secondItem="wDQ-3g-KIz" secondAttribute="top" constant="10" id="Ipw-yH-qaY"/>
+                            <constraint firstItem="fpm-Zf-Yzl" firstAttribute="top" secondItem="enr-5F-bOg" secondAttribute="bottom" constant="10" id="JSZ-xX-oKs"/>
+                            <constraint firstAttribute="trailing" secondItem="enr-5F-bOg" secondAttribute="trailing" constant="15" id="MPx-eS-ZW6"/>
+                            <constraint firstItem="enr-5F-bOg" firstAttribute="leading" secondItem="wDQ-3g-KIz" secondAttribute="leading" constant="15" id="bSG-X6-YLf"/>
+                            <constraint firstItem="ePt-gh-aUj" firstAttribute="top" secondItem="o6G-7M-6qJ" secondAttribute="bottom" constant="50" id="hFf-7b-ehS"/>
+                            <constraint firstItem="o6G-7M-6qJ" firstAttribute="top" secondItem="fpm-Zf-Yzl" secondAttribute="bottom" constant="10" id="hQI-Vw-KEi"/>
+                            <constraint firstAttribute="trailing" secondItem="fpm-Zf-Yzl" secondAttribute="trailing" constant="15" id="lPg-qb-6Vc"/>
+                            <constraint firstAttribute="bottom" secondItem="ePt-gh-aUj" secondAttribute="bottom" constant="21" id="mI6-tp-weR"/>
+                            <constraint firstItem="fpm-Zf-Yzl" firstAttribute="leading" secondItem="wDQ-3g-KIz" secondAttribute="leading" constant="15" id="qrh-Pb-0X5"/>
+                            <constraint firstAttribute="trailing" secondItem="ePt-gh-aUj" secondAttribute="trailing" constant="30" id="vT2-We-vH0"/>
+                            <constraint firstItem="ePt-gh-aUj" firstAttribute="leading" secondItem="wDQ-3g-KIz" secondAttribute="leading" constant="30" id="wJB-Il-MHr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wDQ-3g-KIz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9Uk-T4-wmW"/>
+                    <constraint firstAttribute="bottom" secondItem="wDQ-3g-KIz" secondAttribute="bottom" id="Dzr-ta-ygi"/>
+                    <constraint firstItem="wDQ-3g-KIz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pmR-yN-lLp"/>
+                    <constraint firstAttribute="trailing" secondItem="wDQ-3g-KIz" secondAttribute="trailing" id="xxx-Ka-FkO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="searchHolidayBtn" destination="ePt-gh-aUj" id="bZe-d4-8BD"/>
+                <outlet property="titlelbl" destination="enr-5F-bOg" id="YwB-Y6-akp"/>
+                <outlet property="travillingvalueBtn" destination="AkU-S7-inf" id="P7h-A0-SQp"/>
+                <outlet property="travillingvaluelbl" destination="3NR-YZ-6kH" id="gv4-KY-Gc6"/>
+                <outlet property="viewAllBtn" destination="C1W-X7-NkV" id="GSA-X9-TLA"/>
+                <outlet property="viewalllblb" destination="dab-Yn-JxQ" id="2Q7-5c-dqG"/>
+            </connections>
+            <point key="canvasLocation" x="329.00763358778624" y="241.5492957746479"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="searchholiday" width="22" height="22"/>
+        <namedColor name="BorderColor">
+            <color red="0.90196078431372551" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Buttoncolor">
+            <color red="0.87800002098083496" green="0.078000001609325409" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SubTitleColor">
+            <color red="0.14117647058823529" green="0.15686274509803921" blue="0.18823529411764706" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TxtFldbgColor">
+            <color red="0.96078431372549022" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhightColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

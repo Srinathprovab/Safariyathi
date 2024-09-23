@@ -73,7 +73,7 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate, IndexVMDelegat
         gotoSearchHotelVC()
     }
     override func didTapOnHolidaysBtnAction(cell: TabselectTVCell) {
-        showToast(message: "Holidays module not yet implemented")
+        gotoSearchHolidaysVC()
     }
     override func didTapOnInsurenceBtnAction(cell: TabselectTVCell) {
         showToast(message: "Insurence module not yet implemented")
@@ -90,6 +90,13 @@ class HomeVC: BaseTableVC, UIViewControllerTransitioningDelegate, IndexVMDelegat
     func gotoSearchHotelVC() {
         defaults.set("Hotels", forKey: UserDefaultsKeys.tabselect)
         guard let vc = HotelViewController.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    func gotoSearchHolidaysVC() {
+        defaults.set("Holidays", forKey: UserDefaultsKeys.tabselect)
+        guard let vc = SearchHolidayVC.newInstance.self else {return}
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }

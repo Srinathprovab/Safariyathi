@@ -150,6 +150,7 @@ class ModifySearchVC: BaseTableVC {
     func gotoSelectCityVC(str:String) {
         guard let vc = SelectCityVC.newInstance.self else {return}
         vc.modalPresentationStyle = .fullScreen
+        vc.keystring = "flights"
         present(vc, animated: true)
     }
     

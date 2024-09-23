@@ -74,11 +74,11 @@ class AddDeatilsOfTravellerTVCell: TableViewCell, CountryListVMDelegate {
     @IBOutlet weak var passportnoView: UIView!
     @IBOutlet weak var issuecountryView: UIView!
     @IBOutlet weak var passportexpireView: UIView!
-    @IBOutlet weak var flyerNoTF: UITextField!
-    @IBOutlet weak var flyerProgramTF: UITextField!
-    @IBOutlet weak var flyerPgmBtn: UIButton!
-    @IBOutlet weak var flyerProgramView: UIView!
-    @IBOutlet weak var flyerPgmBtnView: UIView!
+//    @IBOutlet weak var flyerNoTF: UITextField!
+//    @IBOutlet weak var flyerProgramTF: UITextField!
+//    @IBOutlet weak var flyerPgmBtn: UIButton!
+//    @IBOutlet weak var flyerProgramView: UIView!
+//    @IBOutlet weak var flyerPgmBtnView: UIView!
     
     
     var vm :CountryListVM?
@@ -239,8 +239,8 @@ class AddDeatilsOfTravellerTVCell: TableViewCell, CountryListVMDelegate {
         setupTextField(txtField: passportnoTF, tag1: 5, label: "Passport NO*", placeholder: "Passport NO")
         setupTextField(txtField: passportIssuingCountryTF, tag1: 6, label: "Passport Issuing Country*", placeholder: "Issuing Country")
         setupTextField(txtField: passportExpireDateTF, tag1: 7, label: "Passport Exprity Date*", placeholder: "Exprity Date")
-        setupTextField(txtField: flyerProgramTF, tag1: 8, label: "Flyer Program ", placeholder: "Flyer Program")
-        setupTextField(txtField: flyerNoTF, tag1: 9, label: "Flyer Number ", placeholder: "Flyer Number")
+//        setupTextField(txtField: flyerProgramTF, tag1: 8, label: "Flyer Program ", placeholder: "Flyer Program")
+//        setupTextField(txtField: flyerNoTF, tag1: 9, label: "Flyer Number ", placeholder: "Flyer Number")
         
         
         passportIssueingCountrySelectBtn.isHidden = true
@@ -251,7 +251,7 @@ class AddDeatilsOfTravellerTVCell: TableViewCell, CountryListVMDelegate {
         showdobDatePicker()
         showexpirDatePicker()
         setupTitleDropDown()
-        setupFlyerDropDown()
+    //    setupFlyerDropDown()
         setupIssuingCountryDropDown()
         
         
@@ -262,8 +262,8 @@ class AddDeatilsOfTravellerTVCell: TableViewCell, CountryListVMDelegate {
         setupView(v: passportnoView)
         setupView(v: issuecountryView)
         setupView(v: passportexpireView)
-        setupView(v: flyerProgramView)
-        setupView(v: flyerPgmBtnView)
+//        setupView(v: flyerProgramView)
+//        setupView(v: flyerPgmBtnView)
         
         
         passportIssuingCountryTF.addTarget(self, action: #selector(searchTextBegin(textField:)), for: .editingDidBegin)
@@ -377,19 +377,19 @@ class AddDeatilsOfTravellerTVCell: TableViewCell, CountryListVMDelegate {
     }
     
     
-    func setupFlyerDropDown() {
-        flyerdropDown.textColor = .ApplabelColor
-        flyerdropDown.direction = .bottom
-        flyerdropDown.backgroundColor = .WhiteColor
-        flyerdropDown.anchorView = self.flyerPgmBtn
-        flyerdropDown.bottomOffset = CGPoint(x: 0, y: flyerPgmBtn.frame.size.height + 20)
-        flyerdropDown.selectionAction = { [weak self] (index: Int, item: String) in
-            
-            self?.flyerProgramTF.text = item
-            self?.delegate?.didTapOnFlyerProgramBtnAction(cell: self!)
-        }
-        
-    }
+//    func setupFlyerDropDown() {
+//        flyerdropDown.textColor = .ApplabelColor
+//        flyerdropDown.direction = .bottom
+//        flyerdropDown.backgroundColor = .WhiteColor
+//        flyerdropDown.anchorView = self.flyerPgmBtn
+//        flyerdropDown.bottomOffset = CGPoint(x: 0, y: flyerPgmBtn.frame.size.height + 20)
+//        flyerdropDown.selectionAction = { [weak self] (index: Int, item: String) in
+//            
+//            self?.flyerProgramTF.text = item
+//            self?.delegate?.didTapOnFlyerProgramBtnAction(cell: self!)
+//        }
+//        
+//    }
     
     
     func setupIssuingCountryDropDown() {

@@ -116,6 +116,15 @@ struct ApiEndpoints {
     static let flight_mobile_pre_process_booking = "flight/mobile_pre_process_booking"
     static let flight_mobile_process_passenger_detail = "flight/mobile_process_passenger_detail"
     
+    
+    //HOLIDAYS
+    static let tours_get_tour_city_package_list = "tours/get_tour_city_package_list"
+    static let tours_search = "tours/search"
+    static let  tours_details = "tours/details"
+    
+    
+    
+    
 }
 
 /*App messages*/
@@ -250,20 +259,25 @@ struct UserDefaultsKeys {
     
     
     //visa
-    static var travelDate = "travelDate"
-    static var visaadultCount = "visaadultCount"
-    static var visachildCount = "visachildCount"
-    static var visainfantsCount = "visainfantsCount"
-    static var visatotalpassengercount = "visatotalpassengercount"
+    //    static var travelDate = "travelDate"
+    //    static var visaadultCount = "visaadultCount"
+    //    static var visachildCount = "visachildCount"
+    //    static var visainfantsCount = "visainfantsCount"
+    //    static var visatotalpassengercount = "visatotalpassengercount"
     
     
-    //Cruise
-    static var fromtravelDate = "fromtravelDate"
-    static var totravelDate = "totravelDate"
-    static var cruisadultCount = "cruisadultCount"
-    static var cruischildCount = "cruischildCount"
-    static var cruisinfantsCount = "cruisinfantsCount"
-    static var cruistotalpassengercount = "cruistotalpassengercount"
+    //    //Cruise
+    //    static var fromtravelDate = "fromtravelDate"
+    //    static var totravelDate = "totravelDate"
+    //    static var cruisadultCount = "cruisadultCount"
+    //    static var cruischildCount = "cruischildCount"
+    //    static var cruisinfantsCount = "cruisinfantsCount"
+    //    static var cruistotalpassengercount = "cruistotalpassengercount"
+    
+    
+    //Holidays
+    static var holiday_package_name = "holiday_package_name"
+    static var holiday_package_id = "holiday_package_id"
 }
 
 

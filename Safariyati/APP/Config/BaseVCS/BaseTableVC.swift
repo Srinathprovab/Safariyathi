@@ -8,8 +8,9 @@
 import UIKit
 import MaterialComponents
 
-class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate, SearchHotelTVCellDelegate, HotelImagesTVCellDelegate, RoomsTVcellDelegate, BookingHotelDetailsTVCellDelegate, AddDeatilsOfGuestTVCellDelegate, MainRoomTVCellDelegate, ButtonTVCellDelegate, SelectFareTVCellDelegate, AcceptTermsAndConditionTVCellDelegate, AddDeatilsOfTravellerTVCellDelegate, ContactInformationTVCellDelegate {
-   
+class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate, SearchHotelTVCellDelegate, HotelImagesTVCellDelegate, RoomsTVcellDelegate, BookingHotelDetailsTVCellDelegate, AddDeatilsOfGuestTVCellDelegate, MainRoomTVCellDelegate, ButtonTVCellDelegate, SelectFareTVCellDelegate, AcceptTermsAndConditionTVCellDelegate, AddDeatilsOfTravellerTVCellDelegate, ContactInformationTVCellDelegate, SearchHolidayTVCellDelegate, HolidayImagesTVCellDelegate {
+    
+    
     
    
     @IBOutlet weak var commonScrollView: UITableView!
@@ -163,6 +164,10 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapOnCountryCodeBtn(cell: ContactInformationTVCell) {}
     func editingTextField(tf: UITextField) {}
     func didTapOnDropDownBtn(cell: ContactInformationTVCell) {}
+    func didTapOnSearchTravellingtoBtnAction(cell: SearchHolidayTVCell) {}
+    func didTapOnViewAllHolidaysBtnAction(cell: SearchHolidayTVCell) {}
+    func didTapOnSearchHoliodaysBtnAction(cell: SearchHolidayTVCell) {}
+    func didTapOnMoreBtnAction(cell: HolidayImagesTVCell) {}
     
     
    
@@ -480,6 +485,24 @@ extension BaseTableVC: UITableViewDataSource {
                 commonCell = cell
                 
        
+                
+            case .SearchHolidayTVCell:
+                let cell: SearchHolidayTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+                
+                
+            case .HolidaysSearchResultTVCell:
+                let cell: HolidaysSearchResultTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+            case .HolidayImagesTVCell:
+                let cell: HolidayImagesTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
+                commonCell = cell
+                
+                
             default:
                 print("handle this case in getCurrentCellAt")
             }

@@ -159,6 +159,7 @@ class SearchFlightsVC: BaseTableVC {
         guard let vc = SelectCityVC.newInstance.self else {return}
         vc.modalPresentationStyle = .fullScreen
         vc.titleString = str
+        vc.keystring = "flights"
         present(vc, animated: true)
     }
     
