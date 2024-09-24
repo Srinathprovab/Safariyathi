@@ -19,7 +19,8 @@ class HolidaysSearchResultTVCell: TableViewCell {
     @IBOutlet weak var refundableView: UIView!
     @IBOutlet weak var InclusionsCV: UICollectionView!
     
-    
+    var tourid = String()
+    var tourpackageName = String()
     var inclsionArray = [String]()
     var list :TourSearchListData?
     override func awakeFromNib() {
@@ -59,6 +60,8 @@ class HolidaysSearchResultTVCell: TableViewCell {
     override func updateUI() {
         list = cellInfo?.moreData as? TourSearchListData
         
+        tourid = list?.id ?? ""
+        tourpackageName = list?.package_name ?? ""
         inclsionArray = list?.inclusions_checks ?? []
         titlelbl.text = list?.package_name ?? ""
         let value = Int(list?.duration ?? "")

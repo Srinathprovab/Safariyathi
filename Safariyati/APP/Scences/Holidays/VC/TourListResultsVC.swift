@@ -67,29 +67,15 @@ class TourListResultsVC: BaseTableVC, TourSearchListVMDelegate {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false)
     }
+
     
-    //MARK: - SearchHolidayTVCell Delegate Methods
-    override func didTapOnSearchTravellingtoBtnAction(cell: SearchHolidayTVCell) {
-        gotoSelectCityVC(str: "holidays")
-    }
     
-    override func didTapOnViewAllHolidaysBtnAction(cell: SearchHolidayTVCell) {
-        print("didTapOnViewAllHolidaysBtnAction")
-    }
-    
-    override func didTapOnSearchHoliodaysBtnAction(cell: SearchHolidayTVCell) {
-        print("didTapOnSearchHoliodaysBtnAction")
-    }
-    
-    func gotoSelectCityVC(str:String) {
-        guard let vc = SelectCityVC.newInstance.self else {return}
+    func gotoHolidayDetailsVC() {
+        callapibool = true
+        guard let vc = HolidayDetailsVC.newInstance.self else {return}
         vc.modalPresentationStyle = .fullScreen
-        vc.titleString = str
-        vc.keystring = "holidays"
-        present(vc, animated: true)
+        present(vc, animated: false)
     }
-    
-   
 }
 
 
@@ -119,7 +105,7 @@ extension TourListResultsVC  {
    
     
     func tourListResults(response: TourSearchListModel) {
-        
+        holderView.isHidden = false
         
         DispatchQueue.main.async { [self] in
             setupTVCells(list: response)
@@ -142,6 +128,17 @@ extension TourListResultsVC  {
         commonTableView.reloadData()
     }
     
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? HolidaysSearchResultTVCell {
+            defaults.set(cell.tourpackageName, forKey: UserDefaultsKeys.holiday_package_id)
+            defaults.set(cell.tourid, forKey: UserDefaultsKeys.holiday_package_id)
+            
+            gotoHolidayDetailsVC()
+        }
+    }
+    
 }
 
 
@@ -158,6 +155,7 @@ extension TourListResultsVC  {
         
         
         if callapibool == true {
+            holderView.isHidden = true
             DispatchQueue.main.async {
                 self.callGetAllHolidaysTourPackeges()
             }

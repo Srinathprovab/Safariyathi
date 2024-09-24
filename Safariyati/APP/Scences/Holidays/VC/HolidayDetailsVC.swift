@@ -21,6 +21,14 @@ class HolidayDetailsVC: BaseTableVC, TourPackageDetailsVMDelegate {
         return vc
     }
     
+    deinit {
+        res = nil
+        itineraryArray.removeAll()
+    }
+    
+    
+    var itineraryArray = [Tours_itinerary_dw]()
+    var res:TourPackageDetailsModel?
     var tablerow = [TableRow]()
     var payload = [String:Any]()
     var vm:TourPackageDetailsVM?
@@ -80,10 +88,64 @@ class HolidayDetailsVC: BaseTableVC, TourPackageDetailsVMDelegate {
     }
     
     
-    
+    //MARK: - didTapOnMoreBtnAction  HolidayImagesTVCell
     override func didTapOnMoreBtnAction(cell: HolidayImagesTVCell) {
         print("didTapOnMoreBtnAction")
     }
+    
+    
+    //MARK: - didTapOnExpandViewBtnAction  ToursItineraryTVCell
+    override func didTapOnExpandViewBtnAction(cell: ToursItineraryTVCell) {
+        reloadToursItineraryTVCell()
+    }
+    
+    func reloadToursItineraryTVCell() {
+        if let indexPath = indexPathForToursItineraryTVCell() {
+            commonTableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func indexPathForToursItineraryTVCell() -> IndexPath? {
+        if let row = tablerow.firstIndex(where: { $0.cellType == .ToursItineraryTVCell }) {
+            return IndexPath(row: row, section: 0)
+        }
+        return nil
+    }
+
+
+    
+    
+    //MARK: - HolidayDeatilsButtonsTVCell  Delegate Methods
+    override func didTapOverviewBtnAction(cell: HolidayDeatilsButtonsTVCell) {
+        
+    }
+    
+    override func didTapItineraryBtnAction(cell: HolidayDeatilsButtonsTVCell) {
+        setupItineraryTVCells()
+    }
+    
+    override func didTapDatesAndPricesBtnAction(cell: HolidayDeatilsButtonsTVCell) {
+        
+    }
+    
+    override func didTapInclusionsBtnAction(cell: HolidayDeatilsButtonsTVCell) {
+        
+    }
+    
+    override func didTapTripNotesBtnAction(cell: HolidayDeatilsButtonsTVCell) {
+        
+    }
+    
+    override func didTapPostReviewBtnAction(cell: HolidayDeatilsButtonsTVCell) {
+        
+    }
+    
+    override func didTapTermsAndConditionsBtnAction(cell: HolidayDeatilsButtonsTVCell) {
+        
+    }
+    
+   
+    
     
 }
 
@@ -96,8 +158,11 @@ extension HolidayDetailsVC {
         commonTableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         commonTableView.layer.cornerRadius = 20
         commonTableView.backgroundColor = .WhiteColor
-        commonTableView.registerTVCells(["HolidayImagesTVCell"
-                                         ,"EmptyTVCell"])
+        commonTableView.registerTVCells(["HolidayImagesTVCell",
+                                         "HolidayDeatilsButtonsTVCell",
+                                         "ToursItineraryTVCell",
+                                         "HolidayAddTravel1ersTVCell",
+                                         "EmptyTVCell"])
         
         
         
@@ -112,25 +177,26 @@ extension HolidayDetailsVC {
     
     
     func tourDetailsResponse(response: TourPackageDetailsModel) {
-    
+        
+       
+        res = response
+        itineraryArray = response.tours_itinerary_dw ?? []
         
         DispatchQueue.main.async { [self] in
-            setupTVCells(res: response)
+            setupTVCells()
         }
     }
     
     
-    
-    
-    
-    
-    func setupTVCells(res:TourPackageDetailsModel) {
+    func setupTVCells() {
         tablerow.removeAll()
         
         
-        tablerow.append(TableRow(image:res.tour_data?.banner_image ?? "",
-                                 moreData: res.tour_data?.gallery ?? [],
+        tablerow.append(TableRow(image:res?.tour_data?.banner_image ?? "",
+                                 moreData: res?.tour_data?.gallery ?? [],
                                  cellType:.HolidayImagesTVCell))
+        
+        tablerow.append((TableRow(cellType:.HolidayDeatilsButtonsTVCell)))
         
         tablerow.append((TableRow(height: 30, cellType:.EmptyTVCell)))
         
@@ -193,6 +259,42 @@ extension HolidayDetailsVC  {
         vc.key = "nointernet"
         self.present(vc, animated: true)
     }
+    
+    
+}
+
+
+extension HolidayDetailsVC {
+    
+    func setupItineraryTVCells() {
+        tablerow.removeAll()
+        
+        
+        
+        tablerow.append(TableRow(image:res?.tour_data?.banner_image ?? "",
+                                 moreData: res?.tour_data?.gallery ?? [],
+                                 cellType:.HolidayImagesTVCell))
+        
+        tablerow.append((TableRow(cellType:.HolidayDeatilsButtonsTVCell)))
+        
+        
+        
+        for (index,value) in itineraryArray.enumerated() {
+            tablerow.append((TableRow(moreData:value,characterLimit: index,cellType:.ToursItineraryTVCell)))
+        }
+        
+        
+        tablerow.append((TableRow(cellType:.HolidayAddTravel1ersTVCell)))
+        
+        tablerow.append((TableRow(height: 100, cellType:.EmptyTVCell)))
+        
+        
+        commonTVData = tablerow
+        commonTableView.reloadData()
+    }
+    
+    
+    
     
     
 }

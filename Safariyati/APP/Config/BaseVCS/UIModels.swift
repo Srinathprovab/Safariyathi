@@ -76,6 +76,9 @@ enum TVCellType {
     case SearchHolidayTVCell
     case HolidaysSearchResultTVCell
     case HolidayImagesTVCell
+    case HolidayDeatilsButtonsTVCell
+    case ToursItineraryTVCell
+    case HolidayAddTravel1ersTVCell
     
     
     

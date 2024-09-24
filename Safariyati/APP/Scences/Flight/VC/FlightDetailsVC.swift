@@ -69,6 +69,7 @@ class FlightDetailsVC: BaseTableVC, FlightDetailsVMDelegate, TimerManagerDelegat
         commonTableView.registerTVCells(["AddFlightltineraryTVCell",
                                          "BaggageTVCell",
                                          "ExchangeOrRefundTVCell",
+                                         "EmptyTVCell",
                                          "NoteTVCell"])
         
         
@@ -230,9 +231,13 @@ extension FlightDetailsVC {
     func setupExchangeTVCell() {
         tablerow.removeAll()
         
+        tablerow.append((TableRow(height: 10, cellType:.EmptyTVCell)))
+        
         tablerow.append(TableRow(title:"Cancellation Charges :",
                                  key: "cancellation",
                                  cellType: .ExchangeOrRefundTVCell))
+        
+        tablerow.append((TableRow(height: 20, cellType:.EmptyTVCell)))
         
         tablerow.append(TableRow(title:"Exchange Charges :",
                                  key: "change",
@@ -242,7 +247,7 @@ extension FlightDetailsVC {
         //                           cellType: .ExchangeOrRefundTVCell))
         
         
-        // tablerow.append(TableRow(cellType: .NoteTVCell))
+         tablerow.append(TableRow(cellType: .NoteTVCell))
         
         
         

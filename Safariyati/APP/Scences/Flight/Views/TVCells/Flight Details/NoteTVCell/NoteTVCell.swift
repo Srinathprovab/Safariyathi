@@ -22,7 +22,7 @@ class NoteTVCell: TableViewCell {
     }
     
     override func updateUI() {
-        notedesclbl.text = "Cancellation /Change penalties are indicative. Fare rules and charges are subject to change as per airline any time. We try to keep this information update to date. But we suggest to reconfirm the penalties from our call center before any cancellation and changes.\n\nFor any Rescheduling - Change fee + fare difference ( if applicable )\n\nAll fees and charges mentioned are per passenger.\n\nDepending on the airline request for cancellation/change to be submitted varies from 24hrs -72hrs before departure of the flight.\n\n"
+        notedesclbl.text = "All charges and fees are valid until 48 hours prior to the scheduled flight departure. Extra charges may be incurred later, or tickets might not be eligible for refunds or changes. The fees displayed are approximate according to airline regulations and may be modified by the airlines without prior notice. Safariyati does not provide assurance for the accuracy of this information"
     }
     
 }

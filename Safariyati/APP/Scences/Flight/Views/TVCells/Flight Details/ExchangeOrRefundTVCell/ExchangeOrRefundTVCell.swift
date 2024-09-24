@@ -9,7 +9,7 @@ import UIKit
 
 class ExchangeOrRefundTVCell: TableViewCell {
 
-    
+    @IBOutlet weak var topview: UIView!
     @IBOutlet weak var titlelbl: UILabel!
     @IBOutlet weak var adultlbl: UILabel!
     @IBOutlet weak var childlbl: UILabel!
@@ -28,6 +28,10 @@ class ExchangeOrRefundTVCell: TableViewCell {
     
     
     override func updateUI() {
+        topview.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        topview.layer.cornerRadius = 8
+        topview.clipsToBounds = true
+        
         titlelbl.text = cellInfo?.title ?? ""
         
         if cellInfo?.key == "change" {

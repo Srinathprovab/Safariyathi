@@ -66,7 +66,7 @@ class SearchHolidayVC: BaseTableVC {
     }
     
     override func didTapOnSearchHoliodaysBtnAction(cell: SearchHolidayTVCell) {
-        print("didTapOnSearchHoliodaysBtnAction")
+        gotoHolidayDetailsVC()
     }
     
     func gotoSelectCityVC(str:String) {
@@ -76,6 +76,15 @@ class SearchHolidayVC: BaseTableVC {
         vc.keystring = "holidays"
         present(vc, animated: true)
     }
+    
+    
+    func gotoHolidayDetailsVC() {
+        callapibool = true
+        guard let vc = HolidayDetailsVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false)
+    }
+    
     
     func gotoTourListResultsVC() {
         callapibool = true
