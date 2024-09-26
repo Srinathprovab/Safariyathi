@@ -157,6 +157,29 @@ class BookingDetailsVC: BaseTableVC, BookingDetailsVMDelegate, TimerManagerDeleg
         paymobilecountrycode = cell.countrycodeTF.text ?? ""
     }
     
+    //MARK: - didTapOnLoginBtn TDetailsLoginTVCell
+    override func didTapOnLoginBtn(cell: TDetailsLoginTVCell) {
+        gotoSigninVC()
+    }
+    
+    override func didTapOnFlightDetailsBtnAction(cell: BDFlightDetailsTVCell) {
+        gotoFlightDetailsVC()
+    }
+    
+    
+    func gotoFlightDetailsVC() {
+        callapibool = true
+        guard let vc = ViewFlightDetailsVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    func gotoSigninVC() {
+        callapibool = true
+        guard let vc = SigninVC.newInstance.self else {return}
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
     
 }
 
@@ -201,6 +224,7 @@ extension BookingDetailsVC {
                                          "TotalNoofTravellerTVCell",
                                          "AddDeatilsOfTravellerTVCell",
                                          "AcceptTermsAndConditionTVCell",
+                                         "TDetailsLoginTVCell",
                                          "ContactInformationTVCell"])
         
         
@@ -210,16 +234,14 @@ extension BookingDetailsVC {
     func setupTVcells(res:BookingDetailsModel) {
         tablerow.removeAll()
         
-        
+        tablerow.append(TableRow(height:10, bgColor:.WhiteColor,cellType:.EmptyTVCell))
         tablerow.append(TableRow(moreData: res.flight_data?[0],cellType:.BDFlightDetailsTVCell))
         
         if defaults.bool(forKey: UserDefaultsKeys.loggedInStatus) == false {
-            tablerow.append(TableRow(cellType:.GuestLoginButtonsTVCell))
-            tablerow.append(TableRow(cellType:.GuestRegistrationTVCell))
+            tablerow.append(TableRow(cellType:.TDetailsLoginTVCell))
         }
         
         passengertypeArray.removeAll()
-        tablerow.append(TableRow(height:20, bgColor:.WhiteColor,cellType:.EmptyTVCell))
         tablerow.append(TableRow(title:"Passenger Details",cellType:.TotalNoofTravellerTVCell))
         for i in 1...adultsCount {
             positionsCount += 1

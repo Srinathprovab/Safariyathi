@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,18 +32,10 @@
                                 <color key="textColor" name="ApplabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passenger Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8l-9x-qxx">
-                                <rect key="frame" x="254" y="16.666666666666668" width="119" height="17.000000000000004"/>
-                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
-                                <color key="textColor" name="AppGreenColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="a8l-9x-qxx" firstAttribute="centerY" secondItem="whI-87-RTX" secondAttribute="centerY" id="4ci-RT-iZi"/>
                             <constraint firstAttribute="bottom" secondItem="whI-87-RTX" secondAttribute="bottom" constant="15.33" id="Dgl-nu-ubw"/>
-                            <constraint firstAttribute="trailing" secondItem="a8l-9x-qxx" secondAttribute="trailing" constant="10" id="OMt-aV-iJW"/>
                             <constraint firstItem="whI-87-RTX" firstAttribute="top" secondItem="4qV-gr-xWZ" secondAttribute="top" constant="15.33" id="cMI-ew-uaK"/>
                             <constraint firstItem="whI-87-RTX" firstAttribute="leading" secondItem="4qV-gr-xWZ" secondAttribute="leading" constant="10" id="fro-aZ-hdy"/>
                             <constraint firstAttribute="height" constant="50" id="zOU-HK-St9"/>
@@ -72,15 +65,11 @@
             <connections>
                 <outlet property="holderView" destination="4qV-gr-xWZ" id="eUL-OK-Xn5"/>
                 <outlet property="titlelbl" destination="whI-87-RTX" id="1bs-Dz-78t"/>
-                <outlet property="totalNoOfTravellerCountlbl" destination="a8l-9x-qxx" id="JVD-10-LVT"/>
             </connections>
             <point key="canvasLocation" x="6.8702290076335872" y="37.323943661971832"/>
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="AppGreenColor">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="ApplabelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

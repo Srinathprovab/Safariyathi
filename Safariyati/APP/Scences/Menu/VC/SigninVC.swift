@@ -31,6 +31,7 @@ class SigninVC: BaseTableVC {
 
     
     override func didTapOnBackBtnnAction(cell: SigninTVCell) {
+        callapibool = false
         dismiss(animated: true)
        // gotoTabbarVC()
     }

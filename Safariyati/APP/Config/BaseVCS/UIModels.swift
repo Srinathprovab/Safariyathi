@@ -70,6 +70,7 @@ enum TVCellType {
     case FareFamilyTVCell
     case FareBaggageTVCells
     case FareBreakdownTVCell
+    case TDetailsLoginTVCell
 
     
     //Holidays

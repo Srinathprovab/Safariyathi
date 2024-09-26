@@ -8,7 +8,8 @@
 import UIKit
 import MaterialComponents
 
-class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate, SearchHotelTVCellDelegate, HotelImagesTVCellDelegate, RoomsTVcellDelegate, BookingHotelDetailsTVCellDelegate, AddDeatilsOfGuestTVCellDelegate, MainRoomTVCellDelegate, ButtonTVCellDelegate, SelectFareTVCellDelegate, AcceptTermsAndConditionTVCellDelegate, AddDeatilsOfTravellerTVCellDelegate, ContactInformationTVCellDelegate, SearchHolidayTVCellDelegate, HolidayImagesTVCellDelegate, ToursItineraryTVCellDelegate, HolidayDeatilsButtonsTVCellDelegate {
+class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCellDelagate, SelectTravellerTVCellDelegate, SearchResultTVCellDelegate, SigninTVCellDelegate, SignupTVCellDelegate, MenuBGTVCellDelegate, GuestLoginButtonsTVCellDelegate, GuestRegistrationTVCellDelegate, SearchHotelTVCellDelegate, HotelImagesTVCellDelegate, RoomsTVcellDelegate, BookingHotelDetailsTVCellDelegate, AddDeatilsOfGuestTVCellDelegate, MainRoomTVCellDelegate, ButtonTVCellDelegate, SelectFareTVCellDelegate, AcceptTermsAndConditionTVCellDelegate, AddDeatilsOfTravellerTVCellDelegate, ContactInformationTVCellDelegate, SearchHolidayTVCellDelegate, HolidayImagesTVCellDelegate, ToursItineraryTVCellDelegate, HolidayDeatilsButtonsTVCellDelegate, TDetailsLoginTVCellDelegate, BDFlightDetailsTVCellDelegate {
+   
     
     
     
@@ -177,6 +178,9 @@ class BaseTableVC: UIViewController, TabselectTVCellDelegate, SearchFlightsTVCel
     func didTapTripNotesBtnAction(cell: HolidayDeatilsButtonsTVCell) {}
     func didTapPostReviewBtnAction(cell: HolidayDeatilsButtonsTVCell) {}
     func didTapTermsAndConditionsBtnAction(cell: HolidayDeatilsButtonsTVCell) {}
+    func didTapOnLoginBtn(cell: TDetailsLoginTVCell) {}
+    func didTapOnFlightDetailsBtnAction(cell: BDFlightDetailsTVCell) {}
+    
     
    
     
@@ -322,6 +326,7 @@ extension BaseTableVC: UITableViewDataSource {
                 
             case .BDFlightDetailsTVCell:
                 let cell: BDFlightDetailsTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
                 commonCell = cell
                 
                 
@@ -528,6 +533,12 @@ extension BaseTableVC: UITableViewDataSource {
                 
             case .HolidayAddTravel1ersTVCell:
                 let cell: HolidayAddTravel1ersTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                commonCell = cell
+                
+                
+            case .TDetailsLoginTVCell:
+                let cell: TDetailsLoginTVCell = commonTV.dequeTVCell(indexPath: indexPath)
+                cell.delegate = self
                 commonCell = cell
                 
                 

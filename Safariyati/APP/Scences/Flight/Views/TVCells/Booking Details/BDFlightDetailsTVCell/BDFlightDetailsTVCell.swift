@@ -7,13 +7,19 @@
 
 import UIKit
 
+protocol BDFlightDetailsTVCellDelegate:AnyObject {
+     func didTapOnFlightDetailsBtnAction(cell:BDFlightDetailsTVCell)
+}
+
 class BDFlightDetailsTVCell: TableViewCell {
     
     @IBOutlet weak var fareTypelbl: UILabel!
     @IBOutlet weak var flightinfoTV: UITableView!
     @IBOutlet weak var tvheight: NSLayoutConstraint!
+    @IBOutlet weak var flightdetailsBtn: UIButton!
     
     
+    weak var delegate:BDFlightDetailsTVCellDelegate?
     var flightdata : Flight_data?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,9 +43,21 @@ class BDFlightDetailsTVCell: TableViewCell {
     }
     
     func setupUI() {
+        
+        flightdetailsBtn.setTitle("Flight Details", for: .normal)
+        flightdetailsBtn.titleLabel?.font = .InterBold(size: 12)
+        flightdetailsBtn.setTitleColor(.WhiteColor, for: .normal)
+        flightdetailsBtn.backgroundColor = .Buttoncolor
+        flightdetailsBtn.layer.cornerRadius = 4
+        flightdetailsBtn.clipsToBounds = true
+        flightdetailsBtn.addTarget(self, action: #selector(didTapOnFlightDetailsBtnAction(_:)), for: .touchUpInside)
         setupTV()
     }
     
+    
+    @objc func didTapOnFlightDetailsBtnAction(_ sender:UIButton) {
+        delegate?.didTapOnFlightDetailsBtnAction(cell: self)
+    }
     
     
 }

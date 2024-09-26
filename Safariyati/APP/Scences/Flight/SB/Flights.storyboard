@@ -1769,12 +1769,12 @@
         <!--PopupVC-->
         <scene sceneID="VVt-Dp-PPe">
             <objects>
-                <viewController storyboardIdentifier="PopupVC" id="Nf6-P6-siL" customClass="PopupVC" customModule="Travrate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PopupVC" id="Nf6-P6-siL" customClass="PopupVC" customModule="Safariyati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0iF-of-IK7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-so-g1i" customClass="BorderedView" customModule="Travrate" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-so-g1i" customClass="BorderedView" customModule="Safariyati" customModuleProvider="target">
                                 <rect key="frame" x="30" y="346" width="333" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azo-uL-qUl">
@@ -1833,6 +1833,157 @@
             </objects>
             <point key="canvasLocation" x="3935" y="1475"/>
         </scene>
+        <!--View Flight DetailsVC-->
+        <scene sceneID="e4a-H8-d7H">
+            <objects>
+                <viewController storyboardIdentifier="ViewFlightDetailsVC" id="Ch0-YD-wRl" customClass="ViewFlightDetailsVC" customModule="Safariyati" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oAQ-0X-YXE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmm-EG-MLi">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerBg" translatesAutoresizingMaskIntoConstraints="NO" id="Nba-46-XFO">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="225" id="UFN-he-KmN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-Uc-49q">
+                                        <rect key="frame" x="15" y="49" width="363" height="22"/>
+                                        <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtJ-5g-Utl">
+                                        <rect key="frame" x="15" y="45" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="JyC-eP-LgZ"/>
+                                            <constraint firstAttribute="height" constant="30" id="psQ-Pw-bpY"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrowleft"/>
+                                        <connections>
+                                            <action selector="didTapOnCloseBtnAction:" destination="Ch0-YD-wRl" eventType="touchUpInside" id="PAu-ae-xZ8"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Loe-dh-rKC">
+                                        <rect key="frame" x="0.0" y="100" width="393" height="752"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rfX-Rw-Tyj">
+                                                <rect key="frame" x="20" y="10" width="353" height="29"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttB-fV-coo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="169" height="29"/>
+                                                        <color key="backgroundColor" name="Buttoncolor"/>
+                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Flight ltinerary">
+                                                            <color key="titleColor" name="WhightColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didTapOnFlightItienarayBtnAction:" destination="Ch0-YD-wRl" eventType="touchUpInside" id="Zrw-jN-m8u"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxc-sk-X9i">
+                                                        <rect key="frame" x="184" y="0.0" width="169" height="29"/>
+                                                        <color key="backgroundColor" name="TxtFldbgColor"/>
+                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Baggage info">
+                                                            <color key="titleColor" name="TitleColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didTapOnBaggageInfoBtnAction:" destination="Ch0-YD-wRl" eventType="touchUpInside" id="gbq-Ef-EBW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JZG-Ph-bMR">
+                                                <rect key="frame" x="20" y="49" width="353" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLZ-2Q-uNw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="169" height="30"/>
+                                                        <color key="backgroundColor" name="TxtFldbgColor"/>
+                                                        <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Exchange/Refund">
+                                                            <color key="titleColor" name="TitleColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didTapOnExchangeBtnAction:" destination="Ch0-YD-wRl" eventType="touchUpInside" id="Pe2-Tv-QtG"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YrS-4e-caG">
+                                                        <rect key="frame" x="184" y="0.0" width="169" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="65q-yj-RK8"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PtU-lE-QXe">
+                                                <rect key="frame" x="0.0" y="89" width="393" height="663"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="JZG-Ph-bMR" firstAttribute="leading" secondItem="Loe-dh-rKC" secondAttribute="leading" constant="20" id="4tt-32-W4d"/>
+                                            <constraint firstItem="JZG-Ph-bMR" firstAttribute="top" secondItem="rfX-Rw-Tyj" secondAttribute="bottom" constant="10" id="5FB-Sa-CCX"/>
+                                            <constraint firstItem="rfX-Rw-Tyj" firstAttribute="leading" secondItem="Loe-dh-rKC" secondAttribute="leading" constant="20" id="FYt-BF-pgc"/>
+                                            <constraint firstItem="PtU-lE-QXe" firstAttribute="leading" secondItem="Loe-dh-rKC" secondAttribute="leading" id="PCw-hR-zp9"/>
+                                            <constraint firstAttribute="trailing" secondItem="rfX-Rw-Tyj" secondAttribute="trailing" constant="20" id="RUi-5I-A7I"/>
+                                            <constraint firstItem="rfX-Rw-Tyj" firstAttribute="top" secondItem="Loe-dh-rKC" secondAttribute="top" constant="10" id="aGa-47-BCm"/>
+                                            <constraint firstAttribute="trailing" secondItem="JZG-Ph-bMR" secondAttribute="trailing" constant="20" id="bzz-9l-Bum"/>
+                                            <constraint firstAttribute="bottom" secondItem="PtU-lE-QXe" secondAttribute="bottom" id="ssd-Hq-ztY"/>
+                                            <constraint firstAttribute="trailing" secondItem="PtU-lE-QXe" secondAttribute="trailing" id="tH1-1O-GKs"/>
+                                            <constraint firstItem="PtU-lE-QXe" firstAttribute="top" secondItem="JZG-Ph-bMR" secondAttribute="bottom" constant="10" id="tVh-A9-9Hl"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.58431372550000005" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NtJ-5g-Utl" firstAttribute="leading" secondItem="lmm-EG-MLi" secondAttribute="leading" constant="15" id="7ey-Xx-6BJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Loe-dh-rKC" secondAttribute="trailing" id="8vF-a6-23c"/>
+                                    <constraint firstItem="lhf-Uc-49q" firstAttribute="leading" secondItem="lmm-EG-MLi" secondAttribute="leading" constant="15" id="Fs5-y5-mAZ"/>
+                                    <constraint firstItem="Loe-dh-rKC" firstAttribute="leading" secondItem="lmm-EG-MLi" secondAttribute="leading" id="HhA-Il-eqX"/>
+                                    <constraint firstItem="Loe-dh-rKC" firstAttribute="top" secondItem="NtJ-5g-Utl" secondAttribute="bottom" constant="25" id="PvX-w3-t1h"/>
+                                    <constraint firstItem="Nba-46-XFO" firstAttribute="leading" secondItem="lmm-EG-MLi" secondAttribute="leading" id="Qxq-Kz-iGw"/>
+                                    <constraint firstItem="lhf-Uc-49q" firstAttribute="centerY" secondItem="NtJ-5g-Utl" secondAttribute="centerY" id="SyH-5W-Qaq"/>
+                                    <constraint firstItem="Nba-46-XFO" firstAttribute="top" secondItem="lmm-EG-MLi" secondAttribute="top" id="j9t-pg-ODB"/>
+                                    <constraint firstAttribute="trailing" secondItem="lhf-Uc-49q" secondAttribute="trailing" constant="15" id="kFA-9O-bcJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nba-46-XFO" secondAttribute="trailing" id="lxM-cN-TN9"/>
+                                    <constraint firstAttribute="bottom" secondItem="Loe-dh-rKC" secondAttribute="bottom" id="sLS-lP-fKz"/>
+                                    <constraint firstItem="NtJ-5g-Utl" firstAttribute="top" secondItem="lmm-EG-MLi" secondAttribute="top" constant="45" id="wfN-ZB-A0R"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vmO-wf-L1t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lmm-EG-MLi" firstAttribute="leading" secondItem="vmO-wf-L1t" secondAttribute="leading" id="F9A-7x-Hpv"/>
+                            <constraint firstAttribute="bottom" secondItem="lmm-EG-MLi" secondAttribute="bottom" id="ku7-Uk-AYm"/>
+                            <constraint firstItem="vmO-wf-L1t" firstAttribute="trailing" secondItem="lmm-EG-MLi" secondAttribute="trailing" id="mwq-kU-GQ8"/>
+                            <constraint firstItem="lmm-EG-MLi" firstAttribute="top" secondItem="oAQ-0X-YXE" secondAttribute="top" id="zsy-TT-gs7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="baggageInoBtn" destination="gxc-sk-X9i" id="oQS-ez-Pu3"/>
+                        <outlet property="commonTableView" destination="PtU-lE-QXe" id="MVy-6q-HAG"/>
+                        <outlet property="exchangeBtn" destination="jLZ-2Q-uNw" id="DjQ-AE-nkN"/>
+                        <outlet property="flightItineraryBtn" destination="ttB-fV-coo" id="sWC-DW-sG3"/>
+                        <outlet property="holderView" destination="lmm-EG-MLi" id="WQn-VJ-OcW"/>
+                        <outlet property="tabsHolderView" destination="Loe-dh-rKC" id="UDx-xM-GKh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MKT-1A-y4M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3207" y="694"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Edit" width="24" height="24"/>
@@ -1873,10 +2024,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

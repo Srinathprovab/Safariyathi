@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,36 +17,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="BDFlightDetailsTVCell" customModule="Safariyati" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="548" height="137"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="133" id="KGk-i7-Jjw" customClass="BDFlightDetailsTVCell" customModule="Safariyati" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="548" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="548" height="137"/>
+                <rect key="frame" x="0.0" y="0.0" width="548" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxM-ml-PWA">
-                        <rect key="frame" x="0.0" y="0.0" width="548" height="137"/>
+                        <rect key="frame" x="0.0" y="0.0" width="548" height="128"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhx-A9-ruO" customClass="BorderedView" customModule="Safariyati" customModuleProvider="target">
-                                <rect key="frame" x="20" y="10" width="508" height="117"/>
+                                <rect key="frame" x="10" y="10" width="528" height="108"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0fm-Hg-xef">
-                                        <rect key="frame" x="0.0" y="0.0" width="508" height="117"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="528" height="108"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="117" id="e3J-ig-ifS"/>
+                                            <constraint firstAttribute="height" constant="108" id="KrQ-hn-BvP"/>
                                         </constraints>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refundable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GU-3Y-ScS">
-                                        <rect key="frame" x="421.66666666666669" y="10" width="76.333333333333314" height="17"/>
+                                        <rect key="frame" x="441.66666666666669" y="10" width="76.333333333333314" height="17"/>
                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="14"/>
                                         <color key="textColor" name="Refundcolor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5g-Ly-ClX">
+                                        <rect key="frame" x="398" y="8" width="125" height="30"/>
+                                        <color key="backgroundColor" name="Buttoncolor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="kOP-Ue-gLN"/>
+                                            <constraint firstAttribute="height" constant="30" id="knj-qI-Zsd"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Flight Details">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="d5g-Ly-ClX" firstAttribute="top" secondItem="zhx-A9-ruO" secondAttribute="top" constant="8" id="31R-Fe-4tz"/>
                                     <constraint firstAttribute="trailing" secondItem="9GU-3Y-ScS" secondAttribute="trailing" constant="10" id="EIF-Yz-vDC"/>
+                                    <constraint firstAttribute="trailing" secondItem="d5g-Ly-ClX" secondAttribute="trailing" constant="5" id="G80-75-53L"/>
                                     <constraint firstItem="9GU-3Y-ScS" firstAttribute="top" secondItem="zhx-A9-ruO" secondAttribute="top" constant="10" id="P0V-D5-gnf"/>
                                     <constraint firstAttribute="trailing" secondItem="0fm-Hg-xef" secondAttribute="trailing" id="R9x-TX-SEk"/>
                                     <constraint firstItem="0fm-Hg-xef" firstAttribute="leading" secondItem="zhx-A9-ruO" secondAttribute="leading" id="bcC-UU-mEp"/>
@@ -67,11 +82,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zhx-A9-ruO" secondAttribute="trailing" constant="20" id="2iR-HX-wyY"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="137" id="Cl4-M6-Ndp"/>
+                            <constraint firstAttribute="trailing" secondItem="zhx-A9-ruO" secondAttribute="trailing" constant="10" id="2iR-HX-wyY"/>
                             <constraint firstAttribute="bottom" secondItem="zhx-A9-ruO" secondAttribute="bottom" constant="10" id="FiI-Dz-mIg"/>
-                            <constraint firstItem="zhx-A9-ruO" firstAttribute="leading" secondItem="WxM-ml-PWA" secondAttribute="leading" constant="20" id="LO2-uS-Dbr"/>
+                            <constraint firstItem="zhx-A9-ruO" firstAttribute="leading" secondItem="WxM-ml-PWA" secondAttribute="leading" constant="10" id="LO2-uS-Dbr"/>
                             <constraint firstItem="zhx-A9-ruO" firstAttribute="top" secondItem="WxM-ml-PWA" secondAttribute="top" constant="10" id="QEW-Cl-qVC"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="yZD-K3-Lic"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -85,15 +100,19 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="fareTypelbl" destination="9GU-3Y-ScS" id="qYB-6w-sw9"/>
+                <outlet property="flightdetailsBtn" destination="d5g-Ly-ClX" id="GLI-RH-6SZ"/>
                 <outlet property="flightinfoTV" destination="0fm-Hg-xef" id="QQ9-Ez-5O1"/>
-                <outlet property="tvheight" destination="e3J-ig-ifS" id="mUB-ge-h5u"/>
+                <outlet property="tvheight" destination="KrQ-hn-BvP" id="9GJ-HR-b12"/>
             </connections>
-            <point key="canvasLocation" x="312.97709923664121" y="91.901408450704224"/>
+            <point key="canvasLocation" x="312.97709923664121" y="95.070422535211279"/>
         </tableViewCell>
     </objects>
     <resources>
         <namedColor name="BorderColor">
-            <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.90196078431372551" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Buttoncolor">
+            <color red="0.87800002098083496" green="0.078000001609325409" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Refundcolor">
             <color red="0.13725490196078433" green="0.52941176470588236" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

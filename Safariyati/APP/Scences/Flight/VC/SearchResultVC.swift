@@ -78,6 +78,8 @@ class SearchResultVC: BaseTableVC, FlightSearchVMDelegate, TimerManagerDelegate 
         selectedbooking_source = cell.bookingsource
         selectedselectedResultindex = cell.selectedresult
         selected_access_key = cell.selectedaccesskey
+        selectedbooking_source = cell.bookingsource
+        
         gotoSelectFareVC()
     }
     

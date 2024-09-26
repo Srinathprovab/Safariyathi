@@ -21,7 +21,8 @@ class SelectedFareDetailsVC: BaseTableVC, TimerManagerDelegate {
     }
     
     
-    var tabsArray = ["Fare Breakdown","Cancellation / Data Change","Brand Feature","Baggages"]
+   // var tabsArray = ["Fare Breakdown","Cancellation / Data Change","Brand Feature","Baggages"]
+    var tabsArray = ["Fare Breakdown","Brand Feature","Baggages","Cancellation / Data Change"]
     var count = 0
     var payload = [String:Any]()
     var tablerow = [TableRow]()
@@ -30,7 +31,7 @@ class SelectedFareDetailsVC: BaseTableVC, TimerManagerDelegate {
         
         
         if selectedfaredata?.brand_feature == nil {
-            tabsArray = ["Fare Breakdown","Cancellation / Data Change","Baggages"]
+            tabsArray = ["Fare Breakdown","Baggages","Cancellation / Data Change",]
         }
         
         if selectedfaredata?.cancellation_charges == nil {
@@ -38,7 +39,7 @@ class SelectedFareDetailsVC: BaseTableVC, TimerManagerDelegate {
         }
         
         if selectedfaredata?.baggage == nil  {
-            tabsArray = ["Fare Breakdown","Cancellation / Data Change","Brand Feature"]
+            tabsArray = ["Fare Breakdown","Brand Feature","Cancellation / Data Change"]
         }
         
         if selectedfaredata?.baggage == nil && selectedfaredata?.brand_feature == nil {
@@ -189,8 +190,8 @@ extension SelectedFareDetailsVC:UICollectionViewDelegate,UICollectionViewDataSou
         // Configure the flow layout
         if let layout = tabescv.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
-            layout.minimumInteritemSpacing = 5
-            layout.minimumLineSpacing = 5
+//            layout.minimumInteritemSpacing = 5
+//            layout.minimumLineSpacing = 5
             layout.sectionInset = UIEdgeInsets(top: 0, left: 25, bottom: 20, right: 25)
             layout.estimatedItemSize = CGSize(width: 140, height: 35)
             // layout.itemSize = UICollectionViewFlowLayout.automaticSize
@@ -276,6 +277,8 @@ extension SelectedFareDetailsVC:UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     
+    // UICollectionViewDelegateFlowLayout Methods
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         // Get the text for the current indexPath
@@ -284,11 +287,36 @@ extension SelectedFareDetailsVC:UICollectionViewDelegate,UICollectionViewDataSou
         // Calculate the width required for the label text
         let size = (cityName as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont.InterSemiBold(size: 14)])
         
-        // Add some padding to the calculated size
-        let width = size.width + 20 // Adjust padding as needed
+        // Define padding to add to both sides of the text
+        let padding: CGFloat = 20
         
+        // Define min and max widths to ensure cells are not too small or too wide
+        let minWidth: CGFloat = 80   // Minimum width to ensure small text doesn't cause issues
+        let maxWidth: CGFloat = collectionView.bounds.width - 40 // Max width so the cell doesn't exceed the view width
+
+        // Calculate the final width with padding
+        var width = size.width + padding
+
+        // Ensure the width stays within the min and max range
+        width = max(minWidth, min(width, maxWidth))
+        
+        // Return the calculated size for the cell
         return CGSize(width: width, height: 34)
     }
+
+   
+
+
+    // Set minimum spacing between items (10 points)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10 // Set space between cells
+    }
+
+    // Optional: Set minimum spacing between rows (if you have multiple rows)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10 // Set space between rows
+    }
+
     
     
 }

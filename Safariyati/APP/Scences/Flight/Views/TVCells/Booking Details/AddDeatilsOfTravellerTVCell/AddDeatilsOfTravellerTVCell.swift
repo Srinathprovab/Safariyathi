@@ -138,12 +138,12 @@ class AddDeatilsOfTravellerTVCell: TableViewCell, CountryListVMDelegate {
     func expandView() {
         dropdownimg.image = UIImage(named: "dropup")?.withRenderingMode(.alwaysOriginal).withTintColor(.Buttoncolor)
         saveView.isHidden = false
-        viewHeight.constant = 305
+        viewHeight.constant = 233
     }
     
     
     func collapsView() {
-        dropdownimg.image = UIImage(named: "down")?.withRenderingMode(.alwaysOriginal).withTintColor(.Buttoncolor)
+        dropdownimg.image = UIImage(named: "dropDownArrow")?.withRenderingMode(.alwaysOriginal).withTintColor(.Buttoncolor)
         saveView.isHidden = true
         viewHeight.constant = 0
     }
@@ -221,7 +221,7 @@ class AddDeatilsOfTravellerTVCell: TableViewCell, CountryListVMDelegate {
     func setupUI() {
         
         setuplabels(lbl: titlelbl, text: "", textcolor: .ApplabelColor, font: .InterRegular(size: 14), align: .left)
-        dropdownimg.image = UIImage(named: "down")?.withRenderingMode(.alwaysOriginal).withTintColor(.Buttoncolor)
+        dropdownimg.image = UIImage(named: "dropDownArrow")?.withRenderingMode(.alwaysOriginal).withTintColor(.Buttoncolor)
         
         contentView.backgroundColor = UIColor.WhiteColor
         holderView.layer.borderColor = UIColor.BorderColor.cgColor
