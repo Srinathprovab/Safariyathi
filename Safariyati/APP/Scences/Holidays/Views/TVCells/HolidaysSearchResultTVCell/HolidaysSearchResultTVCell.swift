@@ -99,7 +99,78 @@ class HolidaysSearchResultTVCell: TableViewCell {
 
 
 
-extension HolidaysSearchResultTVCell: UICollectionViewDelegate, UICollectionViewDataSource {
+//extension HolidaysSearchResultTVCell: UICollectionViewDelegate, UICollectionViewDataSource {
+//    
+//    func setupCV() {
+//        let nib = UINib(nibName: "InclusionsCVCell", bundle: nil)
+//        InclusionsCV.register(nib, forCellWithReuseIdentifier: "cell")
+//        InclusionsCV.delegate = self
+//        InclusionsCV.dataSource = self
+//
+//        if let layout = InclusionsCV.collectionViewLayout as? UICollectionViewFlowLayout {
+//            layout.scrollDirection = .vertical
+//            layout.minimumInteritemSpacing = 5
+//            layout.minimumLineSpacing = 5
+//            layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+//            layout.estimatedItemSize = CGSize(width: 50, height: 75)
+//          //  layout.itemSize = UICollectionViewFlowLayout.automaticSize
+//        }
+//
+//        InclusionsCV.bounces = false
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return inclsionArray.count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        var commonCell = UICollectionViewCell()
+//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? InclusionsCVCell {
+//            cell.titlelbl.text = inclsionArray[indexPath.row]
+//            
+//            switch cell.titlelbl.text {
+//            case "Hotel":
+//                cell.img.image = UIImage(named: "Hotel")
+//            case "Car":
+//                cell.img.image = UIImage(named: "Car")
+//            case "Meals":
+//                cell.img.image = UIImage(named: "Meals")
+//            case "Sightseeing":
+//                cell.img.image = UIImage(named: "Sightseeing")
+//            case "Transfers":
+//                cell.img.image = UIImage(named: "Transfers")
+//            default:
+//                break
+//            }
+//            
+//            
+//            
+//            commonCell = cell
+//        }
+//        return commonCell
+//    }
+//
+//   
+//    
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        // Get the text for the current indexPath
+//        let cityName = inclsionArray[indexPath.row]
+//        
+//        // Calculate the width required for the label text
+//        let size = (cityName as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont.InterSemiBold(size: 10)])
+//        
+//        // Add some padding to the calculated size
+//        let width = size.width + 20 // Adjust padding as needed
+//        
+//        return CGSize(width: width, height: 75)
+//    }
+//    
+//}
+
+
+extension HolidaysSearchResultTVCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func setupCV() {
         let nib = UINib(nibName: "InclusionsCVCell", bundle: nil)
@@ -111,9 +182,7 @@ extension HolidaysSearchResultTVCell: UICollectionViewDelegate, UICollectionView
             layout.scrollDirection = .vertical
             layout.minimumInteritemSpacing = 5
             layout.minimumLineSpacing = 5
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
             layout.estimatedItemSize = CGSize(width: 50, height: 75)
-          //  layout.itemSize = UICollectionViewFlowLayout.automaticSize
         }
 
         InclusionsCV.bounces = false
@@ -143,23 +212,31 @@ extension HolidaysSearchResultTVCell: UICollectionViewDelegate, UICollectionView
                 break
             }
             
-            
-            
             commonCell = cell
         }
         return commonCell
     }
 
-   
-    
-    
+    // Dynamically adjust insets when there is only one item
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if inclsionArray.count == 1 {
+            // Only one item, align to the right
+            let collectionViewWidth = collectionView.bounds.width
+            let cellWidth = (inclsionArray[0] as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont.InterSemiBold(size: 10)]).width + 20 // cell width calculation with padding
+            let rightInset = collectionViewWidth - cellWidth - 10 // Adjust the inset as per your layout
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: rightInset)
+        } else {
+            // Multiple items, use default insets
+            return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         // Get the text for the current indexPath
-        let cityName = inclsionArray[indexPath.row]
+        let itemText = inclsionArray[indexPath.row]
         
         // Calculate the width required for the label text
-        let size = (cityName as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont.InterSemiBold(size: 10)])
+        let size = (itemText as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont.InterSemiBold(size: 10)])
         
         // Add some padding to the calculated size
         let width = size.width + 20 // Adjust padding as needed
@@ -168,3 +245,6 @@ extension HolidaysSearchResultTVCell: UICollectionViewDelegate, UICollectionView
     }
     
 }
+
+
+

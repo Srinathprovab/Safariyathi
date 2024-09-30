@@ -28,7 +28,7 @@ class HolidayDetailsVC: BaseTableVC, TourPackageDetailsVMDelegate {
     
     
     var itineraryArray = [Tours_itinerary_dw]()
-    var res:TourPackageDetailsModel?
+   
     var tablerow = [TableRow]()
     var payload = [String:Any]()
     var vm:TourPackageDetailsVM?
@@ -144,8 +144,23 @@ class HolidayDetailsVC: BaseTableVC, TourPackageDetailsVMDelegate {
         
     }
     
-   
+   //MARK: - HolidayAddTravel1ersTVCell Delegate Metghod
+    override func didTapOnSendInquiryBtnAction(cell: HolidayAddTravel1ersTVCell) {
+        print("didTapOnSendInquiryBtnAction")
+    }
     
+    
+    override func didTapOnTravellerBtnAction(cell: HolidayAddTravel1ersTVCell) {
+        reloadHolidayAddTravel1ersTVCell()
+    }
+    
+    func reloadHolidayAddTravel1ersTVCell() {
+        if let holidayAddTravel1ersTVCellIndex = tablerow.firstIndex(where: { $0.cellType == .HolidayAddTravel1ersTVCell }) {
+            let indexPath = IndexPath(row: holidayAddTravel1ersTVCellIndex, section: 0)
+            commonTableView.reloadRows(at: [indexPath], with: .none)
+        }
+    }
+   
     
 }
 
@@ -284,7 +299,7 @@ extension HolidayDetailsVC {
         }
         
         
-        tablerow.append((TableRow(cellType:.HolidayAddTravel1ersTVCell)))
+        tablerow.append((TableRow(title:res?.tour_data?.package_name,cellType:.HolidayAddTravel1ersTVCell)))
         
         tablerow.append((TableRow(height: 100, cellType:.EmptyTVCell)))
         

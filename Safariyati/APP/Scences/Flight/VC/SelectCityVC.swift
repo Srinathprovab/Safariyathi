@@ -8,7 +8,7 @@
 import UIKit
 
 class SelectCityVC: BaseTableVC, AirportCodeListVMDelegate, UITextFieldDelegate {
-   
+    
     
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var titlelbl: UILabel!
@@ -23,6 +23,13 @@ class SelectCityVC: BaseTableVC, AirportCodeListVMDelegate, UITextFieldDelegate 
     }
     
     
+    deinit {
+        cityList.removeAll()
+        tourList.removeAll()
+        hotelCityList.removeAll()
+        filtered.removeAll()
+    }
+    
     
     var payload = [String:Any]()
     var citylistvm:AirportCodeListVM?
@@ -34,6 +41,7 @@ class SelectCityVC: BaseTableVC, AirportCodeListVMDelegate, UITextFieldDelegate 
     var filtered:[AirportCodeListModel] = []
     var cityList:[AirportCodeListModel] = []
     var tourList:[TourListData] = []
+    var hotelCityList:[HotelCityListModel] = []
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,19 +79,19 @@ extension SelectCityVC {
         topView.layer.cornerRadius = 20
         
         searchTF.becomeFirstResponder()
-       
+        
         searchTF.font = UIFont.poppinsRegular(size: 16)
         searchTF.addTarget(self, action: #selector(searchTextChanged(_:)), for: .editingChanged)
         searchTF.delegate = self
         
-       
+        
         
         
         commonTableView.backgroundColor = .WhiteColor
         commonTableView.registerTVCells(["CityInfoTVCell"])
         
     }
-
+    
     
     func setupTV(list:[AirportCodeListModel]) {
         tablerow.removeAll()
@@ -137,6 +145,14 @@ extension SelectCityVC {
                 
                 NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                 dismiss(animated: true)
+            }else  if keystring == "hotel" {
+                
+                defaults.setValue(cell.fromcity, forKey: UserDefaultsKeys.locationcity)
+                defaults.setValue(cell.id, forKey: UserDefaultsKeys.locationid)
+                
+                NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+                dismiss(animated: true)
+                
             }else {
                 
                 
@@ -144,7 +160,7 @@ extension SelectCityVC {
                 defaults.setValue(cell.code, forKey: UserDefaultsKeys.holiday_package_id)
                 
                 NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
-//                dismiss(animated: true)
+                //                dismiss(animated: true)
                 gotoHolidayDetailsVC()
             }
         }
@@ -167,10 +183,12 @@ extension SelectCityVC {
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-       
+        
         if keystring == "holidays" {
             self.setupTourListTVCells(list: self.tourList)
-        }else {
+        }else if keystring == "hotel" {
+            self.setupHotelCityListTVCells(list: self.hotelCityList)
+        }else{
             self.setupTV(list: self.cityList)
         }
     }
@@ -178,13 +196,20 @@ extension SelectCityVC {
     @objc func searchTextChanged(_ sender: UITextField) {
         searchText = sender.text ?? ""
         
-    
+        
         if keystring == "holidays" {
-           
+            
             if searchText == "" {
                 callGetToureListData(term: searchText)
             }else {
                 callGetToureListData(term: searchText)
+            }
+        }else if keystring == "hotel" {
+            
+            if searchText == "" {
+                callGetHotelListAPI(term: searchText)
+            }else {
+                callGetHotelListAPI(term: searchText)
             }
         }else {
             if searchText == "" {
@@ -231,12 +256,16 @@ extension SelectCityVC  {
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reload"), object: nil)
         
         
-       
+        
         if keystring == "holidays" {
             titlelbl.text = ""
             searchTF.placeholder = "Enter City"
             callGetToureListData(term: "")
-        }else {
+        }else if keystring == "hotel" {
+            titlelbl.text = ""
+            searchTF.placeholder = "Enter City/ Hotel Name"
+            callGetHotelListAPI(term: "")
+        }else{
             titlelbl.text = titleString
             searchTF.placeholder = "Enter City/Airport Name"
             callGetAirportCodeListAPI(term: "")
@@ -288,7 +317,7 @@ extension SelectCityVC {
         tourList.removeAll()
         tourList = response.data ?? []
         
-        print(response)
+        
         
         DispatchQueue.main.async {
             self.setupTourListTVCells(list: self.tourList)
@@ -310,4 +339,44 @@ extension SelectCityVC {
     
     
     
+}
+
+
+
+extension SelectCityVC {
+    
+    
+    func callGetHotelListAPI(term:String) {
+        payload.removeAll()
+        payload["term"] = term
+        citylistvm?.CALL_GET_CITY_OR_HOTEL_LIST_API(dictParam: payload)
+    }
+    
+    
+    func hotelcitylist(response: [HotelCityListModel]) {
+        
+        hotelCityList.removeAll()
+        hotelCityList = response
+        
+        print(hotelCityList)
+        DispatchQueue.main.async {
+            self.setupHotelCityListTVCells(list: self.hotelCityList)
+        }
+        
+    }
+    
+    
+    func setupHotelCityListTVCells(list:[HotelCityListModel]) {
+        tablerow.removeAll()
+        
+        
+        list.forEach { i in
+            tablerow.append(TableRow(key:"hotel",
+                                     moreData:i,
+                                     cellType:.CityInfoTVCell))
+        }
+        
+        commonTVData = tablerow
+        commonTableView.reloadData()
+    }
 }

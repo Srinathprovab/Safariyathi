@@ -8,7 +8,7 @@
 import UIKit
 
 class CityInfoTVCell: TableViewCell {
-
+    
     
     @IBOutlet weak var titlelbl: UILabel!
     @IBOutlet weak var subtitlelbl: UILabel!
@@ -22,23 +22,24 @@ class CityInfoTVCell: TableViewCell {
     var cityname = String()
     var code = String()
     var list :AirportCodeListModel?
+    var hotel_city_list :HotelCityListModel?
     var tourlist :TourListData?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
     
     override func updateUI() {
-       
         
-       
+        
+        
         if cellInfo?.key == "holidays" {
             
             tourlist = cellInfo?.moreData as? TourListData
@@ -48,7 +49,19 @@ class CityInfoTVCell: TableViewCell {
             codelbl.isHidden = true
             code = tourlist?.id ?? ""
             locationimg.image = UIImage(named: "hotelloc")
+            
+        }else if cellInfo?.key == "hotel" {
+            
+            hotel_city_list = cellInfo?.moreData as? HotelCityListModel
+            fromcity = hotel_city_list?.label ?? ""
+            titlelbl.text = "\(hotel_city_list?.label ?? "")"
+            subtitlelbl.text = "\(hotel_city_list?.value ?? "")"
+            id = hotel_city_list?.id ?? ""
+            locationimg.image = UIImage(named: "location")
+            codelbl.isHidden = true
+            
         }else {
+            
             list = cellInfo?.moreData as? AirportCodeListModel
             fromcity = list?.label ?? ""
             titlelbl.text = "\(list?.city ?? "")"

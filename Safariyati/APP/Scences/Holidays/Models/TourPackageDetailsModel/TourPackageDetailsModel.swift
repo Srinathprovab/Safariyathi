@@ -19,7 +19,9 @@ struct TourPackageDetailsModel : Codable {
     let adult_2_price : Int?
     let adult_3_price : Int?
     let child_pricing : Int?
+    let currency : String?
 
+    
     enum CodingKeys: String, CodingKey {
 
         case tour_data = "tour_data"
@@ -31,6 +33,7 @@ struct TourPackageDetailsModel : Codable {
         case adult_2_price = "adult_2_price"
         case adult_3_price = "adult_3_price"
         case child_pricing = "child_pricing"
+        case currency = "currency"
     }
 
     init(from decoder: Decoder) throws {
@@ -44,6 +47,7 @@ struct TourPackageDetailsModel : Codable {
         adult_2_price = try values.decodeIfPresent(Int.self, forKey: .adult_2_price)
         adult_3_price = try values.decodeIfPresent(Int.self, forKey: .adult_3_price)
         child_pricing = try values.decodeIfPresent(Int.self, forKey: .child_pricing)
+        currency = try values.decodeIfPresent(String.self, forKey: .currency)
     }
 
 }

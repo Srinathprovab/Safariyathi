@@ -100,10 +100,15 @@ var changecharges : Changecharges?
 var bagdata = [Bag_data]()
 var faredata = [SelectFareData]()
 var selectedfaredata :SelectFareData?
+var res:TourPackageDetailsModel?
+var tour_amount = Int()
+
 
 /* URL endpoints */
 struct ApiEndpoints {
     
+    
+    //FLIGHTS
     static let general_home = "general/home"
     static let indexpage = "general/getTopFlightHotelDestination"
     static let ajax_get_airport_code_list = "ajax/get_airport_code_list"
@@ -116,6 +121,9 @@ struct ApiEndpoints {
     static let flight_mobile_pre_process_booking = "flight/mobile_pre_process_booking"
     static let flight_mobile_process_passenger_detail = "flight/mobile_process_passenger_detail"
     
+    
+    //HOTELS
+    static let ajax_get_hotel_city_list = "ajax/get_hotel_city_list"
     
     //HOLIDAYS
     static let tours_get_tour_city_package_list = "tours/get_tour_city_package_list"
@@ -278,6 +286,8 @@ struct UserDefaultsKeys {
     //Holidays
     static var holiday_package_name = "holiday_package_name"
     static var holiday_package_id = "holiday_package_id"
+    static var holidays_adultCount = "Holidays_Adult_Count"
+    static var holidays_childCount = "Child_Count"
 }
 
 
